@@ -1,0 +1,22 @@
+---
+import { getStaticPaths } from './builder.js';
+
+export { getStaticPaths };
+
+const { page } = Astro.request.params;
+
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+	</head>
+	<body>
+		<main>
+			<h1>Hello Astro?!!</h1>
+			<p>Page: {page}</p>
+		</main>
+	</body>
+</html>
