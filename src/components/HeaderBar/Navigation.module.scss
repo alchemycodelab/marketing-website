@@ -1,0 +1,27 @@
+.Navigation {    
+    display: flex;
+    justify-content: flex-end;
+
+    a {
+        color: inherit;
+        text-decoration: none;
+    }
+
+    .filler {
+        --gap: 72px;
+        min-width: calc(var(--gap) / 3);
+        flex-basis: var(--gap);
+        flex-shrink: 1;
+
+        &:nth-last-child(2) {
+            display: none;
+        }
+    }
+
+    .margin {
+        --gap: 60px;
+        min-width: calc(var(--gap) / 3);
+        flex-basis: var(--gap);
+        flex-shrink: 1;
+    }
+}

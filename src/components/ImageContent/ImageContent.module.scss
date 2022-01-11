@@ -1,0 +1,6 @@
+.ImageContent{
+
+    &.squareHeight {
+        grid-template-rows: var(--content-width);  
+    }
+}

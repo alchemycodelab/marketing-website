@@ -1,0 +1,19 @@
+.Content {
+  @media (min-width: 700px) {
+    border-left: 2px solid var(--pink);
+    border-top: 2px solid var(--pink);
+  }
+}
+
+.Tab {
+  padding: calc(18px + (var(--scale) * 12));
+
+  
+  border-top: 2px solid var(--pink);
+  
+  
+  @media (max-width: 699px) {
+    // margin-right: var(--primary-margin);
+    padding-left: calc(var(--primary-margin) - 0px);
+  }
+}

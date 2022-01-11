@@ -1,0 +1,57 @@
+.InfoCard {
+  border-bottom-width: 2px;
+  border-bottom-style: solid;
+  border-bottom-color: inherit;
+
+  display: grid;
+  grid-template-columns: 1fr max-content;
+  grid-template-areas:
+    "eyebrow eyebrow"
+    "heading stat"
+    "text text"
+    "footer footer";
+
+  .eyebrow {
+    grid-area: eyebrow;
+    margin-bottom: calc(3px + (var(--scale) * 1));
+  }
+
+  .heading {
+    grid-area: heading;
+    align-self: center;
+    margin-bottom: calc(8px + (var(--scale) * 4));
+  }
+
+  .stat {
+    grid-area: stat;
+    align-self: start;
+  }
+
+  .text {
+    grid-area: text;
+
+    p:not(:last-child),
+    ul:not(:last-child) {
+      margin-bottom: calc(8px + (var(--scale) * 4));
+    }
+  }
+
+  .footer {
+    grid-area: footer;
+    align-self: start;
+  }
+
+  .heading + .footer {
+    margin-top: calc(-1 * 8px + (var(--scale) * 4));
+  }
+
+  padding: var(--primary-margin);
+
+  @media (min-width: 700px) {
+    padding: 20px;
+
+    &:global(.active) {
+      background-color: var(--pink);
+    }
+  }
+}

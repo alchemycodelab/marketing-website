@@ -1,0 +1,54 @@
+.SlideOut {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    height: calc( 100vh - 100% );
+    width: 375px;
+    @media (max-height: 568px) {
+        width: 475px;
+    }
+    max-width: max(100vw, var(--min-section-width));
+
+    padding: 68px 0 0 98px;
+    text-align: initial;
+    
+    transition: transform 300ms ease-in-out;
+    transform: translateX(100%);
+    
+    &:global(.active) {
+        transform: translateX(0);
+    }
+
+    display: flex;
+    gap: 32px;
+    flex-direction: column;
+    flex-wrap: wrap;
+
+    .navlink {
+        display: block;
+        
+        &:global(.current) {
+            color: var(--peach);
+        }
+        
+        &:global(.primary) {
+            font-family: 'Newzald Black';
+            font-size: 34px;
+            line-height: 36px;
+            margin-bottom: 12px;
+        }
+
+        &:global(.primary) + &:global(.secondary) {
+            margin-top: 32px;
+        }
+
+        &:global(.secondary) {
+            font-family: 'National Book';
+            font-size: 18px;
+            line-height: 20px;
+
+            margin-bottom: 8px;
+        }
+    }
+    
+}

@@ -1,0 +1,58 @@
+* {
+  box-sizing: border-box;
+}
+
+button {
+  cursor: pointer;
+}
+
+html {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  /* This is displayed during overscroll, also tints browser top bar underneath */
+  // background: var(--black);
+}
+
+
+body {
+  min-width: var(--min-section-width);
+  max-width: 100vw;
+  height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+:root {
+  --max-section-width: 1440px;
+  --min-section-width: 320px;
+  --section-width: clamp(var(--min-section-width), 100vw, var(--max-section-width));
+  --content-width: var(--section-width);
+  @media (min-width: 700px) {
+    --content-width: calc(var(--section-width) / 2);
+  }
+  --scale: calc( ( var(--content-width) - var(--min-section-width) ) / 400 );
+
+  
+  --primary-margin: calc(22.75px + ( var(--scale) * 67.25));
+
+  --header-height: 60px;
+  @media (min-width: 1024px) {
+      --header-height: 88px;
+  }
+
+
+  /* TODO: evaluate if this is this needed here? */
+  --vertical-margin-scaling: .011;
+  --vertical-margin-base: calc(var(--vertical-margin-scaling) * var(--content-width));
+
+  --golden-split-big: 61.8%;
+  --golden-split-small: calc(100% - var(--golden-split-big));
+
+  --accordion-split-small: 31.25%;
+  --accordion-split-big: calc(100% - var(--accordion-split-small));
+
+  
+}
+
+

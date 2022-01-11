@@ -1,0 +1,71 @@
+.BaseAccordion {
+  .HeaderContent {
+    padding: var(--primary-margin);
+    padding-bottom: calc(var(--primary-margin) / 2.5);
+
+    @media (min-width: 700px) {
+      max-width: 50%;
+    }
+  }
+
+  .Container {
+    padding-bottom: calc(var(--primary-margin) * 1.25);
+
+    @media (min-width: 700px) {
+      margin-left: var(--primary-margin);
+      margin-right: var(--primary-margin);
+
+      display: grid;
+      grid-template-columns: var(--accordion-split-small) var(--accordion-split-big);
+    }
+  }
+
+  .Tab {
+    order: 1;
+    grid-column: 1;
+    cursor: pointer;
+    transition: background-color 200ms ease-in;
+  }
+
+  .Content {
+    order: 2;
+    grid-row-start: 1;
+    grid-row-end: -1;
+    grid-column: 2;
+    place-self: stretch;
+
+    padding-left: calc(var(--primary-margin) + 25.6px);
+    padding-right: calc(var(--primary-margin) + 6.4px);
+
+    @media (max-width: 699px) {
+      max-height: 0px;
+      overflow-y: hidden;
+      transition: max-height 200ms ease-in, padding 200ms ease-in;
+    }
+
+    @media (min-width: 700px) {
+      padding-right: var(--primary-margin);
+      padding-left: var(--primary-margin);
+      padding-top: calc(var(--primary-margin) / 2.5);
+      padding-bottom: 0;
+      visibility: hidden;
+    }
+
+    &:global(.active) {
+      @media (max-width: 699px) {
+        padding-top: var(--primary-margin);
+        padding-bottom: var(--primary-margin);
+        max-height: 400px;
+
+        &:last-of-type {
+          padding-bottom: 0;
+        }
+      }
+
+      @media (min-width: 700px) {
+        padding-bottom: 0;
+        visibility: visible;
+      }
+    }
+  }
+}

@@ -1,27 +1,18 @@
 ---
 import { getStaticPaths, getPage } from './builder.js';
+import Page from '../layouts/page.astro';
 import BuilderServer from '../components/BuilderServer.jsx'
 import BuilderClient from '../components/BuilderClient.tsx'
 
 export { getStaticPaths };
 
+const { pages } = Astro.props;
 const { url } = Astro.request
 const page = await getPage(url.pathname);
 const isEditing = import.meta.env.MODE === 'editing';
+if(isEditing) console.log('edit mode');
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/x-icon" href="/favicon.ico" />
-	</head>
-	<body>
-		<header>
-			<h1>Header in Astro</h1>
-		</header>
-		<main>
-			{ !isEditing ? <BuilderServer page={page} /> : <BuilderClient page={page} client:only /> }
-		</main>
-	</body>
-</html>
+<Page pages={pages} page={page}>
+	{ !isEditing ? <BuilderServer page={page} /> : <BuilderClient page={page} client:only /> }
+</Page>

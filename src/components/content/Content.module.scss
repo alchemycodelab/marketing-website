@@ -1,0 +1,9 @@
+.Content {
+  p:not(:last-child), ul:not(:last-child) {
+    margin-bottom: calc(12px + var(--vertical-margin-base));
+  }
+
+  .Wayfinder {
+    margin-bottom: calc(4.5px + var(--vertical-margin-base));
+  }
+}

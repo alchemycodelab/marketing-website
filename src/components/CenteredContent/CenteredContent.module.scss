@@ -1,0 +1,23 @@
+.CenteredContent {
+  
+  --vertical-expansion: 1.5;
+  padding: 
+    calc( var(--primary-margin) * var(--vertical-expansion)) 
+    var(--primary-margin)
+  ;
+  
+  @media (max-width: 400px) {
+    --vertical-expansion: 2;
+  }
+
+  @media (min-width: 700px) {
+    --inset-padding: calc( 130px + ( var(--scale) * 170 ) );
+    padding-left: var(--inset-padding);
+    padding-right: var(--inset-padding);
+
+    text-align: center;
+  }
+
+
+
+}

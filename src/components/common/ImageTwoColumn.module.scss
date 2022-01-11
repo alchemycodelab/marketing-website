@@ -1,0 +1,26 @@
+.ImageTwoColumn {
+
+    /*
+    possible sizing constraint for mobile???
+    grid-template-rows: minmax(400px, 100vw) auto;
+    */
+    > *:first-child {
+        padding: var(--primary-margin);    
+    }
+
+    &.enforceAspectRatio {
+        /* TODO: max-row-height concept??? */
+        /* height: min(100%, var(--max-row-height));*/
+        img {
+            height: 100%;
+        }
+    }
+
+    img {
+        grid-area: image;
+        width: 100%;
+        max-height: fit-content;
+        object-fit: cover;
+        object-position: top;
+    }
+}

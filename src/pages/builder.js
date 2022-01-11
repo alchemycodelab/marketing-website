@@ -15,14 +15,15 @@ export async function getStaticPaths() {
     },
   });
 
-  const paths = resp
-    .map((item) => {
-      const path = item.data?.url?.replace('/', '');
+  const pages = resp.map(item => item.data);
+
+  const paths = pages
+    .map(page => {
       return {
         params: { 
-          page: path || undefined, 
+          page: page?.url?.replace('/', '') || undefined, 
         },
-        props: item.data,
+        props: { page, pages }
       };
     });
 

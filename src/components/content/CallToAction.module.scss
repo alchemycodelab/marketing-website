@@ -1,0 +1,29 @@
+.CallToAction {
+
+  margin-top: 40px;
+
+  a {
+    font-family: "National Bold";
+
+    --font-scaling: .020;
+    --font-size-base: calc(var(--font-scaling) * var(--content-width));
+    font-size: calc(9.6px + var(--font-size-base));
+    
+    line-height: 1.2; 
+    
+    display: inline-block;
+    white-space: nowrap;
+    text-decoration: none;
+
+    &::after {
+      content: ' ->';
+    }
+
+    &.primary {
+      padding: 12px 28px; 
+      border-style: outset;
+      border-width: 2px;
+    }
+
+  }
+}

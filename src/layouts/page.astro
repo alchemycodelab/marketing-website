@@ -1,0 +1,27 @@
+---
+import '../styles/reset.scss';
+import '../styles/globals.scss';
+import '../styles/typography.scss';
+import '../styles/color.scss';
+import HeaderBar from '../components/HeaderBar/HeaderBar.jsx'
+import Footer from '../components/Footer/Footer.jsx';
+
+const { pages, page } = Astro.props;
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8"/>
+		<meta name="viewport" content="width=device-width"/>
+		<link rel="icon" type="image/x-icon" href="/favicon.ico"/>
+	</head>
+	<body>
+		<HeaderBar pages={pages} page={page}/>
+
+		<main>
+			<slot/>
+		</main>
+
+		<Footer pages={pages} page={page} />
+	</body>
+</html>

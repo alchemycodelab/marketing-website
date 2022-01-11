@@ -1,0 +1,56 @@
+.DeluxeHero { 
+    display: grid;
+    grid-template-columns: 100vw;
+    grid-template-rows: clamp(312px, 100vw, 50vh) auto auto;
+    grid-template-areas:
+        'image'
+        'headline'
+        'lead'
+    ;
+
+    @media (min-width: 700px) {
+        grid-template-columns: 50% 50%;
+        grid-template-areas:
+            'headline image'
+            'lead lead'
+        ;
+    }
+
+    @media (min-width: 1024px) {
+        grid-template-columns: var(--golden-split-small) var(--golden-split-big);
+        grid-template-areas:
+            'headline image'
+            'headline lead'
+        ;
+    }
+
+    .ImageContainer {
+        grid-area: image;
+        justify-self: stretch;
+
+        img {
+            height: 100%;            
+        }
+    }
+
+    .PrimaryExpressiveHeader {
+        grid-area: headline;
+        align-self: end;
+
+        padding: var(--primary-margin);
+        padding-top: calc(1.5 * var(--primary-margin));
+
+        font-family: "Newzald Black";
+        font-size: calc(42.51px + ( var(--scale) * 47.49));
+        line-height: calc(43.07px + ( var(--scale) * 60.93));
+    }
+
+    .HeroLead {
+        grid-area: lead;
+    
+        padding: calc(1.5 * var(--primary-margin)) var(--primary-margin);
+        @media (min-width: 1024px) {
+            padding: var(--primary-margin);
+        }
+    }
+}

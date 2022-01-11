@@ -1,0 +1,140 @@
+.StickyHeader {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.HeaderBar {
+
+    --duration: 250ms;
+
+    --header-height: 60px;
+    @media (min-width: 1024px) {
+        --header-height: 88px;
+    }
+
+    height: var(--header-height);
+    padding-left: var(--primary-margin);
+
+    display: grid;
+    grid-template-columns: max-content 1fr max-content var(--header-height);
+    grid-template-areas: 
+        'logo . apply menu'
+    ;
+
+    @media (min-width: 1024px) {
+        grid-template-areas: 
+            'logo navigation apply menu'
+        ;
+    }
+
+    .logo {
+        grid-area: logo;
+        display: grid;
+
+        img {
+            height: 13px;
+
+            @media (min-width: 700px) {
+                height: 18px;
+            }
+        }
+    } 
+
+    .navigation {
+        grid-area: navigation;
+        align-self: center;
+
+        display: none;
+        @media (min-width: 1024px) {
+            display: initial;
+            transform: scale(1);
+
+            /* "active" means the slide out nav is open,
+               so we fade out the primary nav */
+            &:global(.active) {
+                opacity: 0;
+                transform: scale(0);
+                transition-timing-function: step-end, ease-in-out;
+            }
+
+            transition: 
+                transform var(--duration) step-start,
+                opacity var(--duration) ease-in-out
+            ;
+        }
+    }
+
+    .apply {
+        grid-area: apply;
+        display: flex;
+        align-items: center;
+        padding: 0 31px;
+        text-decoration: none;
+        z-index: 500;
+
+        /* Override .cta font-size when not wide */
+        @media (max-width: 1023px) {
+            font-size: var(--text-font-size);
+            line-height: var(--text-line-height); 
+        }
+
+        @media (min-width: 700px) {
+            padding: 0 36px;
+            span::after {
+                content: " Now"
+            }
+        }
+    }
+
+    .menu {
+        grid-area: menu;
+        border: 0;
+        width: var(--header-height);
+        
+        @media (min-width: 700px) {
+            width: calc(var(--header-height) + 4px);
+        }
+        
+        &:focus {
+            /* TODO: replace with other visual cue */
+            outline: none;
+        }
+
+        > span {
+            font-size: calc(var(--header-height)/3);
+            &:before {
+                content: '☰';
+            }
+        }
+
+        &:global(.active) {
+            span:before {
+                content: '✕';
+            } 
+        }
+
+    }
+
+    .curtain {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100vw;
+        height: calc( 100vh - 100% );
+        background: var(--black);
+        transform: scale(0);
+        opacity: 0;
+
+        transition: 
+            transform var(--duration) step-end,
+            opacity var(--duration) ease-in-out
+        ;
+        
+        &:global(.active) {
+            transform: scale(1);
+            opacity: .6;
+            transition-timing-function: step-start, ease-in-out;
+        }
+    } 
+}

@@ -1,0 +1,38 @@
+.QuadStats {
+
+    --square-size: calc(max(100vw, 320px) / 2);
+    @media (min-width: 700px) {
+        --square-size: 25vw
+    }
+    @media (min-width: 1024px) {
+        --width: calc(min(100vw, 1440px) * .618);
+        --square-size: calc(var(--width) / 2);
+    }
+
+    margin: var(--primary-margin) 0;
+    padding-bottom: var(--primary-margin);
+
+    display: grid;
+    align-content: center;
+    grid-template-columns: repeat(2, var(--square-size));
+    grid-template-rows: repeat(2, var(--square-size));
+
+    .StatCard {
+        display: grid;
+        grid-template-rows: var(--golden-split-big) 1fr;
+        justify-content: center;
+        text-align: center;
+
+        &:nth-child(even) {
+            transform: translateY(var(--primary-margin));
+        }
+
+        .Stat {
+            align-self: end;
+            font-family: 'National Light';
+            font-size: calc(46px + ( var(--scale) * 64));
+            font-feature-settings: 'pnum' on, 'lnum' on;
+            line-height: 1.2; 
+        }
+    }
+}

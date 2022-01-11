@@ -1,0 +1,18 @@
+.Hero { 
+
+    grid-template-rows: minmax(auto, 60vh);
+
+    @media (min-width: 700px) {
+        grid-template-rows: clamp(312px, 100vw, 75vh);
+    }
+
+    > .contentContainer {
+        align-self: end;
+        @media (min-width: 700px) {
+            margin-bottom: var(--primary-margin);
+        }
+        @media (min-width: 1024px) {
+           margin-bottom: 0;
+        }
+    }
+}

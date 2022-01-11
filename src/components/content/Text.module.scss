@@ -1,0 +1,66 @@
+.Wayfinder, .StatCaption {
+  font-family: "National Bold";
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-feature-settings: "pnum" on, "lnum" on;
+  font-size: calc(13.68px + ( var(--scale) * 2.32));
+  line-height: calc(15.36px + ( var(--scale) * 4.64));
+}
+
+.PrimaryExpressiveHeader {
+  font-family: "Newzald Black";
+  font-size: calc(37.65px + ( var(--scale) * 26.35));
+  line-height: calc(41.54px + ( var(--scale) * 34.46));
+  
+  &:global(.soft-header) {
+    font-family: "Newzald Book";
+  }
+}
+
+.SecondaryInformativeHeader {
+  font-family: "National Bold";
+  font-size: calc(22.25px + ( var(--scale) * 22.75));
+  line-height: calc(27.45px + ( var(--scale) * 28.55));
+  
+  &:global(.soft-header) {
+    font-family: "National Book";
+  }
+}
+
+.Lead {
+  font-size: calc(17.41px + ( var(--scale) * 14.59));
+  line-height: calc(23.09px + ( var(--scale) * 16.91));
+}
+
+.TextContent, .RichText {
+  font-size: calc(17.20px + ( var(--scale) * 5.80));
+  line-height: calc(18.72px + ( var(--scale) * 9.28));
+
+  ul {
+    list-style-type: square;
+
+    /* TODO: narrow ident on mobile */
+    
+    li {
+      display: list-item;
+      &:not(:last-child) {
+        margin-bottom: 12px;
+      }
+    }  
+        
+    li::marker {
+        color: rgb(232, 144, 98);
+    }
+  }
+}
+
+.HeaderText {
+  font-family: "National Bold";
+  font-size: calc(18.20px + ( var(--scale) * 4.80));
+  line-height: calc(19.72px + ( var(--scale) * 8.28));
+}
+
+.IllustrationCaption {
+  font-size: calc(14.20px + ( var(--scale) * 8.80));
+  line-height: calc(16.72px + ( var(--scale) * 11.28));
+}

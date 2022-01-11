@@ -1,0 +1,128 @@
+.HorizontalScroll {
+  overflow-x: auto;
+  position: relative;
+}
+
+.QuotesCarousel {
+  overflow-x: visible;
+  width: max-content;
+  max-width: none;
+  
+  --quote-width-percent: .86;
+  @media (min-width: 700px) { 
+    --quote-width-percent: .84;
+  }
+  --quote-width: calc( var(--quote-width-percent) * var(--section-width) );
+  
+  --extra-side-margin: calc( ( 100vw - var(--section-width) ) / 2);
+  --width-remainder: calc( var(--section-width) - var(--quote-width) );
+  --right-margin: calc( var(--extra-side-margin) + var(--width-remainder) );
+
+  margin: 0;
+  padding-left: max(var(--extra-side-margin), 0px);
+  padding-right: var(--right-margin);
+  
+  .carousel {
+    width: fit-content;
+    display: flex;
+    align-items: stretch;
+
+    li {
+      width: var(--quote-width);
+
+      padding-left: var(--primary-margin);
+      padding-right: var(--primary-margin);
+      
+      padding-top: calc(.232 * var(--quote-width));
+      padding-bottom: calc(.434 * var(--quote-width));
+
+      display: grid;
+      grid-template-columns: calc(.287 * var(--quote-width)) 1fr;
+      grid-template-rows: max-content auto;
+      grid-template-areas:
+        'quote quote'
+        'image attribution'
+      ;
+
+      grid-gap: 28px 20px;
+
+      @media (min-width: 700px) { 
+
+        padding-top: max(60px, calc(.080 * var(--quote-width)));
+        padding-bottom: calc(.134 * var(--quote-width));
+
+        grid-template-columns: calc(.215 * var(--quote-width)) 1fr;
+        grid-template-areas:
+          'image quote'
+          'image attribution'
+        ;
+        grid-gap: 16px calc(.069 * var(--quote-width));
+      }
+
+      img {
+        grid-area: image;
+        width: 100%;
+        height: calc(.385 * var(--quote-width));
+        
+        @media (min-width: 700px) { 
+          height: calc(.286 * var(--quote-width));
+        }
+      }
+
+      .attribution {
+        grid-area: attribution;
+      }
+
+      blockquote {
+        grid-area: quote;
+
+        font-family: "Newzald Black";
+        font-size: calc(24.13px + ( var(--scale) * 20.87));
+        line-height: calc(24.17px + ( var(--scale) * 27.83));
+
+        text-indent: -0.45em;
+        quotes: "“" "”" "‘" "’";
+        &::before {
+          content: open-quote;
+        }
+        &::after {
+          content: close-quote;
+        }
+      }
+    
+      @supports ( hanging-punctuation: first) {
+        blockquote {
+          text-indent: 0;
+          hanging-punctuation: first;
+        }
+      }
+    }
+  }
+
+  header {
+    z-index: 100;
+    position: absolute;
+    padding: calc(0.5 * var(--primary-margin)) var(--primary-margin);
+    display: grid;
+    grid-template-columns: max-content max-content;
+    grid-gap: 24px;
+
+    .selector {
+      letter-spacing: 12px;
+      color: var(--white);
+
+      label::before {
+        content: '●';
+      }
+      
+      input:checked + label::before {
+        color: var(--black);
+      }
+
+      input {
+        display: none;
+      }
+    }
+  }
+  
+}

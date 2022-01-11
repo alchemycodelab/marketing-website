@@ -1,0 +1,11 @@
+.Section { 
+    max-width: var(--max-section-width);
+    margin-left: auto;
+    margin-right: auto;
+    height: fit-content;
+    // overflow-x: clip;
+
+    &, * {
+        border-color: inherit;
+    }
+}

@@ -1,0 +1,51 @@
+.TwoColumnTabbedContent {
+  padding: var(--primary-margin);
+  
+  .TwoColumnContainer {
+    margin-top: calc(var(--primary-margin) / 2.5);
+    border-top: 1px solid var(--pink-light);
+    margin-left: calc( var(--primary-margin) * -1);
+    
+    .Left {
+      @media (min-width: 700px) {
+        border-right: 1px solid var(--pink-light);
+      }
+
+      :global(.HeaderText) {
+        color: var(--blue-dark);
+        cursor: pointer;
+
+        &:not(:last-child) {
+          border-bottom: 1px solid var(--pink-light);
+        }
+
+        padding: calc(18px + ( var(--scale) * 12));
+        padding-left: calc( var(--primary-margin) - 0px );
+        
+        // @media (min-width: 700px) {
+        //   padding-left: calc(18px + ( var(--scale) * 12));
+        // }
+
+        &:global(.active) {
+          background-color: var(--blue);
+        }
+      }
+    }
+  
+    .Right {
+      display: contents;
+      
+      > * {
+        grid-area: figure;
+        padding: calc( var(--primary-margin) / 2 ) var(--primary-margin);
+        visibility: hidden;
+        
+        &:global(.active) {
+          visibility: initial;
+        }
+      }
+      
+    }
+  }
+    
+}

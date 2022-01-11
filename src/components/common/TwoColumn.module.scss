@@ -1,0 +1,48 @@
+.TwoColumn{
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-areas: 
+        'figure'
+        'content'
+    ;
+
+    &.rightOnBottom {
+        grid-template-areas: 
+            'content'
+            'figure'
+        ;
+    }
+
+    > *:first-child {
+        grid-area: content;  
+    }
+
+    > *:last-child {
+        grid-area: figure;
+        width: 100%;
+    }
+    
+    @media (min-width: 700px) {
+        grid-template-columns: 50% 50%;
+        &.onlyGoldenSplit {
+            grid-template-columns: var(--golden-split-small) var(--golden-split-big);
+        }
+
+        grid-template-areas: 'content figure';
+        /* repeat to override the above case */
+        &.rightOnBottom {
+            grid-template-areas: 'content figure';
+        }
+        
+        &.rightOnLeft, &.rightOnBottom.rightOnLeft {
+            grid-template-areas: 'figure content';
+        }
+
+    }
+
+    &:not(.onlyHalfSplit) {
+        @media (min-width: 1024px) {
+            grid-template-columns: var(--golden-split-small) var(--golden-split-big);
+        }
+    }
+}
