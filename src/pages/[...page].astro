@@ -1,10 +1,13 @@
 ---
-import { getStaticPaths } from './builder.js';
+import { getStaticPaths, getPage } from './builder.js';
+import BuilderServer from '../components/BuilderServer.jsx'
+import BuilderClient from '../components/BuilderClient.tsx'
 
 export { getStaticPaths };
 
-const { page } = Astro.request.params;
-
+const { url } = Astro.request
+const page = await getPage(url.pathname);
+const isEditing = import.meta.env.MODE === 'editing';
 ---
 
 <html lang="en">
@@ -14,9 +17,11 @@ const { page } = Astro.request.params;
 		<link rel="icon" type="image/x-icon" href="/favicon.ico" />
 	</head>
 	<body>
+		<header>
+			<h1>Header in Astro</h1>
+		</header>
 		<main>
-			<h1>Hello Astro?!!</h1>
-			<p>Page: {page}</p>
+			{ !isEditing ? <BuilderServer page={page} /> : <BuilderClient page={page} client:only /> }
 		</main>
 	</body>
 </html>

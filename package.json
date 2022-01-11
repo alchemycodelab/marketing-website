@@ -4,15 +4,18 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "dev": "astro dev",
-    "start": "astro dev",
-    "build": "astro build",
+    "dev": "astro --config astro.editing.config.mjs dev",
+    "start": "npm run dev",
+    "build": "npm run build:prod && npm run build:editing",
+    "build:prod": "astro build",
+    "build:editing": "astro --config astro.editing.config.mjs build ",
     "preview": "astro preview"
   },
   "devDependencies": {
     "astro": "^0.22.9"
   },
   "dependencies": {
-    "@builder.io/react": "^1.1.47"
+    "@builder.io/react": "^1.1.47",
+    "react-error-boundary": "^3.1.4"
   }
 }
