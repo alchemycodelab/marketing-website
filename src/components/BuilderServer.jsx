@@ -6,9 +6,9 @@ registerComponents(Builder);
 
 export default function BuilderServer({ page }) {
 	
-	if (!page && !Builder.isEditing && !Builder.isPreviewing) {
-		return null; //<PageNotFound />;
-	}
+  if (!page && !Builder.isEditing && !Builder.isPreviewing) {
+    return null; //<PageNotFound />;
+  }
 
-	return <BuilderComponent name="page" content={page} />;
+  return <BuilderComponent name="page" content={page} />;
 }
