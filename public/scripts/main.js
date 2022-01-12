@@ -7,6 +7,6 @@ function loadScripts() {
   loadToggles();
   loadCarousels();
   // loadScrollSelects();
-};
+}
 
 loadScripts();

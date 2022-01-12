@@ -9,10 +9,12 @@
     "build": "npm run build:prod && npm run build:editing",
     "build:prod": "astro build",
     "build:editing": "astro --config astro.editing.config.mjs build ",
-    "preview": "astro preview"
+    "preview": "astro preview",
+    "lint": "eslint --ignore-path .gitignore ."
   },
   "devDependencies": {
-    "astro": "^0.22.9"
+    "astro": "^0.22.9",
+    "eslint-plugin-react": "^7.28.0"
   },
   "dependencies": {
     "@builder.io/react": "^1.1.47",

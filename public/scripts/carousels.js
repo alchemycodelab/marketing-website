@@ -12,7 +12,7 @@ function getObserver(root, callback) {
 }
 
 function loadCarousel(carousel) {
-  const scroller = carousel.querySelector('.carousel-scroller')
+  const scroller = carousel.querySelector('.carousel-scroller');
   const inputs = carousel.querySelectorAll('input');
   const cards = carousel.querySelectorAll('li');
   // map the DOM nodes to their respective index

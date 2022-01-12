@@ -38,15 +38,14 @@ export async function getPage(url) {
   const targeting = { urlPath: '_', device: '_' };
 
   const page = await builder.get(MODEL_NAME, {
-      userAttributes: { 
-        ...targeting, 
-        urlPath: url 
-      }
-    })
-    .promise();
+    userAttributes: { 
+      ...targeting, 
+      urlPath: url 
+    }
+  }).promise();
 
-    // console.log(page);
+  // console.log(page);
     
-    return page || null;
-};
+  return page || null;
+}
 

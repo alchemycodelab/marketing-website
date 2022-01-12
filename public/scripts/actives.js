@@ -42,27 +42,27 @@ function loadSelection(node) {
 }
 
 
-function getObserver(root, callback) {
-  // https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API#creating_an_intersection_observer
-  return new IntersectionObserver(callback, {
-    root,
-    rootMargin: '0px',
-    threshold: 1
-  });
-}
+// function getObserver(root, callback) {
+//   // https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API#creating_an_intersection_observer
+//   return new IntersectionObserver(callback, {
+//     root,
+//     rootMargin: '0px',
+//     threshold: 1
+//   });
+// }
 
-function loadScrollSelect(scrollable) {
-  const items = scrollable.querySelectorAll('.scroll-item-script');
+// function loadScrollSelect(scrollable) {
+//   const items = scrollable.querySelectorAll('.scroll-item-script');
 
-  const observer = getObserver(scrollable, events => {
-    events.forEach((entry) => {
-      // if (!entry.isVisible) return;
-      // console.log(entry);
-    });
-  });
+//   const observer = getObserver(scrollable, events => {
+//     events.forEach((entry) => {
+//       // if (!entry.isVisible) return;
+//       // console.log(entry);
+//     });
+//   });
 
-  items.forEach(item => observer.observe(item));
-}
+//   items.forEach(item => observer.observe(item));
+// }
 
 function loadToggle(node) {
   const triggers = node.querySelectorAll('.trigger-script');
