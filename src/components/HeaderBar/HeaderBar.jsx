@@ -18,7 +18,7 @@ export default function HeaderBar({ pages, page }) {
       <a href="/" className={styles.logo}>
         <img
           className={styles.logo}
-          src="images/alchemy-logo-primary.svg"
+          src="/images/alchemy-logo-primary.svg"
           alt="Alchemy Logo"
         />
       </a>

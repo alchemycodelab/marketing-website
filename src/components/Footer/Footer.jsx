@@ -13,7 +13,7 @@ export default function Footer({ pages, page: currentPage }) {
     >
       <a href="/" className={classNames(styles.logo)}>
         <img
-          src='images/alchemy-logo-vertical.svg'
+          src='/images/alchemy-logo-vertical.svg'
           alt="Alchemy Footer Logo"
           className={classNames(styles.logo)}
         />

@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import { loadCarousels } from './carousels.js';
-import { loadSelections, loadToggles, loadScrollSelects } from './actives.js';
+import { loadSelections, loadToggles } from './actives.js';
 
 function loadScripts() {
   loadSelections();
