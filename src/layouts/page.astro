@@ -23,5 +23,8 @@ const { pages, page } = Astro.props;
 		</main>
 
 		<Footer pages={pages} page={page} />
+
+		<script crossOrigin="true" src="https://polyfill.app/api/polyfill?features=scroll-behavior"></script>
+		<script type="module" src="scripts/main.js" />
 	</body>
 </html>

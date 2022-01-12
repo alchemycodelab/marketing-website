@@ -11,43 +11,48 @@ export default function QuotesCarousel({
   theme,
   alternatingTheme = theme,
   quotes = [],
+  attributes,
   ...rest
 }) {
   return (
     <Section theme={theme} {...rest}
-      tagClassName={classNames(styles.HorizontalScroll, 'carousel-script')}
+      tagClassName={classNames('carousel-script')}
       className={styles.QuotesCarousel}
     >
-      <ControlBar wayfinder={wayfinder} quotes={quotes} />
+      <div className={styles.controlBarContainer}>
+        <ControlBar wayfinder={wayfinder} quotes={quotes} />
+      </div>
 
-      <ul className={styles.carousel}>
+      <div className={classNames(styles.carouselContainer, 'carousel-scroller')}>
+        <ul className={styles.carousel}>
 
-        {quotes.map((quote, i) => {
+          {quotes.map((quote, i) => {
 
-          const className = classNames({
-            [alternatingTheme]: i % 2 === 0
-          });
+            const className = classNames({
+              [alternatingTheme]: i % 2 === 0
+            });
 
-          const { text, image, name, title, company } = quote;
+            const { text, image, name, title, company } = quote;
 
-          return (
-            <li key={i} className={className}>
-              <blockquote className="blockquote">
-                {text}
-              </blockquote>
+            return (
+              <li key={i} className={className}>
+                <blockquote className="blockquote">
+                  {text}
+                </blockquote>
 
-              <Image image={image} />
+                <Image image={image} />
 
-              <div className={styles.attribution}>
-                <RichText text={name} />
-                <RichText text={formatCaption(title, company)} className="black-65-text" />
-              </div>
-            </li>
-          );
+                <div className={styles.attribution}>
+                  <RichText text={name} />
+                  <RichText text={formatCaption(title, company)} className="black-65-text" />
+                </div>
+              </li>
+            );
 
-        })}
+          })}
 
-      </ul>
+        </ul>
+      </div>
     </Section>
   );
 }

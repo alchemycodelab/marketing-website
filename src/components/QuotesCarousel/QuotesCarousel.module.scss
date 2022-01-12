@@ -1,11 +1,5 @@
-.HorizontalScroll {
-  overflow-x: auto;
-  position: relative;
-}
-
 .QuotesCarousel {
-  overflow-x: visible;
-  width: max-content;
+  position: relative;
   max-width: none;
   
   --quote-width-percent: .86;
@@ -19,9 +13,19 @@
   --right-margin: calc( var(--extra-side-margin) + var(--width-remainder) );
 
   margin: 0;
-  padding-left: max(var(--extra-side-margin), 0px);
-  padding-right: var(--right-margin);
+
+  .controlBarContainer {
+    z-index: 100;
+    position: absolute;
+    left: max(var(--extra-side-margin), 0px);
+  }
   
+  .carouselContainer {
+    overflow-x: auto;
+    padding-left: max(var(--extra-side-margin), 0px);
+    padding-right: var(--right-margin);
+  }
+
   .carousel {
     width: fit-content;
     display: flex;
