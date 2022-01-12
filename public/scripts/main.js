@@ -3,7 +3,6 @@ import { loadCarousels } from './carousels.js';
 import { loadSelections, loadToggles, loadScrollSelects } from './actives.js';
 
 function loadScripts() {
-  console.log('running loadScripts');
   loadSelections();
   loadToggles();
   loadCarousels();

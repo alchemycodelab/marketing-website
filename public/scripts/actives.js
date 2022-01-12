@@ -2,7 +2,7 @@ import { getLoadAll } from './load.js';
 
 export const loadSelections = getLoadAll('.selection-script', loadSelection);
 export const loadToggles = getLoadAll('.toggle-script', loadToggle);
-export const loadScrollSelects = getLoadAll('.scroll-selection-script', loadScrollSelect);
+// export const loadScrollSelects = getLoadAll('.scroll-selection-script', loadScrollSelect);
 
 const ACTIVE = 'active';
 const hasActive = node => node?.classList.contains(ACTIVE);
@@ -55,10 +55,9 @@ function loadScrollSelect(scrollable) {
   const items = scrollable.querySelectorAll('.scroll-item-script');
 
   const observer = getObserver(scrollable, events => {
-    console.log('events');
     events.forEach((entry) => {
       // if (!entry.isVisible) return;
-      console.log(entry);
+      // console.log(entry);
     });
   });
 

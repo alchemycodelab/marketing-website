@@ -4,7 +4,7 @@ export function getLoadAll(className, loadingFn) {
 
   return function loadActives() {
     const nodes = document.querySelectorAll(className);
-    console.log('loading', className, nodes);
+    // console.log('loading', className, nodes);
     nodes.forEach(node => {
       if (loaded.has(node)) return;
       loaded.add(node);
