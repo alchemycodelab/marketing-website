@@ -18,6 +18,7 @@ Wayfinder.input = {
 export const PrimaryExpressiveHeader = getRichText('PrimaryExpressiveHeader', 'Headline');
 export const SecondaryInformativeHeader = getRichText('SecondaryInformativeHeader', 'Headline');
 export const Lead = getRichText('Lead');
+export const Title = getRichText('Title');
 export const IllustrationCaption = getRichText('IllustrationCaption', 'Caption');
 export const StatCaption = getRichText('StatCaption', 'Caption');
 export const RichText = getRichText('RichText', 'text');

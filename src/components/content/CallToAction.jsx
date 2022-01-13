@@ -1,9 +1,20 @@
 import classNames from 'classnames';
 import styles from './CallToAction.module.scss';
 
-export default function CallToAction({ theme = '', text = '', url = '', type = 'primary' }) {
+export default function CallToAction({ 
+  theme = '', 
+  text = '', 
+  url = '', 
+  type = 'primary', 
+  className: customClassName = '',
+}) {
   const isPrimary = type === 'primary';
   const className = classNames(
+    styles.CallToAction,
+    customClassName,
+  );
+
+  const linkClassName = classNames(
     styles[type],
     isPrimary ? theme : `${theme}-text`,
     { 'button-accent': isPrimary },
@@ -13,8 +24,8 @@ export default function CallToAction({ theme = '', text = '', url = '', type = '
   if (!theme && !text && !url) return null;
 
   return (
-    <p className={styles.CallToAction}>
-      <a href={url} className={className}>
+    <p className={className}>
+      <a href={url} className={linkClassName}>
         {text}
       </a>
     </p>

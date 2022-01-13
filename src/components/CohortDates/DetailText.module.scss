@@ -1,0 +1,58 @@
+/*TODO: calculate all sizing rather than hard-coded px
+style children of splitinfo rather than what is there now*/
+
+.DetailText {
+  z-index: 1;
+  margin-top: 2em;
+  width: 100%;
+  height: 90%;
+  color: var(--black);
+  
+  .title {
+    --font-scaling: 0.03;
+    --font-size-base: calc(var(--font-scaling) * var(--box-size));
+
+    font-family: 'National Bold';
+    font-size: calc(10px + var(--font-size-base));
+
+    margin-bottom: var(--mini-spacing);
+    justify-self: flex-start;
+    align-self: flex-start;
+  }
+
+  .description {
+    font-size: var(--font-size-base);
+    grid-row-start: 2;
+    grid-column-start: span 2;
+  }
+
+  .subtitleValue,
+  .description {
+    font-family: 'National Bold';
+    font-size: calc(10px + (var(--scale) * 15));
+    line-height: calc(23px + (var(--scale) * 28.55));
+  }
+
+  .subtitle {
+    color: var(--blue-dark);
+  }
+
+  .splitInfo {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    padding-top: var(--mini-spacing);
+    border-top: solid 2px var(--blue-medium);
+  }
+
+  .splitInfo1,
+  .splitInfo2 {
+    padding: var(--mini-spacing);
+  }
+
+  .splitInfo1 {
+    border-right: solid 2px var(--blue-medium);
+    /*prob style the children of SplitInfo rather than this*/
+  }
+}

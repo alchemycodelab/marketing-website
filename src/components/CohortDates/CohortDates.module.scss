@@ -1,0 +1,39 @@
+.CohortDates {
+  
+  padding: var(--primary-margin);
+  
+  .contentContainer {
+    max-width: var(--content-width);
+    margin-bottom: calc( 1.3 * var(--primary-margin) );
+  }
+
+  .boxes {
+    display: grid;
+    grid-gap: var(--primary-margin);
+    --boxes: 1;
+    @media (min-width: 700px) {   
+      --boxes: 2;
+    }
+    @media (min-width: 1024px) {
+      --boxes: 3;
+    }
+
+    --box-size: calc( 
+      ( 
+        var(--section-width) - (
+          calc(var(--boxes) + 1) 
+          * 
+          var(--primary-margin)
+        ) 
+      ) 
+      / 
+      var(--boxes)
+    );
+
+    --box-scale: calc( var(--box-size) / 360 );
+
+    grid-template-columns: repeat(var(--boxes), var(--box-size));
+    grid-auto-rows: var(--box-size);
+  }
+
+}

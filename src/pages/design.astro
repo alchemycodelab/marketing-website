@@ -1,0 +1,47 @@
+---
+import Page from '../layouts/page.astro';
+import CohortDates from '../components/CohortDates/CohortDates.jsx';
+---
+
+<Page pages={[]} page={{}}>
+	<CohortDates
+    theme="pink"
+    content={{
+      wayfinder: 'Cohort Dates',
+      headline: '<p>Cohort Dates</p><p>& Enrollment</p>',
+      lead: 'Rolling admissions means the earlier you apply, the most spots there are available. Start your application today!'
+    }}
+    cohorts={[
+      {
+        title: 'January 2021',
+        deadline: 'Suggested application deadline: January 14th.',
+        startDate: '01/04/21',
+        endDate: '06/25/21'
+      },
+      {
+        title: 'February 2022',
+        deadline: 'Suggested application deadline: January 14th.',
+        startDate: '02/04/21',
+        endDate: '06/25/21'
+      },
+      {
+        title: 'March 2022',
+        deadline: 'Suggested application deadline: January 14th.',
+        startDate: '03/04/21',
+        endDate: '06/25/21'
+      },
+      {
+        title: 'March 2022',
+        deadline: 'Suggested application deadline: January 14th.',
+        startDate: '03/04/21',
+        endDate: '06/25/21'
+      },
+      {
+        title: 'March 2022',
+        deadline: 'Suggested application deadline: January 14th.',
+        startDate: '03/04/21',
+        endDate: '06/25/21'
+      },
+    ]}
+  />
+</Page>

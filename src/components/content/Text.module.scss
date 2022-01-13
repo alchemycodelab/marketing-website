@@ -27,31 +27,18 @@
   }
 }
 
-.Lead {
+.Lead, .Title {
   font-size: calc(17.41px + ( var(--scale) * 14.59));
   line-height: calc(23.09px + ( var(--scale) * 16.91));
+}
+
+.Title {
+  font-family: "National Bold";
 }
 
 .TextContent, .RichText {
   font-size: calc(17.20px + ( var(--scale) * 5.80));
   line-height: calc(18.72px + ( var(--scale) * 9.28));
-
-  ul {
-    list-style-type: square;
-
-    /* TODO: narrow ident on mobile */
-    
-    li {
-      display: list-item;
-      &:not(:last-child) {
-        margin-bottom: 12px;
-      }
-    }  
-        
-    li::marker {
-        color: rgb(232, 144, 98);
-    }
-  }
 }
 
 .HeaderText {

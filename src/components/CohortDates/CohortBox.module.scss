@@ -1,0 +1,84 @@
+.CohortBox {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 46% 29% 25%;
+  overflow: hidden;
+
+  .backdrop {
+    mix-blend-mode: soft-light;
+    opacity: 0.5;
+    font-family: "National Bold";
+  }
+  
+  /* --box-scale is from CohortDates */
+
+  .year {
+    grid-column: 1;
+    grid-row: 1;
+    padding-left: 12%;
+    font-size: calc( var(--box-scale) * 60 );
+  }
+
+  .month {
+    grid-column: 1 / 3;
+    grid-row: 1 / 3;
+    place-self: center;
+    font-size: calc( var(--box-scale) * 240 );
+  }
+
+  .detail {
+    padding: 8% 8% 0 8%;
+    grid-column: 1 / 3;
+    grid-row: 1;
+    width: 90%;
+
+    font-size: calc( var(--box-scale) * 23 );
+    line-height: calc( var(--box-scale) * 28 );
+
+    header {
+      font-family: "National Bold";
+      font-size: calc( var(--box-scale) * 32 );
+      margin-bottom: calc( var(--box-scale) * 9 );
+    }
+  }
+
+  .date {
+    grid-row: 2;
+    margin-bottom: 16%;
+    padding-top: 12%;
+    border-top: 2px solid var(--blue-medium);
+    
+    :global(.StatCaption) {
+      color: var(--blue-dark);
+      margin-bottom: 2px;
+    }
+    
+    &.start {
+      grid-column: 1;
+      margin-left: 16%;
+      border-right: 2px solid var(--blue-medium);
+    }
+    
+    &.end {
+      grid-column: 2;
+      margin-right: 16%;
+      padding-left: 16%;
+    }
+  }
+
+  .cta {
+    grid-row: 3;
+    grid-column: 1 / 3;
+    background: rgba(#FFFCFA, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0;
+  }
+
+  // transition: transform 300ms ease-in-out;
+
+  // &:hover {
+  //   transform: scale(1.07);
+  // }
+}
