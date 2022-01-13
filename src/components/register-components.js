@@ -18,7 +18,6 @@ export default function registerComponents(Builder) {
     Builder.registerComponent(Component, Component.config || {});
   }
 
-  register(Test);
   register(DeluxeHero);
   register(AlchemyDifference);
   register(QuotesCarousel);
