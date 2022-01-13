@@ -1,4 +1,3 @@
-import Test from './Test';
 import DeluxeHero from './DeluxeHero/DeluxeHero';
 import Hero from './Hero/Hero';
 import AlchemyDifference from './AlchemyDifference/AlchemyDifference';
