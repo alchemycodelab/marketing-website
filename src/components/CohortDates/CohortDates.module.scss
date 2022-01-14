@@ -4,7 +4,10 @@
   
   .contentContainer {
     max-width: var(--content-width);
-    margin-bottom: calc( 1.3 * var(--primary-margin) );
+    margin-bottom: var(--primary-margin);
+    @media (min-width: 700px) {   
+      margin-bottom: calc( 1.3 * var(--primary-margin) );
+    }
   }
 
   .boxes {

@@ -6,7 +6,9 @@ export default function CallToAction({
   text = '', 
   url = '', 
   type = 'primary', 
+  noArrow = false,
   className: customClassName = '',
+  linkClassName: customLinkClassName = '',
 }) {
   const isPrimary = type === 'primary';
   const className = classNames(
@@ -18,6 +20,11 @@ export default function CallToAction({
     styles[type],
     isPrimary ? theme : `${theme}-text`,
     { 'button-accent': isPrimary },
+    customLinkClassName,
+  );
+
+  const textClassName = classNames(
+    noArrow ? styles.noArrow : ''
   );
 
   // the builder editor can leave empty objects
@@ -26,7 +33,7 @@ export default function CallToAction({
   return (
     <p className={className}>
       <a href={url} className={linkClassName}>
-        {text}
+        <span className={textClassName}>{text}</span>
       </a>
     </p>
   );
@@ -42,6 +49,7 @@ CallToAction.inputs = [
       text: 'Call to Action',
       url: '#link',
       navigation: 'primary',
+      noArrow: false,
     },
     subFields: [
       {
@@ -67,6 +75,13 @@ CallToAction.inputs = [
         type: 'text',
         defaultValue: 'primary',
         enum: ['primary', 'secondary']
+      },
+      {
+        name: 'noArrow',
+        type: 'boolean',
+        helperText: 'Suppress " ->" content after text',
+        advanced: true,
+        defaultValue: false,
       },
     ]
   }

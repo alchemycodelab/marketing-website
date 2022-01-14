@@ -15,7 +15,7 @@
     white-space: nowrap;
     text-decoration: none;
 
-    &::after {
+    span:not(.noArrow)::after {
       content: ' ->';
     }
 

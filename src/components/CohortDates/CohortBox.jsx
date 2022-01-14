@@ -39,6 +39,7 @@ export default function CohortBox({ cohort }) {
         theme="blue-dark"
         text="Apply Now" 
         className={styles.cta} 
+        linkClassName={styles.ctaLink}
       /> 
     </article>
   );
