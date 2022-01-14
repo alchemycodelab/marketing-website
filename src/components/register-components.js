@@ -1,15 +1,16 @@
-import DeluxeHero from './DeluxeHero/DeluxeHero';
-import Hero from './Hero/Hero';
-import AlchemyDifference from './AlchemyDifference/AlchemyDifference';
-import QuotesCarousel from './QuotesCarousel/QuotesCarousel';
-import IllustrativeExplainer from './IllustrativeExplainer/IllustrativeExplainer';
-import StatsDisplay from './QuadStats/StatsDisplay';
-import FramedQuotesCarousel from './QuotesCarousel/FramedQuotesCarousel';
-import ImageContent from './ImageContent/ImageContent';
-import Accordion from './Accordion/Accordion';
-import DeluxeAccordion from './Accordion/DeluxeAccordion';
-import CenteredContent from './CenteredContent/CenteredContent';
-import Schedules from './Schedules/Schedules';
+import DeluxeHero from './DeluxeHero/DeluxeHero.jsx';
+import Hero from './Hero/Hero.jsx';
+import AlchemyDifference from './AlchemyDifference/AlchemyDifference.jsx';
+import QuotesCarousel from './QuotesCarousel/QuotesCarousel.jsx';
+import IllustrativeExplainer from './IllustrativeExplainer/IllustrativeExplainer.jsx';
+import StatsDisplay from './QuadStats/StatsDisplay.jsx';
+import FramedQuotesCarousel from './QuotesCarousel/FramedQuotesCarousel.jsx';
+import ImageContent from './ImageContent/ImageContent.jsx';
+import Accordion from './Accordion/Accordion.jsx';
+import DeluxeAccordion from './Accordion/DeluxeAccordion.jsx';
+import CenteredContent from './CenteredContent/CenteredContent.jsx';
+import Schedules from './Schedules/Schedules.jsx';
+import CohortDates from './CohortDates/CohortDates.jsx';
 
 export default function registerComponents(Builder) {
 
@@ -29,4 +30,5 @@ export default function registerComponents(Builder) {
   register(CenteredContent);
   register(Schedules);
   register(DeluxeAccordion);
+  register(CohortDates);
 }
