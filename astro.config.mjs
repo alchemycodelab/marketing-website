@@ -8,9 +8,9 @@
 
 // @ts-check
 export default /** @type {import('astro').AstroUserConfig} */ ({
-	buildOptions: {
-		site: 'https://alchemycodelab.com'
-	},
-	// Enable the React renderer to support React JSX components.
-	renderers: ['@astrojs/renderer-react'],
+  buildOptions: {
+    site: 'https://alchemycodelab.com'
+  },
+  // Enable the React renderer to support React JSX components.
+  renderers: ['@astrojs/renderer-react'],
 });
