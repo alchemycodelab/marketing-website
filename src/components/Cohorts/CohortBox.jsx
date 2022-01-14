@@ -1,6 +1,5 @@
-import DetailText from './DetailText';
 import CallToAction from '../content/CallToAction';
-import { Title, RichText, StatCaption, HeaderText } from '../content/Text';
+import { StatCaption, HeaderText } from '../content/Text';
 import classNames from 'classnames';
 import styles from './CohortBox.module.scss';
 
@@ -9,7 +8,7 @@ export default function CohortBox({ cohort }) {
   // add another prop to CTA for dark blue on hover
   // check that all text components are being correctly used
 
-  const { title, deadline, startDate, endDate } = cohort;
+  const { name, suggestion, startDate, endDate } = cohort;
   const start = new Date(startDate);
   const month = start.toLocaleString('en-US', { month: 'short' }).slice(0, 2);
   const year = start.toLocaleString('en-US', { year: '2-digit' });
@@ -23,8 +22,8 @@ export default function CohortBox({ cohort }) {
         {year}
       </div>
       <div className={styles.detail}>
-        <header>{title}</header>
-        <p>{deadline}</p>
+        <header>{name}</header>
+        <p>{suggestion}</p>
       </div>
       <div className={classNames(styles.date, styles.start)}>
         <StatCaption text="Start" />

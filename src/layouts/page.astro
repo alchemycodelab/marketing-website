@@ -5,8 +5,43 @@ import '../styles/typography.scss';
 import '../styles/color.scss';
 import HeaderBar from '../components/HeaderBar/HeaderBar.jsx'
 import Footer from '../components/Footer/Footer.jsx';
+import GlobalContext from '../GlobalContext.js';
 
 const { pages, page } = Astro.props;
+
+const cohorts=[
+	{
+	name: 'January 2021',
+	suggestion: 'Suggested application deadline: January 14th.',
+	startDate: '01/04/21',
+	endDate: '06/25/21'
+	},
+	{
+	name: 'February 2022',
+	suggestion: 'Suggested application deadline: January 14th.',
+	startDate: '02/04/21',
+	endDate: '06/25/21'
+	},
+	{
+	name: 'March 2022',
+	suggestion: 'Suggested application deadline: January 14th.',
+	startDate: '03/04/21',
+	endDate: '06/25/21'
+	},
+	{
+	name: 'March 2022',
+	suggestion: 'Suggested application deadline: January 14th.',
+	startDate: '03/04/21',
+	endDate: '06/25/21'
+	},
+	{
+	name: 'March 2022',
+	suggestion: 'Suggested application deadline: January 14th.',
+	startDate: '03/04/21',
+	endDate: '06/25/21'
+	},
+];
+
 ---
 
 <html lang="en">
@@ -16,14 +51,18 @@ const { pages, page } = Astro.props;
 		<link rel="icon" type="image/x-icon" href="/favicon.ico"/>
 	</head>
 	<body>
-		<HeaderBar pages={pages} page={page}/>
+		<GlobalContext.Provider value={{ pages, page, cohorts }}>
+		
+			<HeaderBar pages={pages} page={page}/>
 
-		<main>
-			<slot/>
-		</main>
+			<main>
+				<slot/>
+			</main>
 
-		<Footer pages={pages} page={page} />
+			<Footer pages={pages} page={page} />
 
+		</GlobalContext.Provider>
+		
 		<script crossOrigin="true" src="https://polyfill.app/api/polyfill?features=scroll-behavior"></script>
 		<script type="module" src="/scripts/main.js" />
 	</body>
