@@ -1,18 +1,14 @@
 import Section from '../common/Section';
 import CohortBox from './CohortBox';
 import Content from '../content/Content';
-import { Wayfinder, Headline, RichText } from '../content/Text';
-import styles from './CohortDates.module.scss';
+import styles from './Cohorts.module.scss';
 
-export default function CohortDates({ 
+export default function Cohorts({ 
   content, 
   cohorts,
   ...rest }) {
-  //TODO:
-  //remove hard-coded text
-  //cleanup classnames vs ids
   return (
-    <Section {...rest} className={styles.CohortDates}>
+    <Section {...rest} className={styles.Cohorts}>
       <div className={styles.contentContainer}>
         <Content content={content} />
       </div>
@@ -23,3 +19,11 @@ export default function CohortDates({
     </Section>
   );
 }
+
+Cohorts.config = {
+  name: 'Cohorts',
+  inputs: [
+    ...Section.inputs,
+    ...Content.inputs,
+  ]
+};

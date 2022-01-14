@@ -10,14 +10,14 @@ import Accordion from './Accordion/Accordion.jsx';
 import DeluxeAccordion from './Accordion/DeluxeAccordion.jsx';
 import CenteredContent from './CenteredContent/CenteredContent.jsx';
 import Schedules from './Schedules/Schedules.jsx';
-import CohortDates from './CohortDates/CohortDates.jsx';
+import CohortDates from './Cohorts/Cohorts.jsx';
 
 export default function registerComponents(Builder) {
 
   function register(Component) {
     Builder.registerComponent(Component, Component.config || {});
   }
-
+  console.log('registering builder components');
   register(DeluxeHero);
   register(AlchemyDifference);
   register(QuotesCarousel);
