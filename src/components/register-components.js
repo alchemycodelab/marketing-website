@@ -15,6 +15,7 @@ import CohortDates from './Cohorts/Cohorts.jsx';
 export default function registerComponents(Builder) {
 
   function register(Component) {
+    console.log('registering component', Component.config.name);
     Builder.registerComponent(Component, Component.config || {});
   }
   console.log('registering builder components');
