@@ -1,8 +1,8 @@
 ---
 import { getStaticPaths, getPage } from './builder.js';
 import Page from '../layouts/page.astro';
-import BuilderServer from '../components/BuilderServer.jsx'
-import BuilderClient from '../components/BuilderClient.tsx'
+import BuilderServer from '../components/Builder/BuilderServer.jsx'
+import BuilderClient from '../components/Builder/BuilderClient.tsx'
 
 export { getStaticPaths };
 
@@ -11,8 +11,42 @@ const { url } = Astro.request
 const page = await getPage(url.pathname);
 const isEditing = import.meta.env.MODE !== 'production';
 if(isEditing) console.log('edit mode');
+
+const cohorts = [
+  {
+    name: 'January 2021',
+    suggestion: 'Suggested application deadline: January 14th.',
+    startDate: '01/04/21',
+    endDate: '06/25/21'
+  },
+  {
+    name: 'February 2022',
+    suggestion: 'Suggested application deadline: January 14th.',
+    startDate: '02/04/21',
+    endDate: '06/25/21'
+  },
+  {
+    name: 'March 2022',
+    suggestion: 'Suggested application deadline: January 14th.',
+    startDate: '03/04/21',
+    endDate: '06/25/21'
+  },
+  {
+    name: 'March 2022',
+    suggestion: 'Suggested application deadline: January 14th.',
+    startDate: '03/04/21',
+    endDate: '06/25/21'
+  },
+  {
+    name: 'March 2022',
+    suggestion: 'Suggested application deadline: January 14th.',
+    startDate: '03/04/21',
+    endDate: '06/25/21'
+  },
+];
+
 ---
 
 <Page pages={pages} page={page}>
-	{ !isEditing ? <BuilderServer page={page} /> : <BuilderClient page={page} client:only /> }
+	{ !isEditing ? <BuilderServer cohorts={cohorts} page={page} /> : <BuilderClient cohorts={cohorts} page={page} client:only /> }
 </Page>
