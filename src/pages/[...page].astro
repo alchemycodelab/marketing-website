@@ -8,7 +8,7 @@ export { getStaticPaths };
 
 const { pages } = Astro.props;
 const { url } = Astro.request;
-const page = getPage(url.pathname);
+const page = await getPage(url.pathname);
 
 const isEditing = import.meta.env.MODE !== 'production';
 

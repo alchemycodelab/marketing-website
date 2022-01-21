@@ -1,4 +1,4 @@
-// import { useContext } from 'react';
+import { useState, useEffect } from 'react';
 // import GlobalContext from '../GlobalContext.js';
 import Section from '../common/Section';
 import CohortBox from './CohortBox';
@@ -23,10 +23,24 @@ export function CohortDates({
   );
 }
 
+export async function getCohorts() {
+  const url = 'https://cdn.builder.io/api/v2/content/cohort?apiKey=b9c103cda0f24735921c917287d4fc23';
+  const response = await fetch(url);
+  const { results } = await response.json();
+  return results.map(({ name, data }) => ({ ...data, name }));
+}
+
 export default function CohortDatesContainer(props) {
-  console.log('Container Props', props);
-  // const { cohorts = [] } = useContext(GlobalContext) ?? {};
-  
+  // const [cohorts, setCohorts] = useState([]);
+  // useEffect(() => {
+  //   const doIt = async () => {
+  //     const cohorts = await getCohorts(); 
+  //     setCohorts(cohorts);
+  //   };
+
+  //   doIt();
+  // }, []);
+  // console.log('cohorts are', cohorts);
   return <CohortDates cohorts={[]} {...props}/>;
 }
 
