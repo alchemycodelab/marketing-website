@@ -4,12 +4,10 @@ import classNames from 'classnames';
 import styles from './CohortBox.module.scss';
 
 export default function CohortBox({ cohort }) {
-  //TODO:
-  // add another prop to CTA for dark blue on hover
-  // check that all text components are being correctly used
-
+  //TODO: add another prop to CTA for dark blue on hover
   const { name, suggestion, startDate, endDate } = cohort;
   const start = new Date(startDate);
+  const end = new Date(endDate);
   const month = start.toLocaleString('en-US', { month: 'short' }).slice(0, 2);
   const year = start.toLocaleString('en-US', { year: '2-digit' });
 
@@ -25,14 +23,8 @@ export default function CohortBox({ cohort }) {
         <header>{name}</header>
         <p>{suggestion}</p>
       </div>
-      <div className={classNames(styles.date, styles.start)}>
-        <StatCaption text="Start" />
-        <HeaderText text={startDate} />
-      </div>
-      <div className={classNames(styles.date, styles.end)}>
-        <StatCaption text="End"></StatCaption>
-        <HeaderText text={endDate} />
-      </div>
+      <CohortDate name="Start" date={start} className={styles.start}/>
+      <CohortDate name="End" date={end} className={styles.end}/>
       <CallToAction 
         type="secondary" 
         theme="blue-dark"
@@ -41,5 +33,29 @@ export default function CohortBox({ cohort }) {
         linkClassName={styles.ctaLink}
       /> 
     </article>
+  );
+}
+
+function Backdrop({ datePart, className }){
+  return (
+    <div className={classNames(styles.backdrop, className)}>
+      {datePart}
+    </div>
+  );
+}
+
+function CohortDate({ name, date, className }) {
+  
+  const display = date.toLocaleDateString('en-us', { 
+    year: '2-digit', 
+    month: '2-digit', 
+    day: '2-digit' 
+  });
+  
+  return (
+    <div className={classNames(styles.date, className)}>
+      <StatCaption text={name}></StatCaption>
+      <HeaderText text={display} />
+    </div>
   );
 }

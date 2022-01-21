@@ -2,11 +2,11 @@ import pkg from '@builder.io/react';
 const { builder } = pkg;
 builder.init('b9c103cda0f24735921c917287d4fc23');
 
-const MODEL_NAME = 'page';
+const PAGE_MODEL_NAME = 'page';
 
 export async function getStaticPaths() {
 
-  const resp = await builder.getAll(MODEL_NAME, {
+  const resp = await builder.getAll(PAGE_MODEL_NAME, {
     key: 'pages:all',
     fields: 'data.url,data.navigation,data.title,data.description',
     limit: 200,
@@ -37,7 +37,7 @@ export async function getPage(url) {
   // Don't target on url and device for better cache efficiency
   const targeting = { urlPath: '_', device: '_' };
 
-  const page = await builder.get(MODEL_NAME, {
+  const page = await builder.get(PAGE_MODEL_NAME, {
     userAttributes: { 
       ...targeting, 
       urlPath: url 
@@ -49,3 +49,9 @@ export async function getPage(url) {
   return page || null;
 }
 
+const COHORT_MODEL_NAME = 'cohort';
+
+export async function getCohorts() {
+  const res = await builder.getAll(COHORT_MODEL_NAME);
+  return res.map(({ name, data }) => ({ ...data, name }));
+}

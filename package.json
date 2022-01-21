@@ -15,7 +15,7 @@
     "astro:help": "astro --help"
   },
   "devDependencies": {
-    "astro": "^0.22.16",
+    "astro": "^0.22.17",
     "eslint-plugin-react": "^7.28.0"
   },
   "dependencies": {

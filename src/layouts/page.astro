@@ -17,16 +17,15 @@ const { pages, page } = Astro.props;
 		<link rel="icon" type="image/x-icon" href="/favicon.ico"/>
 	</head>
 	<body>
+	
+		<HeaderBar pages={pages} page={page}/>
 		
-			<HeaderBar pages={pages} page={page}/>
-
-			<main>
-				<slot/>
-			</main>
-
-			<Footer pages={pages} page={page} />
-
+		<main>
+			<slot/>
+		</main>
 		
+		<Footer pages={pages} page={page} />
+
 		<script crossOrigin="true" src="https://polyfill.app/api/polyfill?features=scroll-behavior"></script>
 		<script type="module" src="/scripts/main.js"></script>
 

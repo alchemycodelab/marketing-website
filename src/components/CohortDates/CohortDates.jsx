@@ -1,17 +1,15 @@
-import { useContext } from 'react';
-import GlobalContext from '../GlobalContext.js';
+// import { useContext } from 'react';
+// import GlobalContext from '../GlobalContext.js';
 import Section from '../common/Section';
 import CohortBox from './CohortBox';
 import Content from '../content/Content';
 import styles from './CohortDates.module.scss';
 
-export default function CohortDates({ 
+export function CohortDates({ 
   content = {}, 
   cohorts = [],
   ...rest }) {
-  
-  // const { cohorts = [] } = useContext(GlobalContext);
-  
+
   return (
     <Section {...rest} className={styles.CohortDates}>
       <div className={styles.contentContainer}>
@@ -25,7 +23,14 @@ export default function CohortDates({
   );
 }
 
-CohortDates.config = {
+export default function CohortDatesContainer(props) {
+  console.log('Container Props', props);
+  // const { cohorts = [] } = useContext(GlobalContext) ?? {};
+  
+  return <CohortDates cohorts={[]} {...props}/>;
+}
+
+CohortDatesContainer.config = {
   name: 'Cohort Dates',
   inputs: [
     ...Section.inputs,
