@@ -13,6 +13,8 @@
     mix-blend-mode: soft-light;
     opacity: 0.5;
     font-family: "National Bold";
+    user-select: none;
+    pointer-events: none;
   }
   
   /* --box-scale is from CohortDates */
