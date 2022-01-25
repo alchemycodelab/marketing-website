@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './AlchemyDifference.module.scss';
 import ImageTwoColumn from '../common/ImageTwoColumn';
-import Content from '../content/Content';
+import { Content } from '../content/Content';
 import { HeaderText, RichContent } from '../content/Text';
 import classNames from 'classnames';
 

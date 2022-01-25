@@ -1,7 +1,7 @@
 import React from 'react';
 import TwoColumn from '../common/TwoColumn';
 import Section from '../common/Section';
-import Content from '../content/Content';
+import { Content } from '../content/Content';
 import QuadStats from './QuadStats';
 import { StatCaption } from '../content/Text';
 import classNames from 'classnames';

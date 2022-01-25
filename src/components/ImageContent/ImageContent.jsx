@@ -1,6 +1,6 @@
 import React from 'react';
 import ImageTwoColumn from '../common/ImageTwoColumn';
-import Content from '../content/Content';
+import { Content } from '../content/Content';
 import classNames from 'classnames';
 import styles from './ImageContent.module.scss';
 

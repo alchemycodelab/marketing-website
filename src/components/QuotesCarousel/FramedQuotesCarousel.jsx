@@ -1,5 +1,5 @@
 import QuotesCarousel from './QuotesCarousel';
-import Content from '../content/Content';
+import { Content } from '../content/Content';
 import classNames from 'classnames';
 import { themes } from '../../styles/themes.js';
 import styles from './FramedQuotesCarousel.module.scss';

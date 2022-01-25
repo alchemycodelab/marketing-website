@@ -1,5 +1,5 @@
 import Section from '../common/Section';
-import Content from '../content/Content';
+import { Content } from '../content/Content';
 // import classNames from 'classnames';
 import styles from './CenteredContent.module.scss';
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import Section from '../common/Section';
-import Content from '../content/Content';
+import { Content } from '../content/Content';
 import { IllustrationCaption } from '../content/Text';
 import Image from '../common/Image';
 import { themes } from '../../styles/themes.js';

@@ -1,47 +1,57 @@
 ---
 import Page from '../layouts/page.astro';
-import { CohortDates } from '../components/CohortDates/CohortDates.jsx';
+import { Steps } from '../components/Steps/Steps.jsx';
 ---
 
 <Page pages={[]} page={{}}>
-	<CohortDates
-    theme="pink"
+	<Steps
+    theme="white"
     content={{
-      wayfinder: 'Cohort Dates',
-      headline: '<p>Cohort Dates</p><p>& Enrollment</p>',
-      lead: 'Rolling admissions means the earlier you apply, the most spots there are available. Start your application today!'
+      headline: '<p>Application Process</p>',
     }}
-    cohorts={[
-      {
-        name: 'January 2021',
-        suggestion: 'Suggested application deadline: January 14th.',
-        startDate: '01/04/21',
-        endDate: '06/25/21'
-      },
-      {
-        name: 'February 2022',
-        suggestion: 'Suggested application deadline: January 14th.',
-        startDate: '02/04/21',
-        endDate: '06/25/21'
-      },
-      {
-        name: 'March 2022',
-        suggestion: 'Suggested application deadline: January 14th.',
-        startDate: '03/04/21',
-        endDate: '06/25/21'
-      },
-      {
-        name: 'March 2022',
-        suggestion: 'Suggested application deadline: January 14th.',
-        startDate: '03/04/21',
-        endDate: '06/25/21'
-      },
-      {
-        name: 'March 2022',
-        suggestion: 'Suggested application deadline: January 14th.',
-        startDate: '03/04/21',
-        endDate: '06/25/21'
-      },
+    steps={[{
+      headline: `    
+        <p>Complete your application</p>
+      `,
+      text: `
+        This short-form questionnaire helps our team customize your interview and admissions experience.
+      `,
+      cta: {
+        theme: 'peach',
+        text: 'Apply Now',
+        url: '#',
+        type: 'primary'
+      }
+    }, {
+      headline: `    
+        <p>Schedule an interview</p>
+      `,
+      text: `
+        During this 30 - 45 min Zoom conversation we help you plan for success starting with a goal assessment and extensive Q&A. You will be able to meet with us more than once.
+      `,
+    }, 
+    {
+      headline: `    
+        <p>Formally enroll</p>
+      `,
+      text: `
+        A paid program deposit and signed agreement secure your cohort seat. You then have time to apply for scholarships (if applicable) and to explore your funding and preparation plans with our admissions team as a resource.
+      `,
+    }, 
+    {
+      headline: `    
+        <p>Prepare for class</p>
+      `,
+      text: `
+        Preparation requires 40 hours of tutorial prework online with the optional 30-hour Developer 101 week course. You’ll join our prework Slack and have access to instructional support and our entire community before your cohort begins!
+      `,
+      cta: {
+        theme: 'peach',
+        text: 'Sign Up for Dev 101',
+        url: '#',
+        type: 'primary'
+      }
+    }
     ]}
   />
 </Page>

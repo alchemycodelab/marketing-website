@@ -1,8 +1,7 @@
 import { useState, useEffect } from 'react';
-// import GlobalContext from '../GlobalContext.js';
 import Section from '../common/Section';
 import CohortBox from './CohortBox';
-import Content from '../content/Content';
+import { Content } from '../content/Content';
 import styles from './CohortDates.module.scss';
 
 export function CohortDates({ 
@@ -40,8 +39,8 @@ export default function CohortDatesContainer(props) {
 
   //   doIt();
   // }, []);
-  // console.log('cohorts are', cohorts);
-  return <CohortDates cohorts={[]} {...props}/>;
+  // console.log(props)
+  return <CohortDates cohorts={[] /*cohorts*/} {...props}/>;
 }
 
 CohortDatesContainer.config = {

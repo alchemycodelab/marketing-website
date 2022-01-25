@@ -35,6 +35,10 @@
   .text-accent {
     color: var(--black-65);
   }
+
+  li:before {
+    color: var(--peach);
+  }
 }
 
 .pink-text {
@@ -239,9 +243,14 @@
   color: var(--black);
   border-color: var(--pink);
 
-   .text-accent {
-     color: var(--black-65);
-   }
+  .text-accent {
+    color: var(--black-65);
+  }
+   
+  li:before {
+    color: var(--peach);
+  }
+
  }
 
  .white-text {

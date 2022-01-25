@@ -1,6 +1,6 @@
 import React from 'react';
 import Section from '../common/Section';
-import Content from '../content/Content';
+import { Content } from '../content/Content';
 import QuadStats from './QuadStats';
 import { RichContent } from '../content/Text';
 import styles from './TabbedStatsDisplay.module.scss';

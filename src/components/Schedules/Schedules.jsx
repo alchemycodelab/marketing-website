@@ -1,7 +1,7 @@
 import Section from '../common/Section';
 import TwoColumn from '../common/TwoColumn';
 import Image from '../common/Image';
-import Content from '../content/Content';
+import { Content } from '../content/Content';
 import InfoCards from '../content/InfoCards';
 import { HeaderText } from '../content/Text';
 import classNames from 'classnames';

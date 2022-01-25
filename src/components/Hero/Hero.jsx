@@ -1,5 +1,5 @@
 import ImageTwoColumn from '../common/ImageTwoColumn';
-import Content from '../content/Content';
+import { Content } from '../content/Content';
 import Image from '../common/Image';
 import Section from '../common/Section';
 import styles from './Hero.module.scss';
@@ -20,7 +20,7 @@ export default function Hero({
       image={image}
     >
       <div className={styles.contentContainer}>
-        <Content content={content} isPrimary={true}/>
+        <Content content={content} isExpressive={true}/>
       </div>
     </ImageTwoColumn>
   );

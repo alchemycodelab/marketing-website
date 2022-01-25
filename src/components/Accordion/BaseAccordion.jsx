@@ -1,6 +1,6 @@
 import { Fragment, cloneElement } from 'react';
 import Section from '../common/Section';
-import Content from '../content/Content';
+import { Content } from '../content/Content';
 import classNames from 'classnames';
 import { themes } from '../../styles/themes.js';
 
