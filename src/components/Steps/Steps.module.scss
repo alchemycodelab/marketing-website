@@ -43,7 +43,8 @@
     }
 
     padding: var(--primary-margin);
-    border-bottom: 1px solid #dfdfdf;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
 
     @media (min-width: 700px) {   
       
@@ -60,7 +61,8 @@
       }
       
       &:nth-child(odd) {
-        border-right: 1px solid #dfdfdf;
+        border-right-width: 1px;
+        border-right-style: solid;
         padding-right: var(--primary-margin);
       }
 
