@@ -36,7 +36,7 @@
     color: var(--black-65);
   }
 
-  li:before {
+  li::marker, li:before {
     color: var(--peach);
   }
 }

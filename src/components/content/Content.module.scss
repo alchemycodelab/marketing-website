@@ -1,5 +1,5 @@
 .Content {
-  p:not(:last-child), ul:not(:last-child) {
+  h2, h3, h4, p:not(:last-child), ul:not(:last-child) {
     margin-bottom: calc(12px + var(--vertical-margin-base));
   }
 

@@ -1,6 +1,16 @@
 .CallToAction {
 
-  margin-top: 40px;
+  margin-top: calc(var(--primary-margin) * .4);
+  @media (min-width: 700px) {   
+    margin-top: calc(var(--primary-margin) * .312);
+  }
+  
+  &.primary {
+    margin-top: calc(var(--primary-margin) * .875);
+    @media (min-width: 700px) {   
+      margin-top: calc(var(--primary-margin) * .45);
+    }
+  }
 
   a {
     font-family: "National Bold";

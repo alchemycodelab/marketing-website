@@ -3,7 +3,7 @@ import { paragraphToLineBreak } from '../format';
 import classNames from 'classnames';
 import styles from './Text.module.scss';
 
-export function Wayfinder({ text, as: Tag = 'h2', className: customClass = '' }) {
+export function Wayfinder({ text, as: Tag = 'div', className: customClass = '' }) {
   const className = classNames(styles.Wayfinder, customClass);
   return <Tag className={className}>{text}</Tag>;
 }

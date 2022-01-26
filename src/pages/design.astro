@@ -1,10 +1,105 @@
 ---
 import Page from '../layouts/page.astro';
 import { Steps } from '../components/Steps/Steps.jsx';
+import { TuitionFinancing } from '../components/TuitionFinancing/TuitionFinancing.jsx';
 ---
 
 <Page pages={[]} page={{}}>
-	<Steps
+	
+	<TuitionFinancing
+    theme="pink"
+    content={{
+      headline: '<p>Tuition & financing</p>',
+      lead: `
+        We’re here to help you succeed. From the minute you’re enrolled until long after graduation we’re invested in providing the tools and resources you need at every step in your new career. Over the course of our rigorous program, we work with each student to tailor a personalized career strategy and introduce you to a network of employers, alumni, community partners, and opportunities.
+      `,
+      text: `
+        <p><strong>Program Tuition</strong>: $24,000 / 25 Weeks Full-time</p>
+      `
+    }}
+    title={`
+      Find the financing plan that’s right for you
+    `}
+    sources={[{
+      headline: `    
+        <p>Upfront tuition</p>
+      `,
+      text: `
+        Pay tuition in full one week prior to starting the program, or choose an installment plan to pay installments throughout the program for a fee.
+      `
+    }, {
+      headline: `    
+        <p>ISA</p>
+      `,
+      text: `
+        Pay your tuition after you are employed with Alchemy's Income Share Agreement (ISA). Provided in partnership with Social Finance, this option was carefully designed as an intelligent solution to building your new career with less risk for individuals who are under-employed or unemployed. An optional living stipend of up to $7,500 is available for qualifying individuals.
+      `,
+      cta: {
+        theme: 'blue-medium',
+        text: 'Download brochure',
+        url: '#',
+        type: 'secondary',
+        noArrow: true
+      }
+    }, 
+    {
+      headline: `    
+        <p>Private Loans</p>
+      `,
+      text: `
+        Choose from a variety of options offered by Alchemy’s partner lenders.
+      `,
+      cta: {
+        theme: 'blue-medium',
+        text: 'More Information',
+        url: '#',
+        type: 'secondary'
+      }
+    }, 
+    {
+      headline: `    
+        <p>Veteran Benefits</p>
+      `,
+      text: `
+        <p>Utilize your veteran benefits towards Alchemy training through the following programs:</p>
+        <ul>
+          <li>Post-9/11 GI Bill®* (Ch. 33)</li>
+          <li>Montgomery GI Bill® (Ch. 30)</li>
+          <li>Select Reserve GI Bill® (Ch. 1606)</li>
+          <li>REAP GI Bill® (Ch. 1607)</li>
+          <li>Dependents Educational Assistance (DEA) (Ch. 35)</li>
+        </ul>
+      `,
+      cta: {
+        theme: 'blue-medium',
+        text: 'More Information',
+        url: '#',
+        type: 'secondary'
+      }
+    }, 
+    {
+      headline: `    
+        <p>State Assistance</p>
+      `,
+      text: `
+        <p>Utilize your veteran benefits towards Alchemy training through the following programs:</p>
+        <ul>
+          <li>ETPL</li>
+          <li>TUI</li>
+          <li>Vocational Rehabilitation</li>
+        </ul>
+      `,
+      cta: {
+        theme: 'blue-medium',
+        text: 'More Information',
+        url: '#',
+        type: 'secondary'
+      }
+    }
+    ]}
+  />
+
+  <Steps
     theme="white"
     content={{
       headline: '<p>Application Process</p>',

@@ -14,6 +14,7 @@ export default function CallToAction({
   const className = classNames(
     styles.CallToAction,
     customClassName,
+    { [styles.primary]: isPrimary }
   );
 
   const linkClassName = classNames(
@@ -57,8 +58,9 @@ CallToAction.inputs = [
         type: 'text',
         enum: [
           'peach',
-          'blue', 
+          'blue-medium',
           'blue-dark',
+          'black',
           ''
         ]
       },

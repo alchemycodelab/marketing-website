@@ -28,7 +28,7 @@
 }
 
 .Lead, .Title {
-  font-size: calc(17.41px + ( var(--scale) * 14.59));
+  font-size: calc(19.41px + ( var(--scale) * 14.59));
   line-height: calc(23.09px + ( var(--scale) * 16.91));
 }
 
@@ -39,6 +39,15 @@
 .TextContent, .RichText {
   font-size: calc(17.20px + ( var(--scale) * 5.80));
   line-height: calc(18.72px + ( var(--scale) * 9.28));
+
+  ul {
+    list-style: square;
+    padding-left: 20px;
+  }
+
+  li:not(:first-child) {
+    margin-top: calc(8px + ( var(--scale) * 4));
+  }
 }
 
 .HeaderText {

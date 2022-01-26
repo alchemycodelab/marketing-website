@@ -1,0 +1,37 @@
+.TuitionFinancing {
+  
+  padding: var(--primary-margin);
+  padding-bottom: calc(var(--primary-margin) * 2);
+  
+  @media (min-width: 700px) {   
+    grid-template-columns: 1fr 1fr;
+  } 
+  
+  .contentContainer {
+    max-width: var(--content-width);
+    margin-bottom: calc(var(--primary-margin) * 1);
+    @media (min-width: 700px) {   
+      margin-bottom: calc(var(--primary-margin) * 1.25);
+    } 
+  }
+
+  .sources {
+    padding: calc(var(--primary-margin) * .85) 0;
+    @media (min-width: 700px) {   
+      padding: calc(var(--primary-margin) * .7) 0;
+      columns: 2;
+      gap: var(--primary-margin);
+    }    
+    
+  }
+  
+  .source {
+    break-inside: avoid;
+    &:not(:first-child) {
+      margin-top: calc(var(--primary-margin) * .875);
+      @media (min-width: 700px) {   
+        margin-top: calc(var(--primary-margin) * .65);
+      }
+    }
+  }
+}
