@@ -3,7 +3,7 @@ import { Content, TertiaryContent } from '../content/Content';
 import { Title } from '../content/Text';
 import styles from './TuitionFinancing.module.scss';
 
-export function TuitionFinancing({ 
+export default function TuitionFinancing({ 
   content,
   title,
   sources = [],
@@ -25,7 +25,7 @@ export function TuitionFinancing({
 function Source({ source }) {
   return (
     <li className={styles.source}>
-      <TertiaryContent content={source} />
+      <TertiaryContent content={source.content} />
     </li>
   );
 }

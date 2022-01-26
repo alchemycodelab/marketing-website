@@ -40,6 +40,11 @@
   font-size: calc(17.20px + ( var(--scale) * 5.80));
   line-height: calc(18.72px + ( var(--scale) * 9.28));
 
+  :global(.tiny) {
+    font-size: calc(12.20px + ( var(--scale) * 5.80));
+    line-height: calc(13.72px + ( var(--scale) * 9.28));
+  }
+
   ul {
     list-style: square;
     padding-left: 20px;

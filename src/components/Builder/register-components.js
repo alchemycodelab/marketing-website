@@ -11,6 +11,9 @@ import DeluxeAccordion from '../Accordion/DeluxeAccordion.jsx';
 import CenteredContent from '../CenteredContent/CenteredContent.jsx';
 import Schedules from '../Schedules/Schedules.jsx';
 import CohortDates from '../CohortDates/CohortDates.jsx';
+import Steps from '../Steps/Steps.jsx';
+import TuitionFinancing from '../TuitionFinancing/TuitionFinancing.jsx';
+
 
 export default function registerComponents(Builder) {
 
@@ -32,4 +35,6 @@ export default function registerComponents(Builder) {
   register(Schedules);
   register(DeluxeAccordion);
   register(CohortDates);
+  register(Steps);
+  register(TuitionFinancing);
 }
