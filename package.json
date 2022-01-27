@@ -12,7 +12,8 @@
     "preview": "astro preview",
     "lint": "eslint --ignore-path .gitignore .",
     "astro:version": "astro --version",
-    "astro:help": "astro --help"
+    "astro:help": "astro --help",
+    "check": "astro check"
   },
   "devDependencies": {
     "astro": "^0.22.17",

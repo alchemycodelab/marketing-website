@@ -1,11 +1,10 @@
-import config from './astro.config.mjs';
 
 // @ts-check
 export default /** @type {import('astro').AstroUserConfig} */ ({
-  ...config,
   buildOptions: {
     sitemap: false
   },
+  renderers: ['@astrojs/renderer-react'],
   vite: {
     mode: 'development'
   }

@@ -7,7 +7,6 @@ export default function Steps({
   steps = [],
   ...rest }) {
 
-  console.log(steps);
   return (
     <Section {...rest} className={styles.Steps}>
       <div className={styles.contentContainer}>
