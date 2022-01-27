@@ -1,7 +1,6 @@
 .TuitionFinancing {
   
   padding: var(--primary-margin);
-  padding-bottom: calc(var(--primary-margin) * 2);
   
   @media (min-width: 700px) {   
     grid-template-columns: 1fr 1fr;
@@ -22,7 +21,13 @@
       columns: 2;
       gap: var(--primary-margin);
     }    
-    
+  }
+
+  .trailerContainer {
+    padding-top: calc(var(--primary-margin) * .45);
+    border-top-width: 1px;
+    border-top-style: solid;
+    border-top-color: inherit;
   }
   
   .source {

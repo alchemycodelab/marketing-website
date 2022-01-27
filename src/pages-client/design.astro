@@ -1,12 +1,12 @@
 ---
 import Page from '../layouts/page.astro';
 import Steps from '../components/Steps/Steps.jsx';
-// import TuitionFinancing from '../components/TuitionFinancing/TuitionFinancing.jsx';
+import TuitionFinancing from '../components/TuitionFinancing/TuitionFinancing.jsx';
 ---
 
 <Page pages={[]} page={{}}>
 	
-	<!-- <TuitionFinancing
+  <TuitionFinancing
     theme="pink"
     content={{
       headline: '<p>Tuition & financing</p>',
@@ -107,6 +107,30 @@ import Steps from '../components/Steps/Steps.jsx';
       }
     }
     ]}
+    trailer={{
+      content: {
+         headline: `    
+          <p>Maintaining Your Unemployment Benefits </p>
+        `,
+         lead: `    
+          <p>Alchemy Code Lab is listed on the State of Oregon's Eligible Training Provider List (ETPL).</p>
+        `,
+        text: `
+          <p>
+          If you are collecting unemployment benefits, including pandemic unemployment, you can continue to do so during the full duration of Alchemy’s program. This option is available to residents of Oregon, Washington, and Idaho. 
+          </p>
+          <p>
+          Notify admissions during your interview to receive your Alchemy TUI Form once enrolled. Plan to submit your form 30+ days prior to your start date. 
+          </p>
+        `,
+        cta: {
+          theme: 'blue-blue-dark-text',
+          text: 'View FAQs',
+          url: '#',
+          type: 'primary'
+        }
+      }
+    }}
   />
  
   <Steps
@@ -115,49 +139,56 @@ import Steps from '../components/Steps/Steps.jsx';
       headline: '<p>Application Process</p>',
     }}
     steps={[{
-      headline: `    
-        <p>Complete your application</p>
-      `,
-      text: `
-        This short-form questionnaire helps our team customize your interview and admissions experience.
-      `,
-      cta: {
-        theme: 'peach',
-        text: 'Apply Now',
-        url: '#',
-        type: 'primary'
+      content: {
+        headline: `    
+          <p>Complete your application</p>
+        `,
+        text: `
+          This short-form questionnaire helps our team customize your interview and admissions experience.
+        `,
+        cta: {
+          theme: 'peach',
+          text: 'Apply Now',
+          url: '#',
+          type: 'primary'
+        }
       }
     }, {
-      headline: `    
-        <p>Schedule an interview</p>
-      `,
-      text: `
-        During this 30 - 45 min Zoom conversation we help you plan for success starting with a goal assessment and extensive Q&A. You will be able to meet with us more than once.
-      `,
+      content: {
+        headline: `    
+          <p>Schedule an interview</p>
+        `,
+        text: `
+          During this 30 - 45 min Zoom conversation we help you plan for success starting with a goal assessment and extensive Q&A. You will be able to meet with us more than once.
+        `,
+      }
+    }, {
+      content: {
+        headline: `    
+          <p>Formally enroll</p>
+        `,
+        text: `
+          A paid program deposit and signed agreement secure your cohort seat. You then have time to apply for scholarships (if applicable) and to explore your funding and preparation plans with our admissions team as a resource.
+        `,
+      }
     }, 
     {
-      headline: `    
-        <p>Formally enroll</p>
-      `,
-      text: `
-        A paid program deposit and signed agreement secure your cohort seat. You then have time to apply for scholarships (if applicable) and to explore your funding and preparation plans with our admissions team as a resource.
-      `,
-    }, 
-    {
-      headline: `    
-        <p>Prepare for class</p>
-      `,
-      text: `
-        Preparation requires 40 hours of tutorial prework online with the optional 30-hour Developer 101 week course. You’ll join our prework Slack and have access to instructional support and our entire community before your cohort begins!
-      `,
-      cta: {
-        theme: 'peach',
-        text: 'Sign Up for Dev 101',
-        url: '#',
-        type: 'primary'
+      content: {
+        headline: `    
+          <p>Prepare for class</p>
+        `,
+        text: `
+          Preparation requires 40 hours of tutorial prework online with the optional 30-hour Developer 101 week course. You’ll join our prework Slack and have access to instructional support and our entire community before your cohort begins!
+        `,
+        cta: {
+          theme: 'peach',
+          text: 'Sign Up for Dev 101',
+          url: '#',
+          type: 'primary'
+        }
       }
     }
     ]}
-  />  -->
+  />
 
 </Page>

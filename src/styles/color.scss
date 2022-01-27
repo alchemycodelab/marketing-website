@@ -39,6 +39,9 @@
   li::marker, li:before {
     color: var(--peach);
   }
+
+  border-color: var(--black-40);
+
 }
 
 .pink-text {
@@ -136,6 +139,27 @@
 
 .blue-background, .blue-active.active {
   background: var(--blue);
+}
+
+/* blue */
+.blue-blue-dark-text {
+  background: var(--blue);
+  color: var(--blue-dark);
+
+  .text-accent {
+    color: var(--blue-dark);
+  }
+
+  li::marker, li:before {
+    color: var(--peach);
+  }
+
+  &.button-accent {
+    border-top-color: var(--black-20);
+    border-left-color: var(--black-20);
+    border-bottom-color: var(--blue-medium);
+    border-right-color: var(--blue-medium);
+  }
 }
 
 /* blue-dark */

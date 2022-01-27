@@ -8,7 +8,7 @@ export { getStaticPaths };
 const { pages } = Astro.props;
 const { url } = Astro.request;
 const page = await getPage(url.pathname);
-console.log('pages', pages.length)
+
 ---
 
 <Page pages={pages} page={page}>
