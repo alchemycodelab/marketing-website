@@ -1,11 +1,5 @@
 ---
-import '../styles/reset.scss';
-import '../styles/globals.scss';
-import '../styles/typography.scss';
-import '../styles/color.scss';
-import HeaderBar from '../components/HeaderBar/HeaderBar.jsx'
-import Footer from '../components/Footer/Footer.jsx';
-
+import Page from './Page.jsx';
 const { pages, page } = Astro.props;
 
 ---
@@ -18,14 +12,10 @@ const { pages, page } = Astro.props;
 	</head>
 	<body>
 	
-		<HeaderBar pages={pages} page={page}/>
-		
-		<main>
+		<Page pages={pages} page={page}>
 			<slot/>
-		</main>
+		</Page>
 		
-		<Footer pages={pages} page={page} />
-
 		<script crossOrigin="true" src="https://polyfill.app/api/polyfill?features=scroll-behavior"></script>
 		<script type="module" src="/scripts/main.js"></script>
 

@@ -4,8 +4,11 @@ export default /** @type {import('astro').AstroUserConfig} */ ({
     sitemap: false
   },
   dist: './dist/builder-editing',
+  pages: './src/pages-client/',
   vite: {
     mode: 'development'
   },
   renderers: ['@astrojs/renderer-react'],
 });
+
+console.log('config editing');

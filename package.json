@@ -16,7 +16,7 @@
     "check": "astro check"
   },
   "devDependencies": {
-    "astro": "^0.22.17",
+    "astro": "^0.22.18",
     "eslint-plugin-react": "^7.28.0"
   },
   "dependencies": {

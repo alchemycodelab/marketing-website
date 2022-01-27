@@ -1,16 +1,16 @@
 ---
 import { getStaticPaths, getPage } from '../services/builder.js';
 import Page from '../layouts/page.astro';
-import BuilderClient from '../components/Builder/BuilderClient.tsx'
+import BuilderServer from '../components/Builder/BuilderServer.jsx';
 
 export { getStaticPaths };
 
 const { pages } = Astro.props;
 const { url } = Astro.request;
 const page = await getPage(url.pathname);
-
+// console.log('pages:prod', page.name, import.meta.env);
 ---
 
 <Page pages={pages} page={page}>
-	<BuilderClient page={page} client:only />
+	<BuilderServer page={page} />
 </Page>
