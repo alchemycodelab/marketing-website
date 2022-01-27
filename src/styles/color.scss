@@ -124,6 +124,10 @@
   .text-accent {
     color: var(--black-65);
   }
+
+  li::marker, li:before {
+    color: var(--peach);
+  }
 }
 
 .blue-text {
