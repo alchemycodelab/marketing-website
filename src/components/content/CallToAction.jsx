@@ -61,6 +61,7 @@ CallToAction.inputs = [
           'blue-medium',
           'blue-dark',
           'black',
+          'blue-blue-dark-text',
           ''
         ]
       },

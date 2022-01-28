@@ -20,7 +20,7 @@ export default function Hero({
       image={image}
     >
       <div className={styles.contentContainer}>
-        <Content content={content} isExpressive={true}/>
+        <Content content={content} isPrimary={true} isExpressive={true}/>
       </div>
     </ImageTwoColumn>
   );

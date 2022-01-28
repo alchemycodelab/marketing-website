@@ -33,13 +33,13 @@ Scholarships.config = {
       name: 'intro',
       type: 'object',
       defaultValue: {},
-      subFields: ImageContent.inputs
+      subFields: ImageContent.config.inputs
     },
     {
       name: 'scholarships',
       type: 'object',
       defaultValue: {},
-      subFields: Accordion.inputs
+      subFields: Accordion.config.inputs
     }
   ]
 };

@@ -36,6 +36,7 @@ export function Content({
       {headline && <Headline 
         as={isPrimary ? 'h1' : 'h2'} 
         text={headline} 
+        isPrimary={isPrimary} 
         isExpressive={isExpressive} 
         isSoft={softHeadline} 
       />}
