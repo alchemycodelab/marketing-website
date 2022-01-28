@@ -21,6 +21,7 @@ export default function TwoColumn({
       [styles.rightOnBottom]: rightOnBottom, 
       [styles.rightOnLeft]: rightOnLeft, 
       [styles.onlyGoldenSplit]: split === 'golden', 
+      [styles.onlyGoldenReverseSplit]: split === 'golden-reverse', 
       [styles.onlyHalfSplit]: split === 'half', 
     }
   );
@@ -49,6 +50,7 @@ TwoColumn.inputs = [
       'half',
       'auto',
       'golden',
+      'golden-reverse',
     ]
   }
 ];

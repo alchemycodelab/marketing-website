@@ -8,6 +8,7 @@ export default function ImageContent({
   content,
   image = {},
   heightMode = 'square',
+  enforceAspectRation = false,
   className: parentClassName = '',
   ...rest
 }) {
@@ -24,7 +25,7 @@ export default function ImageContent({
     <ImageTwoColumn 
       {...rest} 
       className={className}
-      enforceAspectRatio={heightMode === 'square'}
+      enforceAspectRatio={enforceAspectRation || heightMode === 'square'}
       image={image}
     >
       <div>
@@ -40,7 +41,7 @@ ImageContent.config = {
     ...ImageTwoColumn.inputs,
     {
       name: 'heightMode',
-      helperText: 'Size height based on square aspect ration or image height',
+      helperText: 'Size height based on square aspect ratio or image height',
       type: 'text',
       defaultValue: 'square',
       enum: ['square', 'image']

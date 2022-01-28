@@ -1,194 +1,75 @@
 ---
 import Page from '../layouts/page.astro';
-import Steps from '../components/Steps/Steps.jsx';
-import TuitionFinancing from '../components/TuitionFinancing/TuitionFinancing.jsx';
+import Scholarships from '../components/Scholarships/Scholarships.jsx';
 ---
 
 <Page pages={[]} page={{}}>
-	
-  <TuitionFinancing
-    theme="pink"
-    content={{
-      headline: '<p>Tuition & financing</p>',
-      lead: `
-        We’re here to help you succeed. From the minute you’re enrolled until long after graduation we’re invested in providing the tools and resources you need at every step in your new career. Over the course of our rigorous program, we work with each student to tailor a personalized career strategy and introduce you to a network of employers, alumni, community partners, and opportunities.
-      `,
-      text: `
-        <p><strong>Program Tuition</strong>: $24,000 / 25 Weeks Full-time</p>
-      `
-    }}
-    title={`
-      Find the financing plan that’s right for you
-    `}
-    sources={[{
-      content: {
-        headline: `    
-          <p>Upfront tuition</p>
-        `,
-        text: `
-          Pay tuition in full one week prior to starting the program, or choose an installment plan to pay installments throughout the program for a fee.
-        `
-      }
-    }, {
-      content: {
-        headline: `    
-          <p>ISA</p>
-        `,
-        text: `
-          Pay your tuition after you are employed with Alchemy's Income Share Agreement (ISA). Provided in partnership with Social Finance, this option was carefully designed as an intelligent solution to building your new career with less risk for individuals who are under-employed or unemployed. An optional living stipend of up to $7,500 is available for qualifying individuals.
-        `,
-        cta: {
-          theme: 'blue-medium',
-          text: 'Download brochure',
-          url: '#',
-          type: 'secondary',
-          noArrow: true
-        }
-      }
-    }, 
-    {
-      content: {
-        headline: `    
-          <p>Private Loans</p>
-        `,
-        text: `
-          Choose from a variety of options offered by Alchemy’s partner lenders.
-        `,
-        cta: {
-          theme: 'blue-medium',
-          text: 'More Information',
-          url: '#',
-          type: 'secondary'
-        }
-      }
-    }, 
-    {
-      content: {
-        headline: `    
-          <p>Veteran Benefits</p>
-        `,
-        text: `
-          <p>Utilize your veteran benefits towards Alchemy training through the following programs:</p>
-          <ul>
-            <li>Post-9/11 GI Bill®* (Ch. 33)</li>
-            <li>Montgomery GI Bill® (Ch. 30)</li>
-            <li>Select Reserve GI Bill® (Ch. 1606)</li>
-            <li>REAP GI Bill® (Ch. 1607)</li>
-            <li>Dependents Educational Assistance (DEA) (Ch. 35)</li>
-          </ul>
-        `,
-        cta: {
-          theme: 'blue-medium',
-          text: 'More Information',
-          url: '#',
-          type: 'secondary'
-        }
-      }
-    }, 
-    {
-      content: {
-        headline: `    
-          <p>State Assistance</p>
-        `,
-        text: `
-          <p>Utilize your veteran benefits towards Alchemy training through the following programs:</p>
-          <ul>
-            <li>ETPL</li>
-            <li>TUI</li>
-            <li>Vocational Rehabilitation</li>
-          </ul>
-        `,
-        cta: {
-          theme: 'blue-medium',
-          text: 'More Information',
-          url: '#',
-          type: 'secondary'
-        }
-      }
-    }
-    ]}
-    trailer={{
-      content: {
-         headline: `    
-          <p>Maintaining Your Unemployment Benefits </p>
-        `,
-         lead: `    
-          <p>Alchemy Code Lab is listed on the State of Oregon's Eligible Training Provider List (ETPL).</p>
-        `,
-        text: `
-          <p>
-          If you are collecting unemployment benefits, including pandemic unemployment, you can continue to do so during the full duration of Alchemy’s program. This option is available to residents of Oregon, Washington, and Idaho. 
-          </p>
-          <p>
-          Notify admissions during your interview to receive your Alchemy TUI Form once enrolled. Plan to submit your form 30+ days prior to your start date. 
-          </p>
-        `,
-        cta: {
-          theme: 'blue-blue-dark-text',
-          text: 'View FAQs',
-          url: '#',
-          type: 'primary'
-        }
-      }
-    }}
-  />
- 
-  <Steps
+	<Scholarships
     theme="white"
-    content={{
-      headline: '<p>Application Process</p>',
+    intro={{
+      image: {
+        url: 'https://res.cloudinary.com/alchemy-code-lab/image/upload/v1630426345/ws/admissions/Alchemy_Admissions_illustraion_02_1260x976_Desktop__2x.png',
+        alt: 'alt image text'
+      },
+      split: 'golden-reverse',
+      heightMode: 'image',
+      content: {
+        headline: `
+          Scholarships Available
+        `,
+        lead: `
+        We offer several scholarships designed to create more opportunities for self-identifying women, Veterans, LGBTQ+, and individuals from racial and ethnic backgrounds that are traditionally underrepresented in tech.
+        `, 
+        text: `
+        *Scholarship applications are available after acceptance into the program.`
+      }
     }}
-    steps={[{
-      content: {
-        headline: `    
-          <p>Complete your application</p>
-        `,
-        text: `
-          This short-form questionnaire helps our team customize your interview and admissions experience.
-        `,
-        cta: {
-          theme: 'peach',
-          text: 'Apply Now',
-          url: '#',
-          type: 'primary'
+    scholarships={{
+      tabThemes: {
+        activeTheme: 'blue',
+        textTheme: 'blue-dark'
+      },
+      items: [{
+        heading: 'Alchemy Diversity In Tech',
+        content: {
+          text: `
+            <p>Applications are open on a rolling basis. Tuition awards range from 5-70% and are based upon the degree of barrier entering the tech field and personal need. Alchemy does not turn away any qualifying applicants</p>
+          `,
+          cta: {
+            theme: 'blue-medium',
+            text: 'More Information',
+            url: '#',
+            type: 'secondary'
+          }
         }
-      }
-    }, {
-      content: {
-        headline: `    
-          <p>Schedule an interview</p>
-        `,
-        text: `
-          During this 30 - 45 min Zoom conversation we help you plan for success starting with a goal assessment and extensive Q&A. You will be able to meet with us more than once.
-        `,
-      }
-    }, {
-      content: {
-        headline: `    
-          <p>Formally enroll</p>
-        `,
-        text: `
-          A paid program deposit and signed agreement secure your cohort seat. You then have time to apply for scholarships (if applicable) and to explore your funding and preparation plans with our admissions team as a resource.
-        `,
-      }
-    }, 
-    {
-      content: {
-        headline: `    
-          <p>Prepare for class</p>
-        `,
-        text: `
-          Preparation requires 40 hours of tutorial prework online with the optional 30-hour Developer 101 week course. You’ll join our prework Slack and have access to instructional support and our entire community before your cohort begins!
-        `,
-        cta: {
-          theme: 'peach',
-          text: 'Sign Up for Dev 101',
-          url: '#',
-          type: 'primary'
+      }, {
+        heading: 'Women Who Code',
+        content: {
+          text: `
+            <p>This $2500 tuition scholarship is awarded to two women per cohort (located anywhere in the US) and is provided in partnership with Alchemy. Award winners are notified 3-4 weeks prior to the cohort start date.</p>
+          `,
+          cta: {
+            theme: 'blue-medium',
+            text: 'More Information',
+            url: '#',
+            type: 'secondary'
+          }
         }
-      }
-    }
-    ]}
+      }, {
+        heading: 'PDX Women In Tech',
+        content: {
+          text: `
+            <p>This $5000 tuition scholarship is awarded to one Black and/or Indigenous woman per cohort and is provided in partnership with Alchemy. Award winners are notified 3-4 weeks prior to the cohort start date.</p>
+          `,
+          cta: {
+            theme: 'blue-medium',
+            text: 'More Information',
+            url: '#',
+            type: 'secondary'
+          }
+        }
+      }]
+    }}
   />
 
 </Page>

@@ -1,6 +1,5 @@
 import { HeaderText } from '../content/Text';
 import BaseAccordion from './BaseAccordion';
-import classnames from 'classnames';
 import styles from './Accordion.module.scss';
 
 export default function Accordion(props) {

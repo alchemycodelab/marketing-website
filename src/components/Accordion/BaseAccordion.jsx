@@ -10,7 +10,7 @@ export default function BaseAccordion({
   tabThemes = {},
   contentClassName = '',
   content,
-  items,
+  items = [],
   children,
   ...rest
 }) {
@@ -21,7 +21,7 @@ export default function BaseAccordion({
     <>
       <Section {...rest} className={styles.BaseAccordion}>
 
-        <Content content={content} className={styles.HeaderContent} />
+        {content && <Content content={content} className={styles.HeaderContent} />}
 
         <div
           className={classNames(styles.Container, 'selection-script')}
