@@ -1,7 +1,7 @@
 ---
 import { getStaticPaths, getPage } from '../services/builder.js';
 import Page from '../layouts/page.astro';
-import BuilderClient from '../components/Builder/BuilderClient.tsx'
+import Body from '../layouts/Body.jsx';
 
 export { getStaticPaths };
 
@@ -11,6 +11,6 @@ const page = await getPage(url.pathname);
 
 ---
 
-<Page pages={pages} page={page}>
-	<BuilderClient page={page} client:only />
+<Page page={page}>
+	<Body pages={pages} page={page} client:only/>
 </Page>

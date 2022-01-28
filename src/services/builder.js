@@ -27,14 +27,11 @@ export async function getStaticPaths() {
       };
     });
 
-  // console.log(paths);//.map(p => p.params));
-
   return paths;
 }
 
 export async function getPage(url) {
   
-  // Don't target on url and device for better cache efficiency
   const targeting = { urlPath: '_', device: '_' };
 
   const page = await builder.get(PAGE_MODEL_NAME, {
@@ -44,8 +41,6 @@ export async function getPage(url) {
     }
   }).promise();
 
-  // console.log(page);
-    
   return page || null;
 }
 
