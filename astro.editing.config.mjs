@@ -10,5 +10,3 @@ export default /** @type {import('astro').AstroUserConfig} */ ({
   },
   renderers: ['@astrojs/renderer-react'],
 });
-
-console.log('config editing');

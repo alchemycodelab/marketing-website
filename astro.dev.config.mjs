@@ -7,5 +7,3 @@ export default /** @type {import('astro').AstroUserConfig} */ ({
   pages: './src/pages-client',
   renderers: ['@astrojs/renderer-react'],
 });
-
-console.log('config dev');
