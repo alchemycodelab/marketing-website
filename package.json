@@ -16,11 +16,11 @@
     "check": "astro check"
   },
   "devDependencies": {
-    "astro": "^0.22.18",
     "eslint-plugin-react": "^7.28.0"
   },
   "dependencies": {
     "@builder.io/react": "^1.1.47",
+    "astro": "^0.22.9",
     "classnames": "^2.3.1"
   }
 }
