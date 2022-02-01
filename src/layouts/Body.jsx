@@ -3,10 +3,8 @@ import Footer from '../components/Footer/Footer.jsx';
 import { Builder, BuilderComponent } from '../components/Builder/builder.js'
 import registerComponents from '../components/Builder/register-components.js';
 
-export default function Body({ pages, page, children }) {
+export default function Body({ pages, page }) {
 	
-	console.log('Builder page', page, children);
-
 	registerComponents(Builder);
 	
 	return (

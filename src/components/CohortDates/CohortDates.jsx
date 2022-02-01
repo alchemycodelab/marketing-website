@@ -30,17 +30,17 @@ export async function getCohorts() {
 }
 
 export default function CohortDatesContainer(props) {
-  const [cohorts, setCohorts] = useState([]);
-  useEffect(() => {
-    const doIt = async () => {
-      const cohorts = await getCohorts(); 
-      setCohorts(cohorts);
-    };
+  // const [cohorts, setCohorts] = useState([]);
+  // useEffect(() => {
+  //   const doIt = async () => {
+  //     const cohorts = await getCohorts(); 
+  //     setCohorts(cohorts);
+  //   };
 
-    doIt();
-  }, []);
+  //   doIt();
+  // }, []);
   
-  return <CohortDates cohorts={cohorts} {...props}/>;
+  return <CohortDates cohorts={[] /*cohorts*/} {...props}/>;
 }
 
 CohortDatesContainer.config = {

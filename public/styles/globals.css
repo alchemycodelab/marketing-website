@@ -28,19 +28,12 @@ body {
   --min-section-width: 320px;
   --section-width: clamp(var(--min-section-width), 100vw, var(--max-section-width));
   --content-width: var(--section-width);
-  @media (min-width: 700px) {
-    --content-width: calc(var(--section-width) / 2);
-  }
   --scale: calc( ( var(--content-width) - var(--min-section-width) ) / 400 );
 
   
   --primary-margin: calc(22.75px + ( var(--scale) * 67.25));
 
   --header-height: 60px;
-  @media (min-width: 1024px) {
-      --header-height: 88px;
-  }
-
 
   /* TODO: evaluate if this is this needed here? */
   --vertical-margin-scaling: .011;
@@ -55,4 +48,14 @@ body {
   
 }
 
+@media (min-width: 700px) {
+  :root {
+    --content-width: calc(var(--section-width) / 2);
+  }
+}
 
+@media (min-width: 1024px) {
+  :root {
+    --header-height: 88px;
+  }
+}

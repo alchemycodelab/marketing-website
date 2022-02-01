@@ -31,18 +31,17 @@
 .pink {
   background: var(--pink);
   color: var(--black);
-
-  .text-accent {
-    color: var(--black-65);
-  }
-
-  li::marker, li:before {
-    color: var(--peach);
-  }
-
-  border-color: var(--black-40);
-
+  border-color: var(--black-40);  
 }
+
+.pink .text-accent {
+  color: var(--black-65);
+}
+
+.pink li::marker, .pink li:before {
+  color: var(--peach);
+}
+
 
 .pink-text {
   color: var(--pink);
@@ -58,9 +57,10 @@
   color: var(--black);
   border-color: var(--pink-dark);
 
-  .text-accent {
-    color: var(--black);
-  }
+}
+
+.pink-dark .text-accent {
+  color: var(--black);
 }
 
 .pink-dark-text {
@@ -76,9 +76,10 @@
   background: var(--pink-light);
   color: var(--black);
 
-  .text-accent {
-    color: var(--black-65);
-  }
+}
+
+.pink-light .text-accent {
+  color: var(--black-65);
 }
 
 .pink-light-text {
@@ -97,16 +98,17 @@
   border-color: var(--gold);
   color: var(--black);
 
-  .text-accent {
-    color: var(--peach-dark);
-  }
-  
-  &.button-accent {
-    border-top-color: var(--peach-light);
-    border-left-color: var(--peach-light);
-    border-bottom-color: var(--peach);
-    border-right-color: var(--peach);
-  }
+}
+
+.peach .text-accent {
+  color: var(--peach-dark);
+}
+
+.peach.button-accent {
+  border-top-color: var(--peach-light);
+  border-left-color: var(--peach-light);
+  border-bottom-color: var(--peach);
+  border-right-color: var(--peach);
 }
 
 .peach-text {
@@ -124,13 +126,14 @@
   background: var(--blue);
   color: var(--black);
 
-  .text-accent {
-    color: var(--black-65);
-  }
+}
 
-  li::marker, li:before {
-    color: var(--peach);
-  }
+.blue .text-accent {
+  color: var(--black-65);
+}
+
+.blue li::marker, .blue li:before {
+  color: var(--peach);
 }
 
 .blue-text {
@@ -146,20 +149,21 @@
   background: var(--blue);
   color: var(--blue-dark);
 
-  .text-accent {
-    color: var(--blue-dark);
-  }
+}
 
-  li::marker, li:before {
-    color: var(--peach);
-  }
+.blue-blue-dark-text .text-accent {
+  color: var(--blue-dark);
+}
 
-  &.button-accent {
-    border-top-color: var(--black-20);
-    border-left-color: var(--black-20);
-    border-bottom-color: var(--blue-medium);
-    border-right-color: var(--blue-medium);
-  }
+.blue-blue-dark-text li::marker, .blue-blue-dark-text li:before {
+  color: var(--peach);
+}
+
+.blue-blue-dark-text.button-accent {
+  border-top-color: var(--black-20);
+  border-left-color: var(--black-20);
+  border-bottom-color: var(--blue-medium);
+  border-right-color: var(--blue-medium);
 }
 
 /* blue-dark */
@@ -168,16 +172,17 @@
   background: var(--blue-dark);
   color: var(--white);
 
-  .text-accent {
-    color: var(--pink);
-  }
+}
 
-  &.button-accent {
-    border-top-color: var(--blue-medium);
-    border-left-color: var(--blue-medium);
-    border-bottom-color: var(--blue-dark);
-    border-right-color: var(--blue-dark);
-  }
+.blue-dark .text-accent {
+  color: var(--pink);
+}
+
+.blue-dark.button-accent {
+  border-top-color: var(--blue-medium);
+  border-left-color: var(--blue-medium);
+  border-bottom-color: var(--blue-dark);
+  border-right-color: var(--blue-dark);
 }
 
 .blue-dark-background, .blue-dark-active.active {
@@ -194,9 +199,10 @@
   background: var(--blue-medium);
   color: var(--black);
 
-  .text-accent {
-    color: var(--black-65);
-  }
+}
+
+.blue-medium .text-accent {
+  color: var(--black-65);
 }
 
 .blue-medium-text {
@@ -213,9 +219,10 @@
   background: var(--blue-medium);
   color: var(--blue-dark);
 
-  .text-accent {
-    color: var(--black-65);
-  }
+}
+
+.blue-medium-with-dark .text-accent {
+  color: var(--black-65);
 }
 
 // .blue-medium-with-dark-text {
@@ -232,9 +239,10 @@
   background: var(--gold);
   color: var(--black);
 
-  .text-accent {
-    color: var(--black-65);
-  }
+}
+
+.gold .text-accent {
+  color: var(--black-65);
 }
 
 .gold-text {
@@ -269,25 +277,24 @@
 .white {
   background: var(--white);
   color: var(--black);
-  border-color: var(--pink);
+  border-color: var(--pink);  
+}
 
-  .text-accent {
-    color: var(--black-65);
-  }
-   
-  li:before {
-    color: var(--peach);
-  }
+.white .text-accent {
+  color: var(--black-65);
+}
+ 
+.white li:before {
+  color: var(--peach);
+}
 
- }
+.white-text {
+color: var(--white);
+}
 
- .white-text {
-  color: var(--white);
- }
-
- .white-background, .white-active.active {
-  background: var(--white);
- }
+.white-background, .white-active.active {
+background: var(--white);
+}
 
 
 
