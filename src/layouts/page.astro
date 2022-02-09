@@ -1,6 +1,8 @@
 ---
+import HeaderBar from '../components/HeaderBar/HeaderBar.jsx'
+import Footer from '../components/Footer/Footer.jsx';
 
-const { page } = Astro.props;
+const { page, pages } = Astro.props;
 // TODO: title and metadata
 
 ---
@@ -17,7 +19,13 @@ const { page } = Astro.props;
 	</head>
 	<body>
 	
-		<slot/>
+		<HeaderBar pages={pages} page={page}/>
+
+		<main>		
+			<slot/>
+		</main>	
+		
+		<Footer pages={pages} page={page} />
 
 		<script crossOrigin="true" src="https://polyfill.app/api/polyfill?features=scroll-behavior"></script>
 		<script type="module" src="/scripts/main.js"></script>

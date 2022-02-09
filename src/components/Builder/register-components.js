@@ -19,10 +19,9 @@ import Scholarships from '../Scholarships/Scholarships.jsx';
 export default function registerComponents(Builder) {
 
   function register(Component) {
-    // console.log('registering component', Component.config.name);
     Builder.registerComponent(Component, Component.config || {});
   }
-  // console.log('registering builder components');
+  console.log('registering builder components');
   register(DeluxeHero);
   register(AlchemyDifference);
   register(QuotesCarousel);

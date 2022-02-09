@@ -1,3 +1,4 @@
+console.log('prod config');
 // @ts-check
 export default /** @type {import('astro').AstroUserConfig} */ ({
   buildOptions: {
@@ -5,7 +6,7 @@ export default /** @type {import('astro').AstroUserConfig} */ ({
     // site: 'https://alchemycodelab.com/'
   },
   renderers: ['@astrojs/renderer-react'],
-  vite: {
-    mode: 'production'
-  }
+  // vite: {
+  //   mode: 'production'
+  // }
 });

@@ -1,9 +1,9 @@
 import pkg, { builder as b, Builder as B, BuilderComponent as BC } from '@builder.io/react';
 
-const builder = b ?? pkg.builder;
-const Builder = B ?? pkg.Builder;
-const BuilderComponent = BC ?? pkg.BuilderComponent;
+const builder = pkg.builder || b;
+const Builder = pkg.Builder || B;
+const BuilderComponent = pkg.BuilderComponent || BC;
 
 builder.init('b9c103cda0f24735921c917287d4fc23');
 
-export { Builder, BuilderComponent };
+export { builder, Builder, BuilderComponent };

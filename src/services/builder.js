@@ -1,5 +1,6 @@
 import pkg from '@builder.io/react';
 const { builder } = pkg;
+
 builder.init('b9c103cda0f24735921c917287d4fc23');
 
 const PAGE_MODEL_NAME = 'page';
@@ -31,16 +32,7 @@ export async function getStaticPaths() {
 }
 
 export async function getPage(url) {
-  
-  const targeting = { urlPath: '_', device: '_' };
-
-  const page = await builder.get(PAGE_MODEL_NAME, {
-    userAttributes: { 
-      ...targeting, 
-      urlPath: url 
-    }
-  }).promise();
-
+  const page = await builder.get(PAGE_MODEL_NAME, { url }).promise();
   return page || null;
 }
 

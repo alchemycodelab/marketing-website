@@ -1,3 +1,4 @@
+console.log('editing config');
 // @ts-check
 export default /** @type {import('astro').AstroUserConfig} */ ({
   buildOptions: {
