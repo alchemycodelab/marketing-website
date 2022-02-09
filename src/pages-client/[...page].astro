@@ -1,4 +1,5 @@
 ---
+
 import { getStaticPaths, getPage } from '../services/builder.js';
 import Page from '../layouts/page.astro';
 import CMS from '../layouts/CMS.jsx';
@@ -10,6 +11,6 @@ const { url } = Astro.request;
 const page = await getPage(url.pathname);
 ---
 
-<Page pages={pages} page={page}>
-	<CMS page={page} client:only/>
+<Page>
+	<CMS pages={pages} page={page} client:only/>
 </Page>
