@@ -7,7 +7,7 @@ export default /** @type {import('astro').AstroUserConfig} */ ({
   dist: './dist/builder-editing',
   pages: './src/pages-client/',
   vite: {
-    mode: 'development'
+    mode: 'production'
   },
   renderers: ['@astrojs/renderer-react'],
 });
