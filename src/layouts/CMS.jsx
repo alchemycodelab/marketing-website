@@ -5,16 +5,6 @@ import Footer from '../components/Footer/Footer.jsx';
 
 registerComponents(Builder);
 	
-export default function CMS({ pages, page }) {
-  return (
-    <>
-      <HeaderBar pages={pages} page={page}/>
-
-        <main>		
-          <BuilderComponent model="page" content={page} />
-        </main>	
-
-      <Footer pages={pages} page={page} />
-    </>
-  );
+export default function CMS({ page }) {
+  return <BuilderComponent model="page" content={page} />;
 }  

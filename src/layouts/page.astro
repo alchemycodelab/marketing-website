@@ -16,10 +16,18 @@ const { page, pages } = Astro.props;
 		<link rel="stylesheet" type="text/css" href={Astro.resolve('../styles/globals.css')}>
 		<link rel="stylesheet" type="text/css" href={Astro.resolve('../styles/typography.css')}>
 		<link rel="stylesheet" type="text/css" href={Astro.resolve('../styles/color.css')}>
+		<style global>
+
+		</style>
 	</head>
 	<body>
-	
-		<slot/>
+		<HeaderBar pages={pages} page={page}/>
+
+		<main>		
+			<slot/>
+		</main>	
+
+    <Footer pages={pages} page={page} />
 
 		<script crossOrigin="true" src="https://polyfill.app/api/polyfill?features=scroll-behavior"></script>
 		<script type="module" src="/scripts/main.js"></script>

@@ -11,6 +11,6 @@ const { url } = Astro.request;
 const page = await getPage(url.pathname);
 ---
 
-<Page>
-	<CMS pages={pages} page={page} client:only/>
+<Page pages={pages} page={page} >
+	<CMS page={page} client:only/>
 </Page>
