@@ -5,7 +5,8 @@ export default /** @type {import('astro').AstroUserConfig} */ ({
     sitemap: false
   },
   devOptions: {
-    port: Number(process.env.PORT || 3000)
+    port: Number(process.env.PORT || 3000),
+    hostname: process.env.PORT ? '0.0.0.0' : 'localhost'
   },
   pages: './src/pages-client',
   // pages: './src/pages',
