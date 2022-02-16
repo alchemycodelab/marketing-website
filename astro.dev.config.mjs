@@ -5,7 +5,7 @@ export default /** @type {import('astro').AstroUserConfig} */ ({
     sitemap: false
   },
   devOptions: {
-    port: process.env.PORT || 3000
+    port: Number(process.env.PORT || 3000)
   },
   pages: './src/pages-client',
   // pages: './src/pages',
