@@ -1,78 +1,39 @@
 ---
 import Page from '../layouts/page.astro';
-import Scholarships from '../components/Scholarships/Scholarships.jsx';
+import Endorsements from '../components/Endorsements/Endorsements.jsx';
 
 ---
 
 <Page>
 
-	<Scholarships
-    theme="white"
-    intro={{
-      image: {
-        url: 'https://res.cloudinary.com/alchemy-code-lab/image/upload/v1630426345/ws/admissions/Alchemy_Admissions_illustraion_02_1260x976_Desktop__2x.png',
-        alt: 'alt image text'
-      },
-      split: 'golden-reverse',
-      heightMode: 'image',
-      content: {
-        headline: `
-          Scholarships Available
-        `,
-        lead: `
-        We offer several scholarships designed to create more opportunities for self-identifying women, Veterans, LGBTQ+, and individuals from racial and ethnic backgrounds that are traditionally underrepresented in tech.
-        `, 
-        text: `
-          *Scholarship applications are available after acceptance into the program.
-        `
+	<Endorsements
+    theme="pink"
+    content={{
+      wayfinder: 'Affiliations & Endorsements'
+    }}
+    endorsements={[{
+        image: {
+          url: 'https://d92mrp7hetgfk.cloudfront.net/images/sites/misc/2022/original.png?1630021827',
+          alt: 'SwitchUp best coding bootcamp'
+        },
+        title: '3rd Best Bootcamp',
+        source: 'SwitchUp 2021'
+      }, {
+        image: {
+          url: 'https://d92mrp7hetgfk.cloudfront.net/images/sites/misc/2022/original.png?1630021827',
+          alt: 'SwitchUp best coding bootcamp'
+        },
+        title: '3rd Best Bootcamp',
+        source: 'SwitchUp 2021'
+      }, {
+        image: {
+          url: 'https://d92mrp7hetgfk.cloudfront.net/images/sites/misc/2022/original.png?1630021827',
+          alt: 'SwitchUp best coding bootcamp'
+        },
+        title: '3rd Best Bootcamp',
+        source: 'SwitchUp 2021'
       }
-    }}
-    scholarships={{
-      tabThemes: {
-        activeTheme: 'blue',
-        textTheme: 'blue-dark'
-      },
-      items: [{
-        heading: 'Alchemy Diversity In Tech',
-        content: {
-          text: `
-            <p>Applications are open on a rolling basis. Tuition awards range from 5-70% and are based upon the degree of barrier entering the tech field and personal need. Alchemy does not turn away any qualifying applicants</p>
-          `,
-          cta: {
-            theme: 'blue-medium',
-            text: 'More Information',
-            url: '#',
-            type: 'secondary'
-          }
-        }
-      }, {
-        heading: 'Women Who Code',
-        content: {
-          text: `
-            <p>This $2500 tuition scholarship is awarded to two women per cohort (located anywhere in the US) and is provided in partnership with Alchemy. Award winners are notified 3-4 weeks prior to the cohort start date.</p>
-          `,
-          cta: {
-            theme: 'blue-medium',
-            text: 'More Information',
-            url: '#',
-            type: 'secondary'
-          }
-        }
-      }, {
-        heading: 'PDX Women In Tech',
-        content: {
-          text: `
-            <p>This $5000 tuition scholarship is awarded to one Black and/or Indigenous woman per cohort and is provided in partnership with Alchemy. Award winners are notified 3-4 weeks prior to the cohort start date.</p>
-          `,
-          cta: {
-            theme: 'blue-medium',
-            text: 'More Information',
-            url: '#',
-            type: 'secondary'
-          }
-        }
-      }]
-    }}
+    ]}
   />
 
 </Page>
