@@ -6,11 +6,10 @@
   "scripts": {
     "dev": "astro --verbose --config astro.dev.config.mjs dev",
     "start": "npm run dev",
-    "build": "npm run build:prod && npm run build:editing",
+    "build": "npm run build:prod",
     "build:prod": "astro build",
-    "build:editing": "astro --config astro.editing.config.mjs build ",
+    "build:cms": "astro --config astro.cms.config.mjs build ",
     "preview": "astro preview",
-    "preview:editing": "astro preview",
     "lint": "eslint --ignore-path .gitignore .",
     "astro:version": "astro --version",
     "astro:help": "astro --help",
