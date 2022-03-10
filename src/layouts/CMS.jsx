@@ -1,6 +1,6 @@
 import { Builder, BuilderComponent } from '../components/Builder/builder.js'
 import registerComponents from '../components/Builder/register-components.js';
-// These may matter, need to test before removing:
+// This needs to be here or the CSS is foobar in dev mode:
 import HeaderBar from '../components/HeaderBar/HeaderBar.jsx'
 import Footer from '../components/Footer/Footer.jsx';
 
