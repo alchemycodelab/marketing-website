@@ -48,7 +48,7 @@ Endorsements.config = {
           defaultValue: 'Endorsement title',
         },
         {
-          ...HeaderSmallText.input,
+          ...HeaderStrongText.input,
           name: 'source',
           defaultValue: 'Endorsement source',
         },
