@@ -22,7 +22,7 @@
   },
   "dependencies": {
     "@builder.io/react": "^1.1.47",
-    "astro": "^0.23.6",
+    "astro": "^0.23.7",
     "classnames": "^2.3.1"
   }
 }
