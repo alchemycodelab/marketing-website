@@ -9,7 +9,7 @@ export default function Endorsements({
   endorsements = [],
   ...rest 
 }) {
-  console.log(endorsements);
+  
   return (
     <Section {...rest} className={styles.Endorsements}>
       <Content className={styles.Content} content={content} />
