@@ -24,33 +24,19 @@
     padding-bottom: 28px;
   }
 
-  .tabContainer {
-    display: grid;
-    grid-auto-flow: column;
-    grid-auto-columns: min-content;
+  .TabsContainer {
     border-bottom-width: 2px;
     border-bottom-style: solid;
     border-bottom-color: inherit;
 
-    padding: 0 var(--primary-margin);
-
+    margin-left: var(--primary-margin);
     @media (min-width: 700px) {
-      padding: 0;
-      margin: 0 var(--primary-margin);
-    }
-
-    .Header {
-      padding: 8px calc(14.09px + (var(--scale) * 13.91));
-      color: var(--blue-dark);
-      cursor: pointer;
-
-      &:global(.active) {
-        background-color: var(--blue);
-      }
+      padding-right: 0;
+      margin-right: var(--primary-margin);
     }
   }
 
-  .schedulesContainer {
+  .SchedulesContainer {
     position: relative;
     display: grid;
     grid-template-areas: "schedule";
@@ -62,7 +48,9 @@
 
     --gap: 28px;
 
-    .scheduleContainer {
+
+
+    .ScheduleContainer {
       grid-area: schedule;
       visibility: hidden;
       overflow: auto;

@@ -1,46 +1,62 @@
 ---
 import Page from '../layouts/page.astro';
-import Endorsements from '../components/Endorsements/Endorsements.jsx';
+import TabbedOutcomes from '../components/QuadStats/TabbedOutcomes.jsx';
 
 ---
 
 <Page>
 
-	<Endorsements client:only
-    theme="pink"
-    content={{
-      wayfinder: 'Affiliations & Endorsements'
-    }}
-    endorsements={[{
-        image: {
-          url: 'https://www.oregon.gov/highered/style%20library/Images/hecc-logo.png',
-          alt: 'Oregon HECC'
-        },
-        title: 'Licensed Vocational School',
-        source: 'State of Oregon'
-      }, {
-        image: {
-          url: 'https://d92mrp7hetgfk.cloudfront.net/images/sites/misc/2022/original.png?1630021827',
-          alt: 'SwitchUp best coding bootcamp'
-        },
-        title: '3rd Best Bootcamp',
-        source: 'SwitchUp 2021'
-      }, {
-        image: {
-          url: 'https://d92mrp7hetgfk.cloudfront.net/images/sites/misc/2022/original.png?1630021827',
-          alt: 'SwitchUp best coding bootcamp'
-        },
-        title: '3rd Best Bootcamp',
-        source: 'SwitchUp 2021'
-      }, {
-        image: {
-          url: 'https://d92mrp7hetgfk.cloudfront.net/images/sites/misc/2022/original.png?1630021827',
-          alt: 'SwitchUp best coding bootcamp'
-        },
-        title: '3rd Best Bootcamp',
-        source: 'SwitchUp 2021'
-      }
-    ]}
-  />
+	
+      <TabbedOutcomes
+        theme="pink"
+        content={{
+          headline: 'Alchemy Stats',
+          lead: 'As one of the only code schools specializing in mid-level placements, we are proud of our grads’ collective and recent success.',
+          text: 'But our results are more than just numbers. Our graduates tell us time and again that the people skills, self-awareness, and relationships built while at Alchemy are just as valuable as the technical skills they acquired, and have a direct impact on their overall quality of life.',
+          cta: {
+            theme: 'peach',
+            text: 'View Full Report',
+            url: '#',
+            type: 'primary'
+          }
+        }}
+        trailer={`
+          <p><strong>Reporting policies & methodology</strong></p>
+          <p>We're committed to transparency on our employment data.</p>
+          <ul>
+            <li>Our numbers are extremely accurate, with 95% of graduates reporting their job status and income in 2020 </li>
+            <li>Our numbers reflect true placement statistics, with all program graduates represented </li>
+            <li>Our statistics are up to date, and demonstrate consistent high performance since Alchemy’s inception </li>
+            <li>Outcomes data has been independently reviewed and verified by Social Finance </li>
+            <li>For more information, see our statistics & reporting methodology blog post</li>
+          </ul>
+        `}
+        outcomes={[{
+          heading: '2020',
+          stats: [
+            { stat: '100%', caption: 'Awesomeness' },
+            { stat: '100%', caption: 'Awesomeness' },
+            { stat: '100%', caption: 'Awesomeness' },
+            { stat: '100%', caption: 'Awesomeness' },
+          ],
+        }, {
+          heading: '2019',
+          stats: [
+            { stat: '100%', caption: 'Awesomeness' },
+            { stat: '100%', caption: 'Awesomeness' },
+            { stat: '100%', caption: 'Awesomeness' },
+            { stat: '100%', caption: 'Awesomeness' },
+          ],
+        }, {
+          heading: 'All Time (2016-2021)',
+          stats: [
+            { stat: '100%', caption: 'Awesomeness' },
+            { stat: '100%', caption: 'Awesomeness' },
+            { stat: '100%', caption: 'Awesomeness' },
+            { stat: '100%', caption: 'Awesomeness' },
+          ],
+        }
+        ]}
+      />
 
 </Page>

@@ -39,7 +39,10 @@ body {
   --vertical-margin-scaling: .011;
   --vertical-margin-base: calc(var(--vertical-margin-scaling) * var(--content-width));
 
-  --golden-split-big: 61.8%;
+  --golden-split-big-calc: .618;
+  --golden-split-small: calc(1 - var(var(--golden-split-big-calc)));
+
+  --golden-split-big: calc(100% * var(--golden-split-big-calc));
   --golden-split-small: calc(100% - var(--golden-split-big));
 
   --accordion-split-small: 31.25%;

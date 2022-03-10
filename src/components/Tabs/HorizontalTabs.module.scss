@@ -1,0 +1,19 @@
+.HorizontalTabs {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: max-content;
+
+  @media (min-width: 700px) {
+    padding: 0;
+  }
+
+  .Header {
+    padding: 8px calc(14.09px + (var(--scale) * 13.91));
+    color: var(--blue-dark);
+    cursor: pointer;
+
+    &:global(.active) {
+      background-color: var(--blue);
+    }
+  }
+}

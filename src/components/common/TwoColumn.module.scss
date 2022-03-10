@@ -21,15 +21,24 @@
         grid-area: figure;
         width: 100%;
     }
+
+    --first-column-width: 100vw;
+    --second-column-width: 100vw;
     
     @media (min-width: 700px) {
-        grid-template-columns: 50% 50%;
+        grid-template-columns: var(--first-column-width) var(--second-column-width);
+
+        --first-column-width: 50vw;
+        --second-column-width: 50vw;
+
         &.onlyGoldenSplit {
-            grid-template-columns: var(--golden-split-small) var(--golden-split-big);
+            --first-column-width: calc(var(--section-width) * var(--golden-split-small-calc));
+            --second-column-width: calc(var(--section-width) * var(--golden-split-big-calc));
         }
 
         &.onlyGoldenReverseSplit {
-            grid-template-columns: var(--golden-split-big) var(--golden-split-small);
+            --first-column-width: calc(var(--section-width) * var(--golden-split-big-calc));
+            --second-column-width: calc(var(--section-width) * var(--golden-split-small-calc));
         }
 
         grid-template-areas: 'content figure';
@@ -46,12 +55,14 @@
 
     &:not(.onlyHalfSplit) {
         @media (min-width: 1024px) {
-            &.onlyGoldenSplit {
-                grid-template-columns: var(--golden-split-small) var(--golden-split-big);
-            }
+            grid-template-columns: var(--first-column-width) var(--second-column-width);
+            
+            --first-column-width: calc(var(--section-width) * var(--golden-split-small-calc));
+            --second-column-width: calc(var(--section-width) * var(--golden-split-big-calc));
             
             &.onlyGoldenReverseSplit {
-                grid-template-columns: var(--golden-split-big) var(--golden-split-small);
+                --first-column-width: calc(var(--section-width) * var(--golden-split-big-calc));
+                --second-column-width: calc(var(--section-width) * var(--golden-split-small-calc));
             }
         }
     }

@@ -3,7 +3,7 @@ import TwoColumn from '../common/TwoColumn';
 import Image from '../common/Image';
 import { Content } from '../content/Content';
 import InfoCards from '../content/InfoCards';
-import { HeaderText } from '../content/Text';
+import HorizontalTabs from '../Tabs/HorizontalTabs.jsx';
 import classNames from 'classnames';
 import { themes } from '../../styles/themes.js';
 
@@ -71,29 +71,14 @@ function Left({ content, schedules, theme, accentTheme }) {
     <div className={styles.leftContainer}>
       <Content content={content} className={styles.headerContent} />
 
-      <div className={styles.tabContainer} >
-        {schedules.map(({ heading }, i) => {
-          const className = classNames(
-            styles.Header,
-            'trigger-script',
-            { active: i === 0 }
-          );
-
-          return (
-            <HeaderText
-              key={heading}
-              text={heading}
-              className={className}
-            />
-          );
-
-        })}
+      <div className={styles.TabsContainer}>
+        <HorizontalTabs tabs={schedules}/>
       </div>
 
-      <div className={styles.schedulesContainer} >
+      <div className={styles.SchedulesContainer} >
         {schedules.map(({ heading, infoCards }, i) => {
           const className = classNames(
-            styles.scheduleContainer,
+            styles.ScheduleContainer,
             'target-script',
             'scroll-reset-script',
             { active: i === 0 }

@@ -1,0 +1,73 @@
+.TabbedOutcomes {
+
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-areas: 
+        'content'
+        'outcomes'
+        'trailer'
+    ;
+
+    --first-column-width: 100vw;
+    --second-column-width: 100vw;
+
+    @media (min-width: 700px) {
+        grid-template-columns: 50% 50%;
+        grid-template-areas: 
+            'content outcomes'
+            'trailer outcomes'
+        ;
+
+        --first-column-width: var(--content-width);
+        --second-column-width: var(--content-width);
+    }
+
+    .Content {
+        grid-area: content;
+        padding: var(--primary-margin);    
+    }
+
+    .OutcomesContainer {
+        grid-area: outcomes;
+
+        @media (min-width: 700px) {
+            padding-top: var(--primary-margin);   
+        }
+
+        .TabsContainer {
+            padding: 0 var(--primary-margin);   
+            
+            @media (min-width: 700px) {
+                border-bottom-width: 2px;
+                border-bottom-style: solid;
+                border-bottom-color: var(--blue);
+                padding: 0;
+            }
+        }
+        
+        .OutcomeContainer {
+            display: grid;
+            grid-template-areas: 'stats';
+            grid-template-columns: 100%;
+
+            padding: 40px 0;
+
+            .StatsContainer {
+                grid-area: stats;
+                visibility: hidden;
+                &:global(.active) {
+                    visibility: visible;
+                }
+            }
+        }
+
+
+    }
+
+
+    .Trailer {
+        grid-area: trailer;
+        padding: var(--primary-margin);    
+        padding-top: 0;
+    }
+}
