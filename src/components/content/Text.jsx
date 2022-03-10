@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import styles from './Text.module.scss';
 
 export function Wayfinder({ text, as: Tag = 'div', className: customClass = '' }) {
-  const className = classNames(styles.Wayfinder, customClass);
+  const className = classNames(styles.Wayfinder, styles.SmallText, customClass);
   return <Tag className={className}>{text}</Tag>;
 }
 
@@ -23,11 +23,13 @@ export const IllustrationCaption = getRichText('IllustrationCaption', 'Caption')
 export const StatCaption = getRichText('StatCaption', 'Caption');
 export const RichText = getRichText('RichText', 'text');
 export const HeaderText = getRichText('HeaderText', 'heading', 'h3');
+export const SmallText = getRichText('SmallText', 'text');
+export const StrongSmallText = getRichText('StrongSmallText', 'text');
 
 function getRichText(baseClass, propName, BaseTag = 'p') {
 
   const RichText = ({ text, className: customClass, as: Tag = BaseTag }) => {
-    // include the friendly class time so consuming components
+    // include the friendly class so consuming components
     // can customize the styles by targeting it
     // TODO: reconsider whether is this a good idea?
     const className = classNames(baseClass, styles[baseClass], customClass);

@@ -7,6 +7,15 @@
   line-height: calc(15.36px + ( var(--scale) * 4.64));
 }
 
+.StrongSmallText {
+  font-family: "National Bold";
+}
+
+.SmallText, .StrongSmallText {
+  font-size: calc(13.68px + ( var(--scale) * 2.32));
+  line-height: calc(15.36px + ( var(--scale) * 4.64));
+}
+
 .PrimaryExpressiveHeader {
   font-family: "Newzald Black";
   font-size: calc(37.65px + ( var(--scale) * 26.35));

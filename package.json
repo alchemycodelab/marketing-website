@@ -4,7 +4,7 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "dev": "astro --verbose --config astro.dev.config.mjs dev",
+    "dev": "astro --config astro.dev.config.mjs dev",
     "start": "npm run dev",
     "build": "npm run build:prod",
     "build:prod": "astro build",

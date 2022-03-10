@@ -6,12 +6,19 @@ import Endorsements from '../components/Endorsements/Endorsements.jsx';
 
 <Page>
 
-	<Endorsements
+	<Endorsements client:only
     theme="pink"
     content={{
       wayfinder: 'Affiliations & Endorsements'
     }}
     endorsements={[{
+        image: {
+          url: 'https://www.oregon.gov/highered/style%20library/Images/hecc-logo.png',
+          alt: 'Oregon HECC'
+        },
+        title: 'Licensed Vocational School',
+        source: 'State of Oregon'
+      }, {
         image: {
           url: 'https://d92mrp7hetgfk.cloudfront.net/images/sites/misc/2022/original.png?1630021827',
           alt: 'SwitchUp best coding bootcamp'

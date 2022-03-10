@@ -1,5 +1,6 @@
 import Section from '../common/Section';
 import { Content } from '../content/Content';
+import { StrongSmallText, SmallText } from '../content/Text';
 // import classNames from 'classnames';
 import styles from './Endorsements.module.scss';
 import Image from '../common/Image';
@@ -9,18 +10,20 @@ export default function Endorsements({
   endorsements = [],
   ...rest 
 }) {
+  console.log(endorsements);
   return (
     <Section {...rest} className={styles.Endorsements}>
       <Content className={styles.Content} content={content} />
       <ul className={styles.List}>
-        {endorsements.map(({ image, title, source }) => {
+        {endorsements.map(({ image, title, source }, index) => {
+          console.log(image, title, source);
           return (
-            <li>
+            <li key={index}>
               <div className={styles.Image}>
-                <Image image={image}/>
+                <Image image={{ ...image, fitVertical: 'center' }}/>
               </div>
-              <h3>{title}</h3>
-              <p>{source}</p>
+              <SmallText text={title} as="h3"/>
+              <StrongSmallText text={source}/>
             </li>
           );
         })}

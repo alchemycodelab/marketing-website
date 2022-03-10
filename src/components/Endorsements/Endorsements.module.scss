@@ -6,31 +6,43 @@
   }
 
   .List {
-    padding-top: var(--primary-margin);
+    padding-top: calc( var(--primary-margin) * .5 );
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    gap: calc( var(--primary-margin) * .5 );
 
     li {
       flex-grow: 1;
       text-align: center;
       padding: calc( var(--primary-margin) * .25 );
+      width: 150px;
       
       display: flex;
       flex-direction: column;
       align-items: center;
 
       .Image {
-        max-width: 180px;
-        max-height: 180px;
-
+        width: 125px;
+        height: 125px;
+        margin-bottom: calc( var(--primary-margin) * .25 );
+        
         img {
           height: 100%;
           width: 100%;
+          object-fit: contain;
         }
       }
+    }
 
-
+    @media (min-width: 1024px) {
+      li {
+        width: 200px;
+        .Image {
+          width: 165px;
+          height: 165px;
+        }
+      }
     }
   }
 
