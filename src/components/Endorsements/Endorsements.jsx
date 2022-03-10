@@ -1,7 +1,6 @@
 import Section from '../common/Section';
 import { Content } from '../content/Content';
 import { StrongSmallText, SmallText } from '../content/Text';
-// import classNames from 'classnames';
 import styles from './Endorsements.module.scss';
 import Image from '../common/Image';
 
@@ -37,6 +36,23 @@ Endorsements.config = {
   inputs: [
     ...Section.inputs,
     ...Content.inputs,
-    // TODO: endorsements   
+    {
+      name: 'endorsements',
+      type: 'list',
+      defaultValue: [],
+      subFields: [
+        ...Image.inputs,
+        {
+          ...SmallText.input,
+          name: 'title',
+          defaultValue: 'Endorsement title',
+        },
+        {
+          ...HeaderSmallText.input,
+          name: 'source',
+          defaultValue: 'Endorsement source',
+        },
+      ]
+    }, 
   ]
 };
