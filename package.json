@@ -6,9 +6,9 @@
   "scripts": {
     "dev": "astro --verbose --config astro.dev.config.mjs dev",
     "start": "npm run dev",
-    "build": "npm run build:prod && npm run build:editing",
+    "build": "npm run build:prod",
     "build:prod": "astro build",
-    "build:editing": "astro --config astro.editing.config.mjs build ",
+    "build:cms": "astro --config astro.cms.config.mjs build ",
     "preview": "astro preview",
     "lint": "eslint --ignore-path .gitignore .",
     "astro:version": "astro --version",
@@ -16,11 +16,13 @@
     "check": "astro check"
   },
   "devDependencies": {
-    "eslint-plugin-react": "^7.28.0"
+    "eslint-plugin-react": "^7.28.0",
+    "node-sass": "^7.0.1",
+    "sass": "^1.49.9"
   },
   "dependencies": {
     "@builder.io/react": "^1.1.47",
-    "astro": "^0.22.20",
+    "astro": "^0.23.6",
     "classnames": "^2.3.1"
   }
 }

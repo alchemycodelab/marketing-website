@@ -1,5 +1,4 @@
-import pkg from '@builder.io/react';
-const { builder } = pkg;
+import { builder } from '@builder.io/react';
 
 builder.init('b9c103cda0f24735921c917287d4fc23');
 
