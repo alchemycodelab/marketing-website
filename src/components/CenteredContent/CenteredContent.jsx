@@ -5,11 +5,13 @@ import styles from './CenteredContent.module.scss';
 
 export default function CenteredContent({ 
   content, 
+  children,
   ...rest 
 }) {
   return (
     <Section {...rest} className={styles.CenteredContent}>
       <Content content={content} />
+      {children}
     </Section>
   );
 }
