@@ -23,13 +23,13 @@ export default function IllustrativeExplainer({
         <Content content={content} />
       </div>
 
-      {illustrations.map(({ text, image }, i) => (
+      {illustrations.map(({ caption, image }, i) => (
         <section key={i}
           className={classNames(styles.tile, illustrationTheme)}
           xstyle={{ borderColor: `var(--${illustrationBorderColor})` }}
         >
           <Image image={image} />
-          <IllustrationCaption text={text} className={styles.IllustrationCaption} />
+          <IllustrationCaption text={caption} className={styles.IllustrationCaption} />
         </section>
       ))}
 

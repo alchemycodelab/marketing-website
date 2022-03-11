@@ -75,7 +75,7 @@
 .pink-light {
   background: var(--pink-light);
   color: var(--black);
-
+  border-color: var(--pink-light);
 }
 
 .pink-light .text-accent {
@@ -97,7 +97,6 @@
   background: var(--peach);
   border-color: var(--gold);
   color: var(--black);
-
 }
 
 .peach .text-accent {
