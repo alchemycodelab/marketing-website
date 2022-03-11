@@ -15,7 +15,6 @@ export default function Endorsements({
       <Content className={styles.Content} content={content} />
       <ul className={styles.List}>
         {endorsements.map(({ image, title, source }, index) => {
-          console.log(image, title, source);
           return (
             <li key={index}>
               <div className={styles.Image}>
