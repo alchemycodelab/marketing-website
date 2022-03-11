@@ -12,6 +12,9 @@
     --second-column-width: 100vw;
 
     @media (min-width: 700px) {
+        padding-top: calc(var(--primary-margin) / 3);
+        padding-bottom: var(--primary-margin);
+
         grid-template-columns: 50% 50%;
         grid-template-areas: 
             'content outcomes'

@@ -10,23 +10,25 @@ import styles from './TabbedOutcomes.module.scss';
 
 export default function TabbedOutcomes({
   content,
-  outcomes,
+  outcomes = [],
   trailer,
   ...rest
 }) {
+
+  const className = classNames(styles.OutcomesContainer, 'selection-script');
 
   return (
     <Section {...rest} className={styles.TabbedOutcomes}>
       
       <Left content={content}/>
       
-      <div className={styles.OutcomesContainer}>
+      <div className={className}>
         <div className={styles.TabsContainer}>
           <HorizontalTabs tabs={outcomes}/>
         </div>
         
         <div className={styles.OutcomeContainer}>
-          {outcomes.map(({ heading, stats }, i) => {
+          {outcomes.map(({ heading, stats = [] }, i) => {
             const className = classNames(
               styles.StatsContainer,
               'target-script',
@@ -68,6 +70,24 @@ TabbedOutcomes.config = {
   inputs: [
     ...Section.inputs,
     ...Content.inputs,
-
+    {
+      ...RichContent.input,
+      name: 'trailer',
+      friendlyName: 'Text Trailer',
+    },
+    {
+      name: 'outcomes',
+      type: 'list',
+      defaultValue: [],
+      subFields: [
+        {
+          name: 'heading',
+          type: 'text',
+          defaultValue: 'Heading',
+          require: true,
+        },
+        ...QuadStats.inputs,
+      ]
+    }, 
   ]
 };
