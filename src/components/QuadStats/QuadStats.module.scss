@@ -1,15 +1,7 @@
 .QuadStats {
 
-    --square-size: calc(max(100vw, 320px) / 2);
-    @media (min-width: 700px) {
-        --square-size: 25vw
-    }
-    @media (min-width: 1024px) {
-        --width: calc(min(100vw, 1440px) * .618);
-        --square-size: calc(var(--width) / 2);
-    }
+    --square-size: calc(var(--second-column-width) / 2);
 
-    margin: var(--primary-margin) 0;
     padding-bottom: var(--primary-margin);
 
     display: grid;

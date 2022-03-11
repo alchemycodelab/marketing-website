@@ -19,7 +19,7 @@ export default function StatsDisplay({
       className={styles.StatsDisplay}
       rightOnBottom={true}
       leftChildren={<Left content={content} />}
-      rightChildren={<QuadStats stats={stats} />}
+      rightChildren={<Right stats={stats} />}
     />
   );
 }
@@ -28,6 +28,14 @@ function Left({ content }) {
   return (
     <div className={styles.LeftContent}>
       <Content content={content} /> 
+    </div>
+  );
+}
+
+function Right({ stats }) {
+  return (
+    <div className={styles.RightContent}>
+      <QuadStats stats={stats} />
     </div>
   );
 }
