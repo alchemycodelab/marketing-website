@@ -15,6 +15,7 @@ import Steps from '../Steps/Steps.jsx';
 import TuitionFinancing from '../TuitionFinancing/TuitionFinancing.jsx';
 import Scholarships from '../Scholarships/Scholarships.jsx';
 import Endorsements from '../Endorsements/Endorsements.jsx';
+import TabbedOutcomes from '../QuadStats/TabbedOutcomes.jsx';
 
 
 export default function registerComponents(Builder) {
@@ -40,4 +41,5 @@ export default function registerComponents(Builder) {
   register(TuitionFinancing);
   register(Scholarships);
   register(Endorsements);
+  register(TabbedOutcomes);
 }
