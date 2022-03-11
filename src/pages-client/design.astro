@@ -1,61 +1,122 @@
 ---
 import Page from '../layouts/page.astro';
-import TabbedOutcomes from '../components/QuadStats/TabbedOutcomes.jsx';
+import Employers from '../components/Employers/Employers.jsx';
 
 ---
 
 <Page>
+  <Employers
+    theme="white"
+    employers={[{
+      image: {
+        url: 'https://res.cloudinary.com/alchemy-code-lab/image/upload/v1647027761/ws/Outcomes/employers/518109_947426.png',
+        alt: 'Vacasa'
+      }
+    }, {
+      image: {
+        url: 'https://res.cloudinary.com/alchemy-code-lab/image/upload/v1647027912/ws/Outcomes/employers/960552_118299.png',
+        alt: 'Kroger'
+      }
+    }, {
+      image: {
+        url: 'https://res.cloudinary.com/alchemy-code-lab/image/upload/v1647027846/ws/Outcomes/employers/619763_835464.png',
+        alt: 'k company'
+      }
+    }, {
+      image: {
+        url: 'https://res.cloudinary.com/alchemy-code-lab/image/upload/v1647027742/ws/Outcomes/employers/857840_620243.png',
+        alt: 'Walmart Labs'
+      }
+    }, {
+      image: {
+        url: 'https://res.cloudinary.com/alchemy-code-lab/image/upload/v1647027706/ws/Outcomes/employers/416573_613061.png',
+        alt: 'Sprinklr'
+      }
+    }, {
+      image: {
+        url: 'https://res.cloudinary.com/alchemy-code-lab/image/upload/v1647027716/ws/Outcomes/employers/928655_118288.png',
+        alt: 'Nike'
+      }
+    }, {
+      image: {
+        url: 'https://res.cloudinary.com/alchemy-code-lab/image/upload/v1647027676/ws/Outcomes/employers/223479_724908.png',
+        alt: 'Esri'
+      }
+    },{
+      image: {
+        url: 'https://res.cloudinary.com/alchemy-code-lab/image/upload/v1647027761/ws/Outcomes/employers/518109_947426.png',
+        alt: 'Vacasa'
+      }
+    }, {
+      image: {
+        url: 'https://res.cloudinary.com/alchemy-code-lab/image/upload/v1647027912/ws/Outcomes/employers/960552_118299.png',
+        alt: 'Kroger'
+      }
+    }, {
+      image: {
+        url: 'https://res.cloudinary.com/alchemy-code-lab/image/upload/v1647027846/ws/Outcomes/employers/619763_835464.png',
+        alt: 'k company'
+      }
+    }, {
+      image: {
+        url: 'https://res.cloudinary.com/alchemy-code-lab/image/upload/v1647027742/ws/Outcomes/employers/857840_620243.png',
+        alt: 'Walmart Labs'
+      }
+    }, {
+      image: {
+        url: 'https://res.cloudinary.com/alchemy-code-lab/image/upload/v1647027706/ws/Outcomes/employers/416573_613061.png',
+        alt: 'Sprinklr'
+      }
+    }, {
+      image: {
+        url: 'https://res.cloudinary.com/alchemy-code-lab/image/upload/v1647027716/ws/Outcomes/employers/928655_118288.png',
+        alt: 'Nike'
+      }
+    }, {
+      image: {
+        url: 'https://res.cloudinary.com/alchemy-code-lab/image/upload/v1647027676/ws/Outcomes/employers/223479_724908.png',
+        alt: 'Esri'
+      }
+    },{
+      image: {
+        url: 'https://res.cloudinary.com/alchemy-code-lab/image/upload/v1647027761/ws/Outcomes/employers/518109_947426.png',
+        alt: 'Vacasa'
+      }
+    }, {
+      image: {
+        url: 'https://res.cloudinary.com/alchemy-code-lab/image/upload/v1647027912/ws/Outcomes/employers/960552_118299.png',
+        alt: 'Kroger'
+      }
+    }, {
+      image: {
+        url: 'https://res.cloudinary.com/alchemy-code-lab/image/upload/v1647027846/ws/Outcomes/employers/619763_835464.png',
+        alt: 'k company'
+      }
+    }, {
+      image: {
+        url: 'https://res.cloudinary.com/alchemy-code-lab/image/upload/v1647027742/ws/Outcomes/employers/857840_620243.png',
+        alt: 'Walmart Labs'
+      }
+    }, {
+      image: {
+        url: 'https://res.cloudinary.com/alchemy-code-lab/image/upload/v1647027706/ws/Outcomes/employers/416573_613061.png',
+        alt: 'Sprinklr'
+      }
+    }, {
+      image: {
+        url: 'https://res.cloudinary.com/alchemy-code-lab/image/upload/v1647027716/ws/Outcomes/employers/928655_118288.png',
+        alt: 'Nike'
+      }
+    }, {
+      image: {
+        url: 'https://res.cloudinary.com/alchemy-code-lab/image/upload/v1647027676/ws/Outcomes/employers/223479_724908.png',
+        alt: 'Esri'
+      }
+    },
 
-      <TabbedOutcomes
-        theme="pink"
-        content={{
-          headline: 'Alchemy Stats',
-          lead: 'As one of the only code schools specializing in mid-level placements, we are proud of our grads’ collective and recent success.',
-          text: 'But our results are more than just numbers. Our graduates tell us time and again that the people skills, self-awareness, and relationships built while at Alchemy are just as valuable as the technical skills they acquired, and have a direct impact on their overall quality of life.',
-          cta: {
-            theme: 'peach',
-            text: 'View Full Report',
-            url: '#',
-            type: 'primary'
-          }
-        }}
-        trailer={`
-          <p><strong>Reporting policies & methodology</strong></p>
-          <p>We're committed to transparency on our employment data.</p>
-          <ul>
-            <li>Our numbers are extremely accurate, with 95% of graduates reporting their job status and income in 2020 </li>
-            <li>Our numbers reflect true placement statistics, with all program graduates represented </li>
-            <li>Our statistics are up to date, and demonstrate consistent high performance since Alchemy’s inception </li>
-            <li>Outcomes data has been independently reviewed and verified by Social Finance </li>
-            <li>For more information, see our statistics & reporting methodology blog post</li>
-          </ul>
-        `}
-        outcomes={[{
-          heading: '2020',
-          stats: [
-            { stat: '100%', caption: 'Awesomeness' },
-            { stat: '100%', caption: 'Awesomeness' },
-            { stat: '100%', caption: 'Awesomeness' },
-            { stat: '100%', caption: 'Awesomeness' },
-          ],
-        }, {
-          heading: '2019',
-          stats: [
-            { stat: '90%', caption: 'Awesomeness' },
-            { stat: '90%', caption: 'Awesomeness' },
-            { stat: '90%', caption: 'Awesomeness' },
-            { stat: '90%', caption: 'Awesomeness' },
-          ],
-        }, {
-          heading: 'All Time (2016-2021)',
-          stats: [
-            { stat: '80%', caption: 'Awesomeness' },
-            { stat: '80%', caption: 'Awesomeness' },
-            { stat: '80%', caption: 'Awesomeness' },
-            { stat: '80%', caption: 'Awesomeness' },
-          ],
-        }
-        ]}
-      />
+
+    ]}
+  />
+     
 
 </Page>

@@ -1,0 +1,45 @@
+.Employers {
+  position: relative;
+
+  .List {
+    padding: var(--primary-margin);
+
+    --size: 140px;
+    @media (min-width: 700px) {
+      --size: 160px;
+    }
+    @media (min-width: 1027px) {
+      --size: 180px;
+    }
+  
+    max-height: calc((3 * var(--size)) + (2 * var(--primary-margin)));
+    
+    overflow-y: scroll;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+
+    &::-webkit-scrollbar { /* WebKit */
+      width: 0;
+      height: 0;
+    }
+  
+    display: grid;
+    gap: calc(var(--primary-margin) / 2.5);
+
+    grid-template-columns: repeat(auto-fit, minmax(var(--size), 1fr));
+    grid-auto-rows: var(--size);
+
+    li {
+      padding: calc(var(--size) * .2) 5px;
+      height: var(--size);
+      width: var(--size);
+      justify-self: center;
+
+      img {
+        height: 100%;
+        width: 100%;
+        object-fit: contain;
+      }
+    }
+  }
+}
