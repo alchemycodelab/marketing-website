@@ -1,0 +1,25 @@
+.FAQ {
+  details {
+    padding: calc(var(--primary-margin) * 0.3) 0;
+    summary {
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      cursor: pointer;
+    }
+    summary::after {
+      content: '›';
+      font-size: 2rem;
+      transition: transform 100ms ease-in-out;
+    }
+    &[open] summary::after {
+      transform: rotate(90deg);
+    }
+  }
+  :global(.HeaderText) {
+    display: inline;
+  }
+  :global(.RichText) {
+    padding: calc(var(--primary-margin) * 0.3) 0;
+  }
+}

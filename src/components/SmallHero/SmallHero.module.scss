@@ -1,0 +1,7 @@
+.SmallHero {
+  padding: var(--primary-margin);
+  padding-top: calc(var(--primary-margin) * 2);
+  .Content {
+    width: 50%;
+  }
+}

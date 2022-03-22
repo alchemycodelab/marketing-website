@@ -1,0 +1,14 @@
+.FAQCategories {
+  padding: var(--primary-margin);
+  .FAQContainer {
+    display: grid;
+    grid-template-areas: 'faq';
+    .FAQArea {
+      grid-area: 'faq';
+      visibility: hidden;
+      &:global(.active) {
+        visibility: visible;
+      }
+    }
+  }
+}
