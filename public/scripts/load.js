@@ -3,7 +3,7 @@ export function getLoadAll(className, loadingFn) {
 
   return function () {
     const nodes = document.querySelectorAll(className);
-    console.log('loading', className, nodes);
+    // console.log('loading', className, nodes);
 
     nodes.forEach((node) => {
       // prevent attaching multiple listeners...
