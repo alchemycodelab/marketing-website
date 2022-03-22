@@ -1,17 +1,22 @@
 .FAQ {
   details {
     padding: calc(var(--primary-margin) * 0.3) 0;
+    
     summary {
       list-style: none;
       display: flex;
       justify-content: space-between;
+      align-items: center;
       cursor: pointer;
+      
+      &::after {
+        content: '›';
+        font-size: 2rem;
+        line-height: 1rem;
+        transition: transform 100ms ease-in-out;
+      }
     }
-    summary::after {
-      content: '›';
-      font-size: 2rem;
-      transition: transform 100ms ease-in-out;
-    }
+
     &[open] summary::after {
       transform: rotate(90deg);
     }

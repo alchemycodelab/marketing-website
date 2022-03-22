@@ -6,17 +6,24 @@ import classNames from 'classnames';
 
 export default function FAQCategories({ categories, ...rest }) {
   return (
-    <Section {...rest} className={classNames(styles.FAQCategories, 'toggle-script')}>
-      <HorizontalTabs
-        tabs={categories.map((category) => ({
-          heading: category.topic,
-        }))}
-      />
+    <Section {...rest} className={classNames(styles.FAQCategories, 'selection-script')}>
+      
+      <div className={styles.TabsContainer}>
+        <HorizontalTabs
+          tabs={categories.map((category) => ({
+            heading: category.topic,
+          }))}
+        />
+      </div>
+
       <div className={styles.FAQContainer}>
         {categories.map((category, i) => {
-          const className = classNames(styles.FAQArea, 'target-script', {
-            active: i === 0,
-          });
+          const className = classNames(
+            styles.FAQArea, 
+            'target-script', 
+            { active: i === 0 },
+          );
+
           return (
             <div className={className}>
               <FAQs faqs={category} />

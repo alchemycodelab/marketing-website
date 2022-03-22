@@ -1,14 +1,25 @@
 .FAQCategories {
   padding: var(--primary-margin);
+
+  .TabsContainer {
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: var(--pink-dark);
+  }
+
   .FAQContainer {
+    margin-top: calc(var(--primary-margin) * .75);
     display: grid;
     grid-template-areas: 'faq';
+  
     .FAQArea {
-      grid-area: 'faq';
+      grid-area: faq;
       visibility: hidden;
+    
       &:global(.active) {
         visibility: visible;
       }
     }
+
   }
 }
