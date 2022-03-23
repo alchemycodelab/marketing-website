@@ -1,0 +1,10 @@
+.SmallHero {
+  padding: var(--primary-margin);
+  padding-top: calc(var(--primary-margin) * 1.5);
+
+  @media (min-width: 700px) {
+    .Content {
+      width: 50%;
+    }
+  }
+}

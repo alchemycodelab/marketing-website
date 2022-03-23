@@ -17,6 +17,8 @@ import Scholarships from '../Scholarships/Scholarships.jsx';
 import Endorsements from '../Endorsements/Endorsements.jsx';
 import TabbedOutcomes from '../QuadStats/TabbedOutcomes.jsx';
 import Employers from '../Employers/Employers.jsx';
+import SmallHero from '../SmallHero/SmallHero.jsx';
+import FAQ from '../FAQ/FAQCategories';
 
 
 export default function registerComponents(Builder) {
@@ -44,4 +46,6 @@ export default function registerComponents(Builder) {
   register(Endorsements);
   register(TabbedOutcomes);
   register(Employers);
+  register(SmallHero);
+  register(FAQ);
 }

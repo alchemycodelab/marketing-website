@@ -6,6 +6,7 @@ export const themes = [
   'blue',
   'blue-medium',
   'blue-dark',
+  'blue-medium-with-dark',
   'gold',
   'black',
   'white',

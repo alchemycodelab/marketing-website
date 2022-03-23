@@ -1,122 +1,38 @@
 ---
 import Page from '../layouts/page.astro';
-import Employers from '../components/Employers/Employers.jsx';
-
+import { FAQCatagories } from '../components/FAQ/FAQCategories.jsx';
+import SmallHero from '../components/SmallHero/SmallHero.jsx';
 ---
 
+
 <Page>
-  <Employers
-    theme="white"
-    employers={[{
-      image: {
-        url: 'https://res.cloudinary.com/alchemy-code-lab/image/upload/v1647027761/ws/Outcomes/employers/518109_947426.png',
-        alt: 'Vacasa'
-      }
+  <SmallHero content={{headline: 'Frequently asked questions:'}} theme='blue-medium-with-dark' />
+  <FAQCatagories theme="pink" categories = {[
+    {
+      topic: 'General', 
+      faqs: [
+        {question: 'What is alchemy all about?', answer: 'This is a full time program. It is 25 weeks, meeting Monday through Friday from 9 am to 6 pm PST. We do not offer a part time program. While part time training is helpful for those who need to work while learning, we have found that full time learning helps equip people to move into a full time role. People leave the program ready to work beyond the entry level.'},
+        {question: 'What is alchemy all about?', answer: 'This is a full time program. It is 25 weeks, meeting Monday through Friday from 9 am to 6 pm PST. We do not offer a part time program. While part time training is helpful for those who need to work while learning, we have found that full time learning helps equip people to move into a full time role. People leave the program ready to work beyond the entry level.'}
+      ]
     }, {
-      image: {
-        url: 'https://res.cloudinary.com/alchemy-code-lab/image/upload/v1647027912/ws/Outcomes/employers/960552_118299.png',
-        alt: 'Kroger'
-      }
+      topic: 'Admissions', 
+      faqs: [
+        {question: 'How do I get in?', answer: 'This is a full time program. It is 25 weeks, meeting Monday through Friday from 9 am to 6 pm PST. We do not offer a part time program. While part time training is helpful for those who need to work while learning, we have found that full time learning helps equip people to move into a full time role. People leave the program ready to work beyond the entry level.'},
+        {question: 'Can I just not do any work and get paid a lot of money?', answer: 'This is a full time program. It is 25 weeks, meeting Monday through Friday from 9 am to 6 pm PST. We do not offer a part time program. While part time training is helpful for those who need to work while learning, we have found that full time learning helps equip people to move into a full time role. People leave the program ready to work beyond the entry level.'}
+      ]
     }, {
-      image: {
-        url: 'https://res.cloudinary.com/alchemy-code-lab/image/upload/v1647027846/ws/Outcomes/employers/619763_835464.png',
-        alt: 'k company'
-      }
+      topic: 'Financing', 
+      faqs: [
+        {question: 'How do I get in?', answer: 'This is a full time program. It is 25 weeks, meeting Monday through Friday from 9 am to 6 pm PST. We do not offer a part time program. While part time training is helpful for those who need to work while learning, we have found that full time learning helps equip people to move into a full time role. People leave the program ready to work beyond the entry level.'},
+        {question: 'Can I just not do any work and get paid a lot of money?', answer: 'This is a full time program. It is 25 weeks, meeting Monday through Friday from 9 am to 6 pm PST. We do not offer a part time program. While part time training is helpful for those who need to work while learning, we have found that full time learning helps equip people to move into a full time role. People leave the program ready to work beyond the entry level.'}
+      ]
     }, {
-      image: {
-        url: 'https://res.cloudinary.com/alchemy-code-lab/image/upload/v1647027742/ws/Outcomes/employers/857840_620243.png',
-        alt: 'Walmart Labs'
-      }
-    }, {
-      image: {
-        url: 'https://res.cloudinary.com/alchemy-code-lab/image/upload/v1647027706/ws/Outcomes/employers/416573_613061.png',
-        alt: 'Sprinklr'
-      }
-    }, {
-      image: {
-        url: 'https://res.cloudinary.com/alchemy-code-lab/image/upload/v1647027716/ws/Outcomes/employers/928655_118288.png',
-        alt: 'Nike'
-      }
-    }, {
-      image: {
-        url: 'https://res.cloudinary.com/alchemy-code-lab/image/upload/v1647027676/ws/Outcomes/employers/223479_724908.png',
-        alt: 'Esri'
-      }
-    },{
-      image: {
-        url: 'https://res.cloudinary.com/alchemy-code-lab/image/upload/v1647027761/ws/Outcomes/employers/518109_947426.png',
-        alt: 'Vacasa'
-      }
-    }, {
-      image: {
-        url: 'https://res.cloudinary.com/alchemy-code-lab/image/upload/v1647027912/ws/Outcomes/employers/960552_118299.png',
-        alt: 'Kroger'
-      }
-    }, {
-      image: {
-        url: 'https://res.cloudinary.com/alchemy-code-lab/image/upload/v1647027846/ws/Outcomes/employers/619763_835464.png',
-        alt: 'k company'
-      }
-    }, {
-      image: {
-        url: 'https://res.cloudinary.com/alchemy-code-lab/image/upload/v1647027742/ws/Outcomes/employers/857840_620243.png',
-        alt: 'Walmart Labs'
-      }
-    }, {
-      image: {
-        url: 'https://res.cloudinary.com/alchemy-code-lab/image/upload/v1647027706/ws/Outcomes/employers/416573_613061.png',
-        alt: 'Sprinklr'
-      }
-    }, {
-      image: {
-        url: 'https://res.cloudinary.com/alchemy-code-lab/image/upload/v1647027716/ws/Outcomes/employers/928655_118288.png',
-        alt: 'Nike'
-      }
-    }, {
-      image: {
-        url: 'https://res.cloudinary.com/alchemy-code-lab/image/upload/v1647027676/ws/Outcomes/employers/223479_724908.png',
-        alt: 'Esri'
-      }
-    },{
-      image: {
-        url: 'https://res.cloudinary.com/alchemy-code-lab/image/upload/v1647027761/ws/Outcomes/employers/518109_947426.png',
-        alt: 'Vacasa'
-      }
-    }, {
-      image: {
-        url: 'https://res.cloudinary.com/alchemy-code-lab/image/upload/v1647027912/ws/Outcomes/employers/960552_118299.png',
-        alt: 'Kroger'
-      }
-    }, {
-      image: {
-        url: 'https://res.cloudinary.com/alchemy-code-lab/image/upload/v1647027846/ws/Outcomes/employers/619763_835464.png',
-        alt: 'k company'
-      }
-    }, {
-      image: {
-        url: 'https://res.cloudinary.com/alchemy-code-lab/image/upload/v1647027742/ws/Outcomes/employers/857840_620243.png',
-        alt: 'Walmart Labs'
-      }
-    }, {
-      image: {
-        url: 'https://res.cloudinary.com/alchemy-code-lab/image/upload/v1647027706/ws/Outcomes/employers/416573_613061.png',
-        alt: 'Sprinklr'
-      }
-    }, {
-      image: {
-        url: 'https://res.cloudinary.com/alchemy-code-lab/image/upload/v1647027716/ws/Outcomes/employers/928655_118288.png',
-        alt: 'Nike'
-      }
-    }, {
-      image: {
-        url: 'https://res.cloudinary.com/alchemy-code-lab/image/upload/v1647027676/ws/Outcomes/employers/223479_724908.png',
-        alt: 'Esri'
-      }
-    },
-
-
-    ]}
-  />
-     
+      topic: 'Outcomes', 
+      faqs: [
+        {question: 'How do I get in?', answer: 'This is a full time program. It is 25 weeks, meeting Monday through Friday from 9 am to 6 pm PST. We do not offer a part time program. While part time training is helpful for those who need to work while learning, we have found that full time learning helps equip people to move into a full time role. People leave the program ready to work beyond the entry level.'},
+        {question: 'Can I just not do any work and get paid a lot of money?', answer: 'This is a full time program. It is 25 weeks, meeting Monday through Friday from 9 am to 6 pm PST. We do not offer a part time program. While part time training is helpful for those who need to work while learning, we have found that full time learning helps equip people to move into a full time role. People leave the program ready to work beyond the entry level.'}
+      ]
+    }
+  ]}/>
 
 </Page>

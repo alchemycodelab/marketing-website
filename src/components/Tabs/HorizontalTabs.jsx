@@ -4,22 +4,11 @@ import styles from './HorizontalTabs.module.scss';
 
 export default function HorizontalTabs({ tabs }) {
   return (
-    <div className={styles.HorizontalTabs} >
+    <div className={styles.HorizontalTabs}>
       {tabs.map(({ heading }, i) => {
-        const className = classNames(
-          styles.Header,
-          'trigger-script',
-          { active: i === 0 }
-        );
+        const className = classNames(styles.Header, 'trigger-script', { active: i === 0 });
 
-        return (
-          <HeaderText
-            key={heading}
-            text={heading}
-            className={className}
-          />
-        );
-
+        return <HeaderText key={heading} text={heading} className={className} />;
       })}
     </div>
   );
