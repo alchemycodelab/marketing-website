@@ -12,5 +12,8 @@ export default function SmallHero({ content, ...rest }) {
 
 SmallHero.config = {
   name: 'SmallHero',
-  inputs: [...Section.inputs, ...Content.inputs],
+  inputs: [
+    ...Section.inputs, 
+    ...Content.inputs
+  ],
 };

@@ -1,14 +1,16 @@
-import Section from '../common/Section';
 import { Content } from '../content/Content';
 import { HeaderText, RichText } from '../content/Text';
+import styles from './FAQs.module.scss';
 
-import styles from './FAQ.module.scss';
-export default function FAQs({ faqs }) {
+export default function FAQs({ category }) {
+  const { topic, faqs } = category;
+
   return (
     <div className={styles.FAQ}>
-      <Content content={{ headline: faqs.topic }} />
-      {faqs.questions.map((q) => (
-        <FAQ {...q} />
+      <Content content={{ headline: topic }}/>
+
+      {faqs.map((faq, i) => (
+        <FAQ key={i} {...faq}/>
       ))}
     </div>
   );
@@ -18,9 +20,9 @@ function FAQ({ question, answer }) {
   return (
     <details>
       <summary>
-        <HeaderText text={question} />
+        <HeaderText text={question}/>
       </summary>
-      <RichText text={answer} />
+      <RichText text={answer}/>
     </details>
   );
 }

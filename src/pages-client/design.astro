@@ -1,34 +1,34 @@
 ---
 import Page from '../layouts/page.astro';
-import FAQCategories from '../components/FAQ/FAQCategories.jsx';
+import { FAQCatagories } from '../components/FAQ/FAQCategories.jsx';
 import SmallHero from '../components/SmallHero/SmallHero.jsx';
 ---
 
 
 <Page>
   <SmallHero content={{headline: 'Frequently asked questions:'}} theme='blue-medium-with-dark' />
-  <FAQCategories theme="pink" categories = {[
+  <FAQCatagories theme="pink" categories = {[
     {
       topic: 'General', 
-      questions: [
+      faqs: [
         {question: 'What is alchemy all about?', answer: 'This is a full time program. It is 25 weeks, meeting Monday through Friday from 9 am to 6 pm PST. We do not offer a part time program. While part time training is helpful for those who need to work while learning, we have found that full time learning helps equip people to move into a full time role. People leave the program ready to work beyond the entry level.'},
         {question: 'What is alchemy all about?', answer: 'This is a full time program. It is 25 weeks, meeting Monday through Friday from 9 am to 6 pm PST. We do not offer a part time program. While part time training is helpful for those who need to work while learning, we have found that full time learning helps equip people to move into a full time role. People leave the program ready to work beyond the entry level.'}
       ]
     }, {
       topic: 'Admissions', 
-      questions: [
+      faqs: [
         {question: 'How do I get in?', answer: 'This is a full time program. It is 25 weeks, meeting Monday through Friday from 9 am to 6 pm PST. We do not offer a part time program. While part time training is helpful for those who need to work while learning, we have found that full time learning helps equip people to move into a full time role. People leave the program ready to work beyond the entry level.'},
         {question: 'Can I just not do any work and get paid a lot of money?', answer: 'This is a full time program. It is 25 weeks, meeting Monday through Friday from 9 am to 6 pm PST. We do not offer a part time program. While part time training is helpful for those who need to work while learning, we have found that full time learning helps equip people to move into a full time role. People leave the program ready to work beyond the entry level.'}
       ]
     }, {
       topic: 'Financing', 
-      questions: [
+      faqs: [
         {question: 'How do I get in?', answer: 'This is a full time program. It is 25 weeks, meeting Monday through Friday from 9 am to 6 pm PST. We do not offer a part time program. While part time training is helpful for those who need to work while learning, we have found that full time learning helps equip people to move into a full time role. People leave the program ready to work beyond the entry level.'},
         {question: 'Can I just not do any work and get paid a lot of money?', answer: 'This is a full time program. It is 25 weeks, meeting Monday through Friday from 9 am to 6 pm PST. We do not offer a part time program. While part time training is helpful for those who need to work while learning, we have found that full time learning helps equip people to move into a full time role. People leave the program ready to work beyond the entry level.'}
       ]
     }, {
       topic: 'Outcomes', 
-      questions: [
+      faqs: [
         {question: 'How do I get in?', answer: 'This is a full time program. It is 25 weeks, meeting Monday through Friday from 9 am to 6 pm PST. We do not offer a part time program. While part time training is helpful for those who need to work while learning, we have found that full time learning helps equip people to move into a full time role. People leave the program ready to work beyond the entry level.'},
         {question: 'Can I just not do any work and get paid a lot of money?', answer: 'This is a full time program. It is 25 weeks, meeting Monday through Friday from 9 am to 6 pm PST. We do not offer a part time program. While part time training is helpful for those who need to work while learning, we have found that full time learning helps equip people to move into a full time role. People leave the program ready to work beyond the entry level.'}
       ]
