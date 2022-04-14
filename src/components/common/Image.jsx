@@ -1,12 +1,20 @@
 import styles from './Image.module.scss';
 
-export default function Image({ image = {} }) {
+export default function Image({ image = {} , maxWidth = 0 }) {
   const { 
-    url, 
     alt, 
     fitHorizontal = 'center', 
-    fitVertical = 'top'
+    fitVertical = 'top',
   } = image;
+
+  let { url } = image;
+
+  if(maxWidth) {
+    const split = '/image/upload/';
+    const [lead, trail] = url.split(split);
+    url = `${lead}${split}c_fill,w_${maxWidth}/${trail}`;
+    console.log(url);
+  }
 
   return (
     <img 
