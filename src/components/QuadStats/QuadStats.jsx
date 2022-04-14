@@ -1,4 +1,3 @@
-import React from 'react';
 import styles from './QuadStats.module.scss';
 import { StatCaption } from '../content/Text';
 import classNames from 'classnames';

@@ -1,4 +1,3 @@
-import React from 'react';
 import TwoColumn from './TwoColumn';
 import Image from './Image';
 import classNames from 'classnames';

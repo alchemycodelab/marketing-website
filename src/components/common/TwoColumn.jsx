@@ -1,4 +1,3 @@
-import React from 'react';
 import Section from './Section';
 import classNames from 'classnames';
 import styles from './TwoColumn.module.scss';

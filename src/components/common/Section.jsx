@@ -1,4 +1,3 @@
-import React from 'react';
 import classNames from 'classnames';
 import { themes } from '../../styles/themes.js';
 import styles from './Section.module.scss';

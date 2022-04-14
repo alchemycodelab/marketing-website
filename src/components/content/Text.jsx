@@ -1,4 +1,3 @@
-import React from 'react';
 import { paragraphToLineBreak } from '../format';
 import classNames from 'classnames';
 import styles from './Text.module.scss';

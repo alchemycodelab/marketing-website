@@ -1,4 +1,3 @@
-import React from 'react';
 import styles from './AlchemyDifference.module.scss';
 import ImageTwoColumn from '../common/ImageTwoColumn';
 import { Content } from '../content/Content';
