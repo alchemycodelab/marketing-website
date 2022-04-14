@@ -38,7 +38,7 @@ body {
   --vertical-margin-base: calc(var(--vertical-margin-scaling) * var(--content-width));
 
   --golden-split-big-calc: .618;
-  --golden-split-small: calc(1 - var(var(--golden-split-big-calc)));
+  --golden-split-small-calc: calc(1 - var(--golden-split-big-calc));
 
   --golden-split-big: calc(100% * var(--golden-split-big-calc));
   --golden-split-small: calc(100% - var(--golden-split-big));
