@@ -6,10 +6,10 @@ import CMS from '../layouts/CMS.jsx';
 export { getStaticPaths };
 
 const { pages } = Astro.props;
-const { url } = Astro.request;
+const url = new URL(Astro.request.url);
 const page = await getPage(url.pathname);
 ---
 
 <Page pages={pages} page={page}>
-	<CMS page={page}/>
+	<CMS page={page} client:only="react"/>
 </Page>

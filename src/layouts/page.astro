@@ -1,6 +1,10 @@
 ---
 import HeaderBar from '../components/HeaderBar/HeaderBar.jsx'
 import Footer from '../components/Footer/Footer.jsx';
+import '../styles/reset.css';
+import '../styles/globals.css';
+import '../styles/typography.css';
+import '../styles/color.css';
 
 const { page, pages } = Astro.props;
 // TODO: title and metadata
@@ -12,14 +16,6 @@ const { page, pages } = Astro.props;
 		<meta charset="utf-8"/>
 		<meta name="viewport" content="width=device-width"/>
 		<link rel="icon" type="image/x-icon" href="/favicon.ico"/>
-
-		<style global>
-			@import "../styles/reset.css";
-			@import "../styles/globals.css";
-			@import "../styles/typography.css";
-			@import "../styles/color.css";
-		</style>
-
 	</head>
 	<body>
 		<HeaderBar pages={pages} page={page}/>
