@@ -10,8 +10,6 @@ html {
   width: 100vw;
   height: 100vh;
   overflow: hidden;
-  /* This is displayed during overscroll, also tints browser top bar underneath */
-  // background: var(--black);
 }
 
 
