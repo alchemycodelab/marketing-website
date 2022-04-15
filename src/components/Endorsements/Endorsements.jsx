@@ -18,7 +18,7 @@ export default function Endorsements({
           return (
             <li key={index}>
               <div className={styles.Image}>
-                <Image image={{ ...image, fitVertical: 'center' }}/>
+                <Image image={{ ...image, fitVertical: 'center' }} maxWidth={125}/>
               </div>
               <SmallText text={title} as="h3"/>
               <StrongSmallText text={source}/>

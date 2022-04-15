@@ -40,7 +40,7 @@ export default function QuotesCarousel({
                   {text}
                 </blockquote>
 
-                <Image image={image} />
+                <Image image={image} maxWidth={270}/>
 
                 <div className={styles.attribution}>
                   <RichText text={name} />

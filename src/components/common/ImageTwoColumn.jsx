@@ -3,11 +3,19 @@ import Image from './Image';
 import classNames from 'classnames';
 import styles from './ImageTwoColumn.module.scss';
 
+const goldenWidth = 890;
+const widths = {
+  golden: goldenWidth,
+  auto: goldenWidth,
+  'golden-reverse': (1440 - goldenWidth)
+};
+
 export default function ImageTwoColumn({
   children,
   className: parentClassName = '',
   image,
   enforceAspectRatio = false,
+  split,
   ...rest
 }) {
 
@@ -17,12 +25,17 @@ export default function ImageTwoColumn({
     { [styles.enforceAspectRatio]: enforceAspectRatio }
   );
 
+  const maxWidth = widths[split] || 720;
+  
+  console.log('ImageTwoColumn', split, image.url);
+
   return (
     <TwoColumn 
+      split={split}
       {...rest} 
       className={className}
       leftChildren={children}
-      rightChildren={<Image image={image} />}
+      rightChildren={<Image image={image} maxWidth={maxWidth}/>}
     />
   );
 }

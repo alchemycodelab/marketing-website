@@ -12,7 +12,7 @@ export default function DeluxeHero({ image, headline, lead, leadTheme, ...rest }
     <Section {...rest} className={styles.DeluxeHero}>
 
       <div className={styles.ImageContainer}>
-        <Image image={image} maxWidth={900}/>
+        <Image image={image} maxWidth={890}/>
       </div>
 
       <PrimaryExpressiveHeader

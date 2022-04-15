@@ -16,7 +16,7 @@ export default function Employers({
         {employers.map(({ image }, index) => {
           return (
             <li key={index}>
-              <Image image={{ ...image, fitVertical: 'center' }}/>
+              <Image image={{ ...image, fitVertical: 'center' }} maxWidth={180}/>
             </li>
           );
         })}

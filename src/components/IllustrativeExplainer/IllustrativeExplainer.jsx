@@ -23,11 +23,8 @@ export default function IllustrativeExplainer({
       </div>
 
       {illustrations.map(({ caption, image }, i) => (
-        <section key={i}
-          className={classNames(styles.tile, illustrationTheme)}
-          xstyle={{ borderColor: `var(--${illustrationBorderColor})` }}
-        >
-          <Image image={image} />
+        <section key={i} className={classNames(styles.tile, illustrationTheme)}>
+          <Image image={image} maxWidth={360}/>
           <IllustrationCaption text={caption} className={styles.IllustrationCaption} />
         </section>
       ))}

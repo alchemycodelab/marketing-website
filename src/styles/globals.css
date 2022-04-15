@@ -46,7 +46,6 @@ body {
   --accordion-split-small: 31.25%;
   --accordion-split-big: calc(100% - var(--accordion-split-small));
 
-  
 }
 
 @media (min-width: 700px) {
