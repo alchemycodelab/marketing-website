@@ -3,9 +3,13 @@
   "version": "0.0.1",
   "type": "module",
   "private": true,
+  "engines": {
+    "node": "17.x"
+  },
   "scripts": {
     "dev": "astro --config astro.dev.config.mjs dev",
     "start": "npm run dev",
+    "heroku-postbuild": "",
     "build": "npm run build:prod",
     "build:prod": "astro build",
     "build:cms": "astro --config astro.cms.config.mjs build ",
