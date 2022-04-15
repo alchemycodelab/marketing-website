@@ -27,12 +27,14 @@ export default function QuotesCarousel({
         <ul className={styles.carousel}>
 
           {quotes.map((quote, i) => {
-
-            const className = classNames({
-              [alternatingTheme]: i % 2 === 0
-            });
-
+            
             const { text, image, name, title, company } = quote;
+            const hasImage = !!(image?.url);
+            
+            const className = classNames({
+              [alternatingTheme]: i % 2 === 0,
+              [styles.noImage]: !hasImage
+            });
 
             return (
               <li key={i} className={className}>
@@ -40,7 +42,7 @@ export default function QuotesCarousel({
                   {text}
                 </blockquote>
 
-                <Image image={image} maxWidth={270}/>
+                {hasImage && <Image image={image} maxWidth={270}/>}
 
                 <div className={styles.attribution}>
                   <RichText text={name} />

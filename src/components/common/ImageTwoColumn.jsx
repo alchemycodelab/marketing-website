@@ -27,8 +27,6 @@ export default function ImageTwoColumn({
 
   const maxWidth = widths[split] || 720;
   
-  console.log('ImageTwoColumn', split, image.url);
-
   return (
     <TwoColumn 
       split={split}

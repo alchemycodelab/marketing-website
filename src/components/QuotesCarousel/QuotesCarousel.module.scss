@@ -50,6 +50,16 @@
 
       grid-gap: 28px 20px;
 
+      &.noImage {
+        grid-template-columns: 1fr;
+        grid-template-rows: max-content auto;
+        grid-template-areas:
+          'quote'
+          'attribution'
+        ;
+        grid-gap: 28px 0;
+      }
+
       @media (min-width: 700px) { 
 
         padding-top: max(60px, calc(.080 * var(--quote-width)));
@@ -60,7 +70,19 @@
           'image quote'
           'image attribution'
         ;
+
         grid-gap: 16px calc(.069 * var(--quote-width));
+
+        &.noImage {
+          grid-template-columns: 1fr;
+          grid-template-areas:
+            'quote'
+            'attribution'
+          ;
+          grid-gap: 16px 0;
+
+        }
+
       }
 
       img {

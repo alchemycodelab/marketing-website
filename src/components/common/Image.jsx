@@ -1,6 +1,6 @@
 import styles from './Image.module.scss';
 
-const isCloudinary = url => url.startsWith('https://res.cloudinary.com/alchemy-code-lab');
+const isCloudinary = url => !!(url?.startsWith('https://res.cloudinary.com/alchemy-code-lab'));
 
 export default function Image({ image = {} , maxWidth = 0 }) {
   const { 
@@ -15,7 +15,6 @@ export default function Image({ image = {} , maxWidth = 0 }) {
     const split = '/image/upload/';
     const [lead, trail] = url.split(split);
     url = `${lead}${split}c_fill,w_${maxWidth}/${trail}`;
-    // console.log(url);
   }
 
   return (
