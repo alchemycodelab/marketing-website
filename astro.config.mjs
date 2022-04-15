@@ -1,12 +1,14 @@
+import { defineConfig } from 'astro/config'
+import react from '@astrojs/react';
+
 console.log('prod config');
-// @ts-check
-export default /** @type {import('astro').AstroUserConfig} */ ({
-  buildOptions: {
-    sitemap: false,
-    // site: 'https://alchemycodelab.com/'
-  },
-  renderers: ['@astrojs/renderer-react'],
-  // vite: {
-  //   mode: 'production'
-  // }
-});
+
+export default defineConfig({
+  // pages: './src/pages-client',
+  // pages: './src/pages',
+  integrations: [
+    react(),
+  ],
+})
+
+
