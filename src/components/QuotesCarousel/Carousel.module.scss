@@ -1,0 +1,52 @@
+.Carousel {
+  position: relative;
+  max-width: none;
+  
+  --quote-width-percent: .86;
+  @media (min-width: 700px) { 
+    --quote-width-percent: .84;
+  }
+  --quote-width: calc( var(--quote-width-percent) * var(--section-width) );
+  
+  --extra-side-margin: calc( ( 100vw - var(--section-width) ) / 2);
+  --width-remainder: calc( var(--section-width) - var(--quote-width) );
+  --right-margin: calc( var(--extra-side-margin) + var(--width-remainder) );
+
+  margin: 0;
+
+  .controlBarContainer {
+    z-index: 100;
+    position: absolute;
+    left: max(var(--extra-side-margin), 0px);
+  }
+  
+  .carouselContainer {
+    overflow-x: auto;
+    padding-left: max(var(--extra-side-margin), 0px);
+    padding-right: var(--right-margin);
+  }
+
+  .carousel {
+    width: fit-content;
+    display: flex;
+    align-items: stretch;
+
+    &.rightPadding li {
+      padding-right: var(--primary-margin);
+    }
+
+    li {
+      width: var(--quote-width);
+
+      padding-left: var(--primary-margin);
+      padding-top: calc(.232 * var(--quote-width));
+      padding-bottom: calc(.232 * var(--quote-width));
+
+      @media (min-width: 700px) { 
+        padding-top: max(60px, calc(.080 * var(--quote-width)));
+        padding-bottom: calc(.134 * var(--quote-width));
+      }
+    }
+  }
+  
+}

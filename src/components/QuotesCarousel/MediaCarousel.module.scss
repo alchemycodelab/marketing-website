@@ -1,0 +1,57 @@
+.MediaCard {
+  /* --quote-width is defined in Carousel.module.scss */
+  
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: calc(100vw - (3 * var(--primary-margin))) auto;
+  grid-template-areas:
+    'image'
+    'content'
+  ;
+
+  &.noImage {
+    grid-template-columns: 1fr;
+    grid-template-rows: max-content auto;
+    grid-template-areas:
+      'quote'
+      'attribution'
+    ;
+  }
+
+  @media (min-width: 700px) { 
+
+    grid-template-columns: var(--golden-split-small) var(--golden-split-big);
+    grid-template-rows: auto;
+    grid-template-areas:
+      'image content'
+    ;
+
+    &.noImage {
+      grid-template-columns: 1fr;
+      grid-template-areas:
+        'quote'
+        'attribution'
+      ;
+      grid-gap: 16px 0;
+
+    }
+  }
+  
+  img {
+    grid-area: image;
+    place-self: stretch;
+  }
+  
+  .Content {
+    padding: var(--primary-margin);
+
+    h3 {
+      margin-bottom: calc(12px + var(--vertical-margin-base));
+      
+      > span {
+        display: block;
+      }
+    }
+  }
+
+}

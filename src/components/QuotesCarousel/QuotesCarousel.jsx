@@ -1,61 +1,49 @@
-import Section from '../common/Section';
-import ControlBar from './ControlBar';
-import { Wayfinder, RichText } from '../content/Text';
+import Carousel from './Carousel';
+import { RichText } from '../content/Text';
 import Image from '../common/Image';
 import classNames from 'classnames';
 import { themes } from '../../styles/themes.js';
 import styles from './QuotesCarousel.module.scss';
 
 export default function QuotesCarousel({
-  wayfinder,
-  theme,
-  alternatingTheme = theme,
   quotes = [],
-  attributes,
-  ...rest
+  alternatingTheme,
+  ...props
 }) {
   return (
-    <Section theme={theme} {...rest}
-      tagClassName={classNames('carousel-script')}
-      className={styles.QuotesCarousel}
-    >
-      <div className={styles.controlBarContainer}>
-        <ControlBar wayfinder={wayfinder} quotes={quotes} />
-      </div>
+    <Carousel {...props} items={quotes} hasRightPadding={true}>
 
-      <div className={classNames(styles.carouselContainer, 'carousel-scroller')}>
-        <ul className={styles.carousel}>
+      {quotes.map((quote, i) => {
+        
+        const { text, image, name, title, company } = quote;
+        const hasImage = !!(image?.url);
+        
+        const className = classNames(
+          styles.QuoteCard, 
+          {
+            [alternatingTheme]: i % 2 === 0,
+            [styles.noImage]: !hasImage
+          }
+        );
 
-          {quotes.map((quote, i) => {
-            
-            const { text, image, name, title, company } = quote;
-            const hasImage = !!(image?.url);
-            
-            const className = classNames({
-              [alternatingTheme]: i % 2 === 0,
-              [styles.noImage]: !hasImage
-            });
+        return (
+          <li key={i} className={className}>
+            <blockquote className="blockquote">
+              {text}
+            </blockquote>
 
-            return (
-              <li key={i} className={className}>
-                <blockquote className="blockquote">
-                  {text}
-                </blockquote>
+            {hasImage && <Image image={image} maxWidth={270}/>}
 
-                {hasImage && <Image image={image} maxWidth={270}/>}
+            <div className={styles.attribution}>
+              <RichText text={name} />
+              <RichText text={formatCaption(title, company)} className="black-65-text" />
+            </div>
+          </li>
+        );
 
-                <div className={styles.attribution}>
-                  <RichText text={name} />
-                  <RichText text={formatCaption(title, company)} className="black-65-text" />
-                </div>
-              </li>
-            );
+      })}
 
-          })}
-
-        </ul>
-      </div>
-    </Section>
+    </Carousel>
   );
 }
 
@@ -66,8 +54,7 @@ const formatCaption = (title, company) => {
 QuotesCarousel.config = {
   name: 'Quotes Carousel',
   inputs: [
-    ...Section.inputs,
-    Wayfinder.input,
+    ...Carousel.inputs,
     {
       name: 'alternatingTheme',
       friendlyName: 'Alternating Quote Card Theme (optional)',

@@ -4,7 +4,7 @@ import styles from './ControlBar.module.scss';
 
 const makeWayfinderId = wayfinder => wayfinder?.replace(/\s/g, '-');
 
-export default function ControlBar({ wayfinder, quotes }) {
+export default function ControlBar({ wayfinder, items }) {
   const wayfinderId = makeWayfinderId(wayfinder);
 
   return (
@@ -13,7 +13,7 @@ export default function ControlBar({ wayfinder, quotes }) {
 
       <div className={classNames(styles.selector, Wayfinder.className)}>
 
-        {quotes.map((_, i) => {
+        {items.map((_, i) => {
           const id = `${wayfinderId}-${i}`;
           return (
             <span key={i}>
@@ -22,7 +22,7 @@ export default function ControlBar({ wayfinder, quotes }) {
                 type="radio"
                 disabled
                 value={i}
-                name={`${wayfinderId}-quote-card-index`}
+                name={`${wayfinderId}-item-card-index`}
               />
               <label htmlFor={id}
                 className={classNames({ [styles.active]: i === 0 })}

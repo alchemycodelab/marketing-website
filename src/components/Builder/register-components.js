@@ -2,6 +2,7 @@ import DeluxeHero from '../DeluxeHero/DeluxeHero.jsx';
 import Hero from '../Hero/Hero.jsx';
 import AlchemyDifference from '../AlchemyDifference/AlchemyDifference.jsx';
 import QuotesCarousel from '../QuotesCarousel/QuotesCarousel.jsx';
+import MediaCarousel from '../QuotesCarousel/MediaCarousel.jsx';
 import IllustrativeExplainer from '../IllustrativeExplainer/IllustrativeExplainer.jsx';
 import StatsDisplay from '../QuadStats/StatsDisplay.jsx';
 import FramedQuotesCarousel from '../QuotesCarousel/FramedQuotesCarousel.jsx';
@@ -30,6 +31,7 @@ export default function registerComponents(Builder) {
   register(DeluxeHero);
   register(AlchemyDifference);
   register(QuotesCarousel);
+  register(MediaCarousel);
   register(IllustrativeExplainer);
   register(StatsDisplay);
   register(FramedQuotesCarousel);
