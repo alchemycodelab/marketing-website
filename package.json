@@ -9,7 +9,7 @@
   "scripts": {
     "dev": "astro --config astro.dev.config.mjs dev",
     "start": "npm run dev",
-    "heroku-postbuild": "",
+    "heroku-postbuild": "echo $PORT",
     "build": "npm run build:prod",
     "build:prod": "astro build",
     "build:cms": "astro --config astro.cms.config.mjs build ",
