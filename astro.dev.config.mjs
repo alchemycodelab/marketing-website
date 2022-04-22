@@ -9,7 +9,7 @@ console.log('port is', PORT);
 export default defineConfig({
   server: {
     port: PORT,
-    // hostname: process.env.PORT ? '0.0.0.0' : 'localhost'
+    hostname: process.env.PORT ? '0.0.0.0' : 'localhost'
   },
   // pages: './src/pages-client',
   // pages: './src/pages',
