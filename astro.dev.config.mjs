@@ -1,21 +1,12 @@
-import { defineConfig } from 'astro/config'
-import react from '@astrojs/react';
+import { defineConfig } from 'astro/config';
+import react from "@astrojs/react";
 
-console.log('dev config');
+const port = Number(process.env.PORT) || 3000;
 
-const PORT = Number(process.env.PORT || 3000);
-console.log('port is', PORT);
+console.log('starting astro server on', port);
 
+// https://astro.build/config
 export default defineConfig({
-  server: {
-    port: PORT,
-    hostname: process.env.PORT ? '0.0.0.0' : 'localhost'
-  },
-  // pages: './src/pages-client',
-  // pages: './src/pages',
-  integrations: [
-    react(),
-  ],
-})
-
-
+  integrations: [react()],
+  server: { port, host: true, }
+} );

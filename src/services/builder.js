@@ -1,10 +1,6 @@
-import { builder } from '@builder.io/react';
-
-builder.init('b9c103cda0f24735921c917287d4fc23');
-
 const PAGE_MODEL_NAME = 'page';
 
-export async function getStaticPaths() {
+export const builderStaticPaths = builder => async () => {
 
   const resp = await builder.getAll(PAGE_MODEL_NAME, {
     key: 'pages:all',
@@ -30,14 +26,14 @@ export async function getStaticPaths() {
   return paths;
 }
 
-export async function getPage(url) {
+export const builderPage = builder => async url => {
   const page = await builder.get(PAGE_MODEL_NAME, { url }).promise();
   return page || null;
 }
 
 const COHORT_MODEL_NAME = 'cohort';
 
-export async function getCohorts() {
+export const builderCohorts = builder => async () => {
   const res = await builder.getAll(COHORT_MODEL_NAME);
   return res.map(({ name, data }) => ({ ...data, name }));
 }
