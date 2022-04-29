@@ -12,8 +12,8 @@ const getPage = builderPage(builder);
 const { pages } = Astro.props;
 const url = new URL(Astro.request.url);
 const page = await getPage(url.pathname);
----
 
+---
 <Page pages={pages} page={page}>
 	<CMS page={page} client:load/>
 </Page>

@@ -1,0 +1,33 @@
+---
+import Page from '../layouts/page.astro';
+import MediaCarousel from '../components/QuotesCarousel/MediaCarousel';
+---
+
+
+<Page>
+  <MediaCarousel
+    theme="pink-dark"
+    cardTheme="pink"
+    wayfinder="Our founders"
+    cards={[{
+      image: {
+        url: 'https://res.cloudinary.com/alchemy-code-lab/image/upload/v1629908594/ws/home/Alchemy-homepage-Joe-Klause-540x720.png',
+        alt: 'Founder Marty Nelson'
+      },
+      header1: `Marty Nelson`,
+      header2: `Chief Alchemist and Co-Founder`,
+      text: `A true alchemist, Marty brings together deep technology knowledge, business acumen, and strong community partnershipA true alchemist, Marty brings together deep technology knowledge, business acumen, and strong community partnershipA true alchemist, Marty brings together deep technology knowledge, business acumen, and strong community partnershipA true alchemist, Marty brings together deep technology knowledge, business acumen, and strong community partnershipA true alchemist, Marty brings together deep technology knowledge, business acumen, and strong community partnershipA true alchemist, Marty brings together deep technology knowledge, business acumen, and strong community partnerships. With more than thirty years of experience in the industry, Marty founded Alchemy Code Lab with a vision to empower diversity, ignite personal potential, and advance the industry through a rigorous, hands-on code curriculum. An advocate behind the scenes, he works with local organizations and companies to authentically bring diversity and a human-centered approach to the tech industry.`,
+    }, 
+    {
+      image: {
+        url: 'https://res.cloudinary.com/alchemy-code-lab/image/upload/v1629908594/ws/home/Alchemy-homepage-Dannie-Schumaker-540x720.png',
+        alt: 'Founder Megan Nelson'
+      },
+      header1: `Megan Nelson`,
+      header2: `School Director and Co-Founder`,
+      text: `Megan is passionate about being of service to others. In her role as Program Director and Admissions Lead, she strives to help students advance their careers through economic stability and meaningful work. In many ways, Megan is the heart compass of Alchemy. She ensures the environment supports each student in their growth both technically and personally. In the Alchemy community, she’s known for spontaneously breaking into song, and caring deeply that each student is set up for success.`,
+    }    
+    ]}
+  />
+
+</Page>

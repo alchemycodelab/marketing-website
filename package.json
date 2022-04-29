@@ -7,12 +7,11 @@
     "node": "18.x"
   },
   "scripts": {
-    "dev": "astro --config astro.dev.config.mjs dev",
-    "start": "npm run dev --host",
-    "heroku-postbuild": "echo $PORT",
-    "build": "npm run build:prod",
-    "build:prod": "astro build",
-    "build:cms": "astro --config astro.cms.config.mjs build ",
+    "prestart": "rm -rf src/pages && cp -R src/pages-dev src/pages",
+    "start": "astro dev --host",
+    "heroku-postbuild": "echo no build required",
+    "prebuild": "rm -rf src/pages && cp -R src/pages-build src/pages",
+    "build": "astro build",
     "preview": "astro preview",
     "lint": "eslint --ignore-path .gitignore .",
     "astro:version": "astro --version",
@@ -26,6 +25,8 @@
     "classnames": "^2.3.1",
     "eslint-plugin-react": "^7.28.0",
     "node-sass": "^7.0.1",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0",
     "sass": "^1.49.9"
   }
 }

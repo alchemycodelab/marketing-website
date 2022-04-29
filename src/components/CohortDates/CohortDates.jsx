@@ -22,24 +22,12 @@ export function CohortDates({
   );
 }
 
-export async function getCohorts() {
-  const url = 'https://cdn.builder.io/api/v2/content/cohort?apiKey=b9c103cda0f24735921c917287d4fc23';
-  const response = await fetch(url);
-  const { results } = await response.json();
-  return results.map(({ name, data }) => ({ ...data, name }));
-}
+const url = 'https://cdn.builder.io/api/v2/content/cohort?apiKey=b9c103cda0f24735921c917287d4fc23';
+const response = await fetch(url);
+const { results } = await response.json();
+const cohorts = results.map(({ name, data }) => ({ ...data, name }));
 
 export default function CohortDatesContainer(props) {
-  const [cohorts, setCohorts] = useState([]);
-  useEffect(() => {
-    const doIt = async () => {
-      const cohorts = await getCohorts(); 
-      setCohorts(cohorts);
-    };
-
-    doIt();
-  }, []);
-  
   return <CohortDates cohorts={cohorts} {...props}/>;
 }
 
