@@ -37,7 +37,6 @@ export function FAQCatagories({ categories, ...rest }) {
 }
 
 const categories = await getFAQs();
-console.log('categories', categories);
 
 export default function FAQCatagoriesContainer(props) {
   return <FAQCatagories categories={categories} {...props}/>;
