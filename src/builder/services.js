@@ -17,14 +17,18 @@ const API_URL = 'https://cdn.builder.io/api/v2/content';
 const API_KEY = `?apiKey=${KEY}`;
 const getModelUrl = model => `${API_URL}/${model}${API_KEY}`;
 
+
 const COHORT_URL = getModelUrl('cohort');
+
 export async function getCohorts() {
   const results = await get(COHORT_URL);
   return results.map(({ name, data }) => ({ ...data, name }));
 }
 
+
 const FAQ_OPTIONS = '&limit=0&fields=data.category.value.name,data.question,data.answer&includeRefs=true';
 const FAQ_URL = `${getModelUrl('faq')}${FAQ_OPTIONS}`;
+
 export async function getFAQs() {
   const results = await get(FAQ_URL);
 
