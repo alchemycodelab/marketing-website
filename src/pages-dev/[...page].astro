@@ -1,16 +1,19 @@
 ---
 import { builder } from '@builder.io/react';
-import { builderStaticPaths, builderPage } from '../builder/services.js';
+import getStaticPaths from '../builder/getStaticPaths.js';
+import { builderPage } from '../builder/services.js';
+import KEY from '../builder/key.js';
+
 import CMS from '../builder/CMS.jsx';
 import Page from '../layouts/page.astro';
 
-builder.init('b9c103cda0f24735921c917287d4fc23');
+export { getStaticPaths };
 
-export const getStaticPaths = builderStaticPaths(builder);
+builder.init(KEY);
 
-const getPage = builderPage(builder);
 const { pages } = Astro.props;
 const url = new URL(Astro.request.url);
+const getPage = builderPage(builder);
 const page = await getPage(url.pathname);
 
 ---

@@ -1,10 +1,11 @@
 import builder from '@builder.io/react';
+import KEY from './key.js';
 
 const PAGE_MODEL_NAME = 'page';
 
 export default async function getStaticPaths() {
-  
-  builder.init('b9c103cda0f24735921c917287d4fc23');
+
+  builder.init(KEY);
 
   const resp = await builder.getAll(PAGE_MODEL_NAME, {
     key: 'pages:all',
@@ -20,8 +21,8 @@ export default async function getStaticPaths() {
   const paths = pages
     .map(page => {
       return {
-        params: { 
-          page: page?.url?.replace('/', '') || undefined, 
+        params: {
+          page: page?.url?.replace('/', '') || undefined,
         },
         props: { page, pages }
       };

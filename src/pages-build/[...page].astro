@@ -2,21 +2,22 @@
 import pkg from '@builder.io/react';
 import registerComponents from '../builder/register-components.js';
 import Page from '../layouts/page.astro';
-// import { builderStaticPaths, builderPage } from '../builder/services.js';
+import { builderPage } from '../builder/services.js';
 import getStaticPaths from '../builder/getStaticPaths.js';
+import KEY from '../builder/key.js';
 
 export { getStaticPaths }
 
 const { builder, Builder, BuilderComponent } = pkg;
-builder.init('b9c103cda0f24735921c917287d4fc23');
-
+builder.init(KEY);
 registerComponents(Builder);
 
-
+const { pages } = Astro.props;
 const url = new URL(Astro.request.url);
-const page = await builder.get('page', { url: url.pathname }).promise();
+const getPage = builderPage(builder);
+const page = await getPage(url.pathname);
 
 ---
-<Page>
+<Page pages={pages} page={page}>
 	<BuilderComponent model="page" content={page} />
 </Page>
