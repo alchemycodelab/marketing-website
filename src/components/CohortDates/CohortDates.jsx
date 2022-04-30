@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import Section from '../common/Section';
 import CohortBox from './CohortBox';
 import { Content } from '../content/Content';
+import { getCohorts } from '../../builder/services';
 import styles from './CohortDates.module.scss';
 
 export function CohortDates({ 
@@ -22,10 +23,7 @@ export function CohortDates({
   );
 }
 
-const url = 'https://cdn.builder.io/api/v2/content/cohort?apiKey=b9c103cda0f24735921c917287d4fc23';
-const response = await fetch(url);
-const { results } = await response.json();
-const cohorts = results.map(({ name, data }) => ({ ...data, name }));
+const cohorts = await getCohorts();
 
 export default function CohortDatesContainer(props) {
   return <CohortDates cohorts={cohorts} {...props}/>;

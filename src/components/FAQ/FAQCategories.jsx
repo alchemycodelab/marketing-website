@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { getFAQs } from '../../builder/services';
 import Section from '../common/Section';
 import FAQs from './FAQs';
 import styles from './FAQCategories.module.scss';
@@ -35,38 +36,10 @@ export function FAQCatagories({ categories, ...rest }) {
   );
 }
 
-async function getFAQs() {
-  const url = 'https://cdn.builder.io/api/v2/content/faq?apiKey=b9c103cda0f24735921c917287d4fc23&limit=0&fields=data.category.value.name,data.question,data.answer&includeRefs=true';
-  const response = await fetch(url);
-  const { results } = await response.json();
-
-  const categoryMap = new Map();
-  for(let { data } of results) {
-    const { question, answer, category } = data;
-    const topic = category.value.name;
-    const hasTopic = categoryMap.has(topic);
-
-    const faqs = hasTopic ? categoryMap.get(topic) : [];
-    faqs.push({ question, answer });
-    if(!hasTopic) categoryMap.set(topic, faqs);
-  }
-  
-  return [...categoryMap.entries()].map(([topic, faqs]) => ({ topic, faqs }));
-}
+const categories = await getFAQs();
+console.log('categories', categories);
 
 export default function FAQCatagoriesContainer(props) {
-  const [categories, setCategories] = useState([]);
-  
-  useEffect(() => {
-    const fetchIt = async () => {
-      const categories = await getFAQs(); 
-      setCategories(categories);
-      console.log(categories);
-    };
-
-    fetchIt();
-  }, []);
-  
   return <FAQCatagories categories={categories} {...props}/>;
 }
 
