@@ -1,0 +1,27 @@
+---
+import pkg from '@builder.io/react';
+import registerComponents from '../../builder/register-components.js';
+import Page from '../../layouts/page.astro';
+import { builderArticle } from '../../builder/services.js';
+import { builderPages } from '../../builder/getStaticPaths.js';
+import getArticlePaths from '../../builder/getArticlePaths.js';
+import { KEY, ARTICLE_MODEL } from '../../builder/constants.js';
+
+export const getStaticPaths = getArticlePaths;
+
+const { builder, Builder, BuilderComponent } = pkg;
+builder.init(KEY);
+registerComponents(Builder);
+const getPages = builderPages(builder);
+
+const url = new URL(Astro.request.url);
+const getArticle = builderArticle(builder);
+const [article, pages] = await Promise.all([
+	getArticle(url.pathname),
+	getPages(),
+]);
+
+---
+<Page pages={pages}>
+	<BuilderComponent model={ARTICLE_MODEL} content={article} />
+</Page>

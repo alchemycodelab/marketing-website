@@ -4,7 +4,7 @@ import registerComponents from '../builder/register-components.js';
 import Page from '../layouts/page.astro';
 import { builderPage } from '../builder/services.js';
 import getStaticPaths from '../builder/getStaticPaths.js';
-import KEY from '../builder/key.js';
+import { KEY, PAGE_MODEL } from '../builder/constants.js';
 
 export { getStaticPaths }
 
@@ -19,5 +19,5 @@ const page = await getPage(url.pathname);
 
 ---
 <Page pages={pages} page={page}>
-	<BuilderComponent model="page" content={page} />
+	<BuilderComponent model={PAGE_MODEL} content={page} />
 </Page>

@@ -1,0 +1,26 @@
+---
+import { builder } from '@builder.io/react';
+import { builderPages } from '../../builder/getStaticPaths.js';
+import getArticlePaths from '../../builder/getArticlePaths.js';
+import { builderArticle } from '../../builder/services.js';
+import { KEY, ARTICLE_MODEL } from '../../builder/constants.js';
+
+import CMS from '../../builder/CMS.jsx';
+import Page from '../../layouts/page.astro';
+
+export const getStaticPaths = getArticlePaths;
+
+builder.init(KEY);
+const getPages = builderPages(builder);
+
+const url = new URL(Astro.request.url);
+const getArticle = builderArticle(builder);
+const [article, pages] = await Promise.all([
+	getArticle(url.pathname),
+	getPages(),
+]);
+
+---
+<Page pages={pages}>
+	<CMS page={article} model={ARTICLE_MODEL} client:load/>
+</Page>

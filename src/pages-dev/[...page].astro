@@ -2,7 +2,7 @@
 import { builder } from '@builder.io/react';
 import getStaticPaths from '../builder/getStaticPaths.js';
 import { builderPage } from '../builder/services.js';
-import KEY from '../builder/key.js';
+import { KEY, PAGE_MODEL } from '../builder/constants.js';
 
 import CMS from '../builder/CMS.jsx';
 import Page from '../layouts/page.astro';
@@ -17,6 +17,7 @@ const getPage = builderPage(builder);
 const page = await getPage(url.pathname);
 
 ---
+
 <Page pages={pages} page={page}>
-	<CMS page={page} client:load/>
+	<CMS page={page} model={PAGE_MODEL} client:load/>
 </Page>
