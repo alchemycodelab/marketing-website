@@ -1,6 +1,9 @@
 
-export function paragraphToLineBreak(html = '') {
-  if (html.trim() === '<p><br></p>') return '';
+const testEmpty = html => !html || html === '<p><br></p>';
+export const isEmpty = (html = '') => testEmpty(html?.trim());
+
+export function paragraphToLineBreak(html) {
+  if (isEmpty(html)) return '';
 
   const withLineBreaks = html
     ?.replace(/<p>/g, '')

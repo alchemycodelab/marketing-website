@@ -62,6 +62,20 @@
   li:not(:first-child) {
     margin-top: calc(8px + ( var(--scale) * 4));
   }
+
+  h2, h3, h4, h5, h6 {
+    font-family: "National Bold";
+  }
+
+  h2 {
+    font-size: calc(22.25px + ( var(--scale) * 22.75));
+    line-height: calc(27.45px + ( var(--scale) * 28.55));
+  }
+
+  h3 {
+    font-size: calc(18.20px + ( var(--scale) * 4.80));
+    line-height: calc(19.72px + ( var(--scale) * 8.28));
+  }
 }
 
 .HeaderText {

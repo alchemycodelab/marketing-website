@@ -1,4 +1,4 @@
-import { paragraphToLineBreak } from '../format';
+import { isEmpty, paragraphToLineBreak } from '../format';
 import classNames from 'classnames';
 import styles from './Text.module.scss';
 
@@ -64,6 +64,8 @@ Headline.input = {
 };
 
 export function RichContent({ text, className = '' }) {
+  if(isEmpty(text)) return null;
+  
   return (
     <div
       className={(classNames(styles.TextContent, className))}

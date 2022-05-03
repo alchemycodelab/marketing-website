@@ -24,7 +24,7 @@ Section.inputs = [
   {
     name: 'theme',
     type: 'text',
-    defaultValue: '',
+    defaultValue: 'pink',
     enum: themes
   },
 ];

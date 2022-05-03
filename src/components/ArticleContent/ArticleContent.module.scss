@@ -1,0 +1,17 @@
+.ArticleContent {
+  padding: 0 var(--primary-margin);
+
+  .RichContent {
+    @media (min-width: 700px) {
+      width: var(--golden-split-big);
+    }
+    
+    p, ul {
+      margin-bottom: calc(12px + var(--vertical-margin-base));
+    }
+    
+    h2, h3, h4 {
+      margin-bottom: calc(8px + var(--vertical-margin-base));
+    }
+  }
+}
