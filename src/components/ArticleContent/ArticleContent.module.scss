@@ -1,5 +1,6 @@
 .ArticleContent {
   padding: 0 var(--primary-margin);
+  padding-top: calc(12px + var(--vertical-margin-base));
   /* prevents ending section before last margin */
   display: flow-root;
 

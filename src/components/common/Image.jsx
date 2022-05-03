@@ -1,8 +1,13 @@
 import styles from './Image.module.scss';
+import classNames from 'classnames';
 
 const isCloudinary = url => !!(url?.startsWith('https://res.cloudinary.com/alchemy-code-lab'));
 
-export default function Image({ image = {} , maxWidth = 0 }) {
+export default function Image({ 
+  image = {} , 
+  maxWidth = 0,
+  className = '', 
+}) {
   const { 
     alt, 
     fitHorizontal = 'center', 
@@ -19,7 +24,7 @@ export default function Image({ image = {} , maxWidth = 0 }) {
 
   return (
     <img 
-      className={styles.Image} 
+      className={classNames(styles.Image, className)} 
       src={url} 
       alt={alt} 
       style={{
