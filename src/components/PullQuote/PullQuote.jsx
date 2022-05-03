@@ -6,15 +6,13 @@ import styles from './FullImage.module.scss';
 export default function FullImage({ 
   image, 
   caption,
-  height,
+  height = '30vw',
   ...rest 
 }) {
 
-  const heightStyle = height ? { height } : null;
-
   return (
     <Section {...rest} className={styles.FullImage}>
-      <div className={styles.container} style={heightStyle}>
+      <div className={styles.container} style={{ height }}>
         <Image className={styles.Image} image={image} />
       </div>
       <SmallText className={styles.caption} text={caption} />

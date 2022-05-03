@@ -1,6 +1,8 @@
 import Carousel from './Carousel';
 import { RichText } from '../content/Text';
 import Image from '../common/Image';
+import Quote from '../content/Quote';
+import Attribution from '../content/Attribution';
 import classNames from 'classnames';
 import { themes } from '../../styles/themes.js';
 import styles from './QuotesCarousel.module.scss';
@@ -28,16 +30,16 @@ export default function QuotesCarousel({
 
         return (
           <li key={i} className={className}>
-            <blockquote className="blockquote">
-              {text}
-            </blockquote>
+            <Quote className={styles.Quote} text={text}/>
 
             {hasImage && <Image image={image} maxWidth={270}/>}
 
-            <div className={styles.attribution}>
-              <RichText text={name} />
-              <RichText text={formatCaption(title, company)} className="black-65-text" />
-            </div>
+            <Attribution 
+              className={styles.Attribution}
+              name={name}
+              title={title}
+              company={company} 
+            />
           </li>
         );
 

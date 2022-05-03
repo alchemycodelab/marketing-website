@@ -52,31 +52,11 @@
     }
   }
 
-  .attribution {
-    grid-area: attribution;
-  }
-
-  blockquote {
+  .Quote {
     grid-area: quote;
-
-    font-family: "Newzald Black";
-    font-size: calc(24.13px + ( var(--scale) * 20.87));
-    line-height: calc(24.17px + ( var(--scale) * 27.83));
-
-    text-indent: -0.45em;
-    quotes: "“" "”" "‘" "’";
-    &::before {
-      content: open-quote;
-    }
-    &::after {
-      content: close-quote;
-    }
   }
 
-  @supports ( hanging-punctuation: first) {
-    blockquote {
-      text-indent: 0;
-      hanging-punctuation: first;
-    }
+  .Attribution {
+    grid-area: attribution;
   }
 }
