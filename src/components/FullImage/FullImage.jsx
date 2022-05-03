@@ -9,6 +9,7 @@ export default function FullImage({
   height = '30vw',
   ...rest 
 }) {
+
   return (
     <Section {...rest} className={styles.FullImage}>
       <div className={styles.container} style={{ height }}>
@@ -32,6 +33,6 @@ FullImage.config = {
       name: 'height',
       type: 'text',
       advanced: true,
-    },
+    }
   ],
 };
