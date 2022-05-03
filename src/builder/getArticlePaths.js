@@ -25,7 +25,7 @@ export default async function getArticlePaths() {
       };
     });
 
-  if (process.env.NODE_ENV === 'development') {
+  if (process.env.NODE_ENV !== 'production') {
     paths.push({
       params: { article: '_' },
       props: { articles }
