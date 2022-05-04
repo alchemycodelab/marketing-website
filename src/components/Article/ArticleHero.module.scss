@@ -1,0 +1,19 @@
+.ArticleHero {
+  padding: var(--primary-margin);
+  padding-top: calc(var(--primary-margin) * 1.5);
+  padding-bottom: calc(var(--primary-margin) * .75);
+
+  .Content {
+    .Date {
+      margin-bottom: calc(12px + var(--vertical-margin-base));
+    }
+
+    .Wayfinder {
+      margin-bottom: calc(4.5px + var(--vertical-margin-base));
+    }
+
+    @media (min-width: 700px) {
+      width: var(--golden-split-big);
+    }
+  }
+}

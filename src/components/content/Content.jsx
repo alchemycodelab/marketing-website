@@ -30,7 +30,10 @@ export function Content({
 
   return (
     <div className={className}>
-      {wayfinder && <Wayfinder text={wayfinder} className="text-accent" />}
+      {wayfinder && <Wayfinder 
+        text={wayfinder} 
+        className={classNames(styles.Wayfinder, 'text-accent')} 
+      />}
 
       {headline && <Headline 
         as={isPrimary ? 'h1' : 'h2'} 
