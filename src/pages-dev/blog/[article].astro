@@ -21,6 +21,6 @@ const [article, pages] = await Promise.all([
 ]);
 
 ---
-<Page pages={pages}>
+<Page pages={pages} page={article}>
 	<CMS page={article} model={ARTICLE_MODEL} client:load/>
 </Page>

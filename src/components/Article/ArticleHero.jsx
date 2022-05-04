@@ -1,4 +1,3 @@
-import { Builder } from '@builder.io/react';
 import {
   Wayfinder,
   Headline,
@@ -12,16 +11,15 @@ import styles from './ArticleHero.module.scss';
 
 export default function ArticleHero({ 
   wayfinder,
-  headline, 
   lead,
   builderState,
   ...rest 
 }) {
-  const { name, data } = builderState.content;
-  const { timestamp, metaDescription } = data;
+  const { data } = builderState.content;
+  const { title, timestamp, description } = data;
   const date = new Date(timestamp).toLocaleDateString('en-US', { dateStyle: 'full' });
-  const articleLead = isEmpty(lead) ? metaDescription : lead;
-  // console.dir(Builder);
+  const articleLead = isEmpty(lead) ? description : lead;
+  
   return (
     <Section {...rest} className={styles.ArticleHero}>
       <div className={styles.Content}>
@@ -30,9 +28,9 @@ export default function ArticleHero({
           className={classNames(styles.Wayfinder, 'text-accent')}
         />}
 
-        {name && <Headline 
+        {title && <Headline 
           as="h1" 
-          text={name} 
+          text={title} 
           isPrimary={true} 
         />}
 
@@ -53,7 +51,6 @@ ArticleHero.config = {
   inputs: [
     ...Section.inputs, 
     Wayfinder.input,
-    Headline.input,
     Lead.input,
   ],
 };

@@ -7,7 +7,7 @@ import '../styles/typography.css';
 import '../styles/color.css';
 
 const { page, pages } = Astro.props;
-// TODO: title and metadata
+const { title, description, imageUrl, canonicalLink } = page.data;
 
 ---
 
@@ -16,6 +16,10 @@ const { page, pages } = Astro.props;
 		<meta charset="utf-8"/>
 		<meta name="viewport" content="width=device-width"/>
 		<link rel="icon" type="image/x-icon" href="/favicon.ico"/>
+		<title>{title || 'Alchemy Code Lab'}</title>
+		{description && <meta name="description" content={description} />}
+		{imageUrl && <meta name="og:image" content={imageUrl} />}
+		{canonicalLink && <link rel="canonical" href={canonicalLink} />}
 	</head>
 	<body>
 		<HeaderBar pages={pages} page={page}/>

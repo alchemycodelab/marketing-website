@@ -22,6 +22,6 @@ const [article, pages] = await Promise.all([
 ]);
 
 ---
-<Page pages={pages}>
+<Page pages={pages} page={article}>
 	<BuilderComponent model={ARTICLE_MODEL} content={article} />
 </Page>

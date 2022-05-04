@@ -4,7 +4,7 @@
   padding-bottom: calc(var(--primary-margin) * .75);
 
   .Content {
-    .Date {
+    .Date:not(:last-child) {
       margin-bottom: calc(12px + var(--vertical-margin-base));
     }
 
