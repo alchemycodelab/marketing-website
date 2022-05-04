@@ -20,8 +20,9 @@ import TabbedOutcomes from '../components/QuadStats/TabbedOutcomes.jsx';
 import Employers from '../components/Employers/Employers.jsx';
 import SmallHero from '../components/SmallHero/SmallHero.jsx';
 import FAQ from '../components/FAQ/FAQCategories';
-import ArticleContent from '../components/ArticleContent/ArticleContent';
-import FullImage from '../components/FullImage/FullImage';
+import ArticleContent from '../components/Article/ArticleContent';
+import ArticleImage from '../components/Article/ArticleImage';
+import ArticleQuote from '../components/Article/ArticleQuote';
 
 export default function registerComponents(Builder) {
 
@@ -52,5 +53,6 @@ export default function registerComponents(Builder) {
   register(SmallHero);
   register(FAQ);
   register(ArticleContent);
-  register(FullImage);
+  register(ArticleImage);
+  register(ArticleQuote);
 }

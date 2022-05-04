@@ -1,18 +1,20 @@
 import Section from '../common/Section';
 import Image from '../common/Image';
 import { SmallText } from '../content/Text';
-import styles from './FullImage.module.scss';
+import styles from './ArticleImage.module.scss';
 
-export default function FullImage({ 
+export default function ArticleImage({ 
   image, 
   caption,
-  height = '30vw',
+  height,
   ...rest 
 }) {
 
+  const heightStyle = height ? { height } : null;
+
   return (
-    <Section {...rest} className={styles.FullImage}>
-      <div className={styles.container} style={{ height }}>
+    <Section {...rest} className={styles.ArticleImage}>
+      <div className={styles.container} style={heightStyle}>
         <Image className={styles.Image} image={image} />
       </div>
       <SmallText className={styles.caption} text={caption} />
@@ -20,8 +22,8 @@ export default function FullImage({
   );
 }
 
-FullImage.config = {
-  name: 'FullImage',
+ArticleImage.config = {
+  name: 'ArticleImage',
   inputs: [
     ...Section.inputs, 
     ...Image.inputs,

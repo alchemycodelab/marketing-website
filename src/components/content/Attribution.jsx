@@ -26,7 +26,7 @@ export default function Attribution({
   return (
     <div className={className}>
       {name && <RichText text={name} />}
-      {position && <RichText text={position} className="black-65-text" />}
+      {position && <RichText text={position} className="text-accent" />}
     </div>
   );
 }

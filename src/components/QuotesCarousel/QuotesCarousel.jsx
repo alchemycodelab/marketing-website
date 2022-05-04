@@ -1,5 +1,4 @@
 import Carousel from './Carousel';
-import { RichText } from '../content/Text';
 import Image from '../common/Image';
 import Quote from '../content/Quote';
 import Attribution from '../content/Attribution';
@@ -69,27 +68,8 @@ QuotesCarousel.config = {
       defaultValue: [],
       subFields: [
         ...Image.inputs,
-        {
-          name: 'text',
-          type: 'longText',
-          defaultValue: 'Quote from this person...',
-          required: true
-        },
-        {
-          name: 'name',
-          type: 'text',
-          defaultValue: 'Person Name',
-        },
-        {
-          name: 'title',
-          type: 'text',
-          defaultValue: 'Title',
-        },
-        {
-          name: 'company',
-          type: 'text',
-          defaultValue: 'Company',
-        },
+        ...Quote.inputs,
+        ...Attribution.inputs,
       ],
     }
   ]

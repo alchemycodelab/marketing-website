@@ -60,7 +60,7 @@
 }
 
 .pink-dark .text-accent {
-  color: var(--black);
+  color: var(--black-65);
 }
 
 .pink-dark-text {
@@ -170,11 +170,10 @@
 .blue-dark {
   background: var(--blue-dark);
   color: var(--white);
-
 }
 
 .blue-dark .text-accent {
-  color: var(--pink);
+  color: var(--blue-medium);
 }
 
 .blue-dark.button-accent {

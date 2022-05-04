@@ -21,23 +21,9 @@ export default function Quote({
 Quote.inputs = [
   {
     name: 'text',
+    friendlyName: 'quote',
     type: 'longText',
     defaultValue: 'Quote from this person...',
     required: true
   },
-  // {
-  //   name: 'name',
-  //   type: 'text',
-  //   defaultValue: 'Person Name',
-  // },
-  // {
-  //   name: 'title',
-  //   type: 'text',
-  //   defaultValue: 'Title',
-  // },
-  // {
-  //   name: 'company',
-  //   type: 'text',
-  //   defaultValue: 'Company',
-  // },
 ];

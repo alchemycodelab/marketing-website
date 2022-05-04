@@ -1,0 +1,9 @@
+.ArticleQuote {
+  padding: var(--primary-margin);
+
+  .Container {
+    @media (min-width: 700px) {
+      width: var(--golden-split-big);
+    }
+  }
+}
