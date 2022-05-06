@@ -24,6 +24,7 @@ import ArticleHero from '../components/Article/ArticleHero';
 import ArticleContent from '../components/Article/ArticleContent';
 import ArticleImage from '../components/Article/ArticleImage';
 import ArticleQuote from '../components/Article/ArticleQuote';
+import ArticleList from '../components/Article/ArticleList';
 
 export default function registerComponents(Builder) {
 
@@ -57,4 +58,5 @@ export default function registerComponents(Builder) {
   register(ArticleContent);
   register(ArticleImage);
   register(ArticleQuote);
+  register(ArticleList);
 }

@@ -1,3 +1,6 @@
 {
-  "liveServer.settings.multiRootWorkspaceName": "dist"
+  "liveServer.settings.multiRootWorkspaceName": "dist",
+  "cSpell.words": [
+    "Cloudinary"
+  ]
 }

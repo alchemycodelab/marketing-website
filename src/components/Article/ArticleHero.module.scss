@@ -1,7 +1,6 @@
 .ArticleHero {
   padding: var(--primary-margin);
-  padding-top: calc(var(--primary-margin) * 1.5);
-  padding-bottom: calc(var(--primary-margin) * .75);
+  padding-bottom: calc(var(--primary-margin) * .5);
 
   .Content {
     .Date:not(:last-child) {

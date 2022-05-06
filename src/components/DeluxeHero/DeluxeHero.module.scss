@@ -33,16 +33,12 @@
         }
     }
 
-    .PrimaryExpressiveHeader {
+    .Headline {
         grid-area: headline;
         align-self: end;
 
         padding: var(--primary-margin);
         padding-top: calc(1.5 * var(--primary-margin));
-
-        font-family: "Newzald Black";
-        font-size: calc(42.51px + ( var(--scale) * 47.49));
-        line-height: calc(43.07px + ( var(--scale) * 60.93));
     }
 
     .HeroLead {

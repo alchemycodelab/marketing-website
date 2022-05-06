@@ -2,7 +2,7 @@
 import pkg from '@builder.io/react';
 import registerComponents from '../../builder/register-components.js';
 import Page from '../../layouts/page.astro';
-import { builderArticle } from '../../builder/services.js';
+import { getArticle } from '../../builder/services.js';
 import { builderPages } from '../../builder/getStaticPaths.js';
 import getArticlePaths from '../../builder/getArticlePaths.js';
 import { KEY, ARTICLE_MODEL } from '../../builder/constants.js';
@@ -15,13 +15,23 @@ registerComponents(Builder);
 const getPages = builderPages(builder);
 
 const url = new URL(Astro.request.url);
-const getArticle = builderArticle(builder);
+const slug = url.pathname.split('/').pop();
 const [article, pages] = await Promise.all([
-	getArticle(url.pathname),
+	getArticle(slug),
 	getPages(),
 ]);
 
 ---
 <Page pages={pages} page={article}>
 	<BuilderComponent model={ARTICLE_MODEL} content={article} />
+	<CenteredContent
+		theme="pink"
+		content={{
+			cta: {
+				theme: 'peach',
+				text: 'Back to News & Events',
+				url: '/news-events',
+			}
+		}}
+	/>
 </Page>

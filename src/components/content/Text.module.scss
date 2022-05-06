@@ -16,6 +16,41 @@
   line-height: calc(15.36px + ( var(--scale) * 4.64));
 }
 
+.Jumbo {
+  font-size: calc(42.51px + ( var(--scale) * 47.49));
+  line-height: calc(43.07px + ( var(--scale) * 60.93));
+}
+
+.Primary {
+  font-size: calc(37.65px + ( var(--scale) * 26.35));
+  line-height: calc(41.54px + ( var(--scale) * 34.46));
+}
+
+.Secondary {
+  font-size: calc(22.25px + ( var(--scale) * 22.75));
+  line-height: calc(27.45px + ( var(--scale) * 28.55));
+}
+
+.Tertiary {
+  font-size: calc(19.41px + ( var(--scale) * 14.59));
+  line-height: calc(23.09px + ( var(--scale) * 16.91));
+}
+
+.ExpressiveHeader {
+  font-family: "Newzald Black";
+  &.Soft {
+    font-family: "Newzald Book";
+  }
+}
+
+.InformativeHeader {
+  font-family: "National Bold";  
+  &.Soft {
+    font-family: "National Book";
+  }
+}
+
+
 .PrimaryExpressiveHeader {
   font-family: "Newzald Black";
   font-size: calc(37.65px + ( var(--scale) * 26.35));

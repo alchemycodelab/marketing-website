@@ -1,0 +1,64 @@
+.Articles {
+
+  .Header {
+
+  }
+  
+  .ArticleList {
+  }
+  
+  
+  .ArticleItem {
+    text-decoration: none;
+    cursor: pointer;
+    color: inherit;
+
+    @media (min-width: 700px) {
+      padding-left: var(--primary-margin);
+    }
+
+    
+    &.AltBackground {
+      // background: var(--black-20);
+    }
+
+    &:hover {
+      background: var(--pink);
+    }
+
+    display: grid;
+    grid-template-columns: minmax(100px, 15%) 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: 
+      'preview content'
+    ;
+    
+
+    .Content {
+      grid-area: content;
+      padding-bottom: calc(var(--primary-margin) * .6);
+      padding-right: var(--primary-margin);
+      padding-left: calc(var(--primary-margin) * .5);
+      padding-top: calc(var(--primary-margin) * .6);
+
+      max-width: 900px;
+
+      border-top-width: 1px;
+      border-top-style: solid;
+
+      .Date {
+        margin-top: calc(var(--primary-margin) * .25);
+      }
+      .Description {
+        margin-top: calc(var(--primary-margin) * .25);
+      }
+    }
+
+    .Preview {
+      grid-area: preview;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+  }
+
+}

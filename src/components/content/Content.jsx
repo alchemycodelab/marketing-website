@@ -13,7 +13,6 @@ import styles from './Content.module.scss';
 export function Content({
   content = {},
   className: customClassName = '',
-  isExpressive = false,
   isPrimary = false,
 }) {
 
@@ -37,10 +36,9 @@ export function Content({
 
       {headline && <Headline 
         as={isPrimary ? 'h1' : 'h2'} 
-        text={headline} 
-        isPrimary={isPrimary} 
-        isExpressive={isExpressive} 
+        size={isPrimary ? 'primary' : 'secondary'}
         isSoft={softHeadline} 
+        text={headline} 
       />}
 
       {lead && <Lead text={lead} />}

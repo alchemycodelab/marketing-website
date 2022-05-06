@@ -31,7 +31,11 @@ function getRichText(baseClass, propName, BaseTag = 'p') {
     // include the friendly class so consuming components
     // can customize the styles by targeting it
     // TODO: reconsider whether is this a good idea?
-    const className = classNames(baseClass, styles[baseClass], customClass);
+    const className = classNames(
+      baseClass, 
+      customClass, 
+      { [styles[baseClass]]: styles[baseClass] }
+    );
 
     return (
       <Tag
@@ -52,9 +56,32 @@ function getRichText(baseClass, propName, BaseTag = 'p') {
   return RichText;
 }
 
-export function Headline({ isPrimary, isSoft, className: customClassName, ...props }) {
-  const Header = isPrimary ? PrimaryExpressiveHeader : SecondaryInformativeHeader;
-  const className = classNames(customClassName, { 'soft-header': isSoft });
+const SIZE = {
+  jumbo: styles.Jumbo,
+  primary: styles.Primary,
+  secondary: styles.Secondary,
+  tertiary: styles.Tertiary
+};
+const sizeDefault = styles.Secondary;
+
+const STYLE = {
+  expressive: styles.ExpressiveHeader,
+  informative: styles.InformativeHeader,
+};
+
+const Header = getRichText(null, 'Headline');
+
+export function Headline({ size, style, isSoft, className: customClassName, ...props }) {
+  const fontSize = SIZE[size] || sizeDefault;
+  const fontStyle = STYLE[style] || ((size === 'primary' || size === 'jumbo') ? STYLE.expressive : STYLE.informative)
+  
+  const className = classNames(
+    customClassName,
+    fontSize,
+    fontStyle, 
+    { [styles.Soft]: isSoft }
+  );
+
   return <Header className={className} {...props} />;
 }
 

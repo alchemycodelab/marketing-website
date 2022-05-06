@@ -1,4 +1,3 @@
-import { useState, useEffect } from 'react';
 import Section from '../common/Section';
 import CohortBox from './CohortBox';
 import { Content } from '../content/Content';

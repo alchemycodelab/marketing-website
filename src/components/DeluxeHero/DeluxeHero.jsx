@@ -1,5 +1,5 @@
 import Section from '../common/Section';
-import { PrimaryExpressiveHeader, Lead } from '../content/Text';
+import { Headline, Lead } from '../content/Text';
 import Image from '../common/Image';
 import { themes } from '../../styles/themes.js';
 import classNames from 'classnames';
@@ -15,9 +15,11 @@ export default function DeluxeHero({ image, headline, lead, leadTheme, ...rest }
         <Image image={image} maxWidth={890}/>
       </div>
 
-      <PrimaryExpressiveHeader
+      <Headline
+        className={styles.Headline}
+        size="jumbo"
+        style="expressive"
         text={headline}
-        className={styles.PrimaryExpressiveHeader}
       />
 
       <Lead className={classNames(styles.HeroLead, leadTheme)} text={lead} />
@@ -37,7 +39,7 @@ DeluxeHero.config = {
       defaultValue: 'peach',
       enum: themes
     },
-    PrimaryExpressiveHeader.input,
+    Headline.input,
     Lead.input,
     ...Image.inputs,
   ]

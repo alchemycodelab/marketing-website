@@ -11,11 +11,6 @@ export const builderPage = builder => async url => {
   return page || null;
 }
 
-export const builderArticle = builder => async url => {
-  const article = await builder.get(ARTICLE_MODEL, { url }).promise();
-  return article || null;
-}
-
 async function get(url) {
   const response = await fetch(url);
   const body = await response.json();
@@ -53,5 +48,24 @@ export async function getFAQs() {
   }
 
   return [...categoryMap.entries()].map(([topic, faqs]) => ({ topic, faqs }));
+}
+
+
+const ARTICLES_OPTIONS = '&limit=0' +
+  '&fields=data.url,data.title,data.description,data.timestamp,data.imageUrl' +
+  '&sort.data.timestamp=-1';
+const ARTICLES_URL = `${getModelUrl(ARTICLE_MODEL)}${ARTICLES_OPTIONS}`;
+
+export async function getArticles() {
+  const results = await get(ARTICLES_URL);
+  return results.map(({ data }) => data);
+}
+
+const ARTICLE_OPTIONS = '&limit=1&query.data.url=';
+const ARTICLE_URL = `${getModelUrl(ARTICLE_MODEL)}${ARTICLE_OPTIONS}`;
+
+export async function getArticle(url) {
+  const [article] = await get(ARTICLE_URL + url);
+  return article || null;
 }
 

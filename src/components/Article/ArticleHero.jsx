@@ -5,7 +5,7 @@ import {
   Lead,
 } from '../content/Text';
 import classNames from 'classnames';
-import { isEmpty } from '../format.js';
+import { isEmpty, timestampToFullDate } from '../format.js';
 import Section from '../common/Section';
 import styles from './ArticleHero.module.scss';
 
@@ -17,7 +17,7 @@ export default function ArticleHero({
 }) {
   const { data } = builderState.content;
   const { title, timestamp, description } = data;
-  const date = new Date(timestamp).toLocaleDateString('en-US', { dateStyle: 'full' });
+  const date = timestampToFullDate(timestamp);
   const articleLead = isEmpty(lead) ? description : lead;
   
   return (
@@ -30,8 +30,8 @@ export default function ArticleHero({
 
         {title && <Headline 
           as="h1" 
+          size="primary" 
           text={title} 
-          isPrimary={true} 
         />}
 
         {date && <RichText

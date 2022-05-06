@@ -2,10 +2,11 @@
 import { builder } from '@builder.io/react';
 import { builderPages } from '../../builder/getStaticPaths.js';
 import getArticlePaths from '../../builder/getArticlePaths.js';
-import { builderArticle } from '../../builder/services.js';
+import { getArticle } from '../../builder/services.js';
 import { KEY, ARTICLE_MODEL } from '../../builder/constants.js';
 
 import CMS from '../../builder/CMS.jsx';
+import CenteredContent from '../../components/CenteredContent/CenteredContent.jsx';
 import Page from '../../layouts/page.astro';
 
 export const getStaticPaths = getArticlePaths;
@@ -14,13 +15,25 @@ builder.init(KEY);
 const getPages = builderPages(builder);
 
 const url = new URL(Astro.request.url);
-const getArticle = builderArticle(builder);
+const slug = url.pathname.split('/').pop();
 const [article, pages] = await Promise.all([
-	getArticle(url.pathname),
+	getArticle(slug),
 	getPages(),
 ]);
+
+// TODO: send 404 on no article
 
 ---
 <Page pages={pages} page={article}>
 	<CMS page={article} model={ARTICLE_MODEL} client:load/>
+	<CenteredContent
+		theme="pink"
+		content={{
+			cta: {
+				theme: 'peach',
+				text: 'Back to News & Events',
+				url: '/news-events',
+			}
+		}}
+	/>
 </Page>

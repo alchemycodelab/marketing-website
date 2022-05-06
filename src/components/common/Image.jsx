@@ -1,7 +1,6 @@
-import styles from './Image.module.scss';
 import classNames from 'classnames';
-
-const isCloudinary = url => !!(url?.startsWith('https://res.cloudinary.com/alchemy-code-lab'));
+import { sizeImageUrl } from '../format.js';
+import styles from './Image.module.scss';
 
 export default function Image({ 
   image = {} , 
@@ -14,13 +13,7 @@ export default function Image({
     fitVertical = 'top',
   } = image;
 
-  let { url } = image;
-
-  if(maxWidth && isCloudinary(url)) {
-    const split = '/image/upload/';
-    const [lead, trail] = url.split(split);
-    url = `${lead}${split}c_fill,w_${maxWidth}/${trail}`;
-  }
+  const url = sizeImageUrl(image.url, maxWidth);
 
   return (
     <img 
