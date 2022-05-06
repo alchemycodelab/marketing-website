@@ -1,6 +1,7 @@
 ---
 import pkg from '@builder.io/react';
 import registerComponents from '../../builder/register-components.js';
+import CenteredContent from '../../components/CenteredContent/CenteredContent.jsx';
 import Page from '../../layouts/page.astro';
 import { getArticle } from '../../builder/services.js';
 import { builderPages } from '../../builder/getStaticPaths.js';
@@ -15,7 +16,13 @@ registerComponents(Builder);
 const getPages = builderPages(builder);
 
 const url = new URL(Astro.request.url);
-const slug = url.pathname.split('/').pop();
+const slug = url
+	.pathname
+	.replace(/\/$/, '')
+	.split('/')
+	// .at(-1) // check node version for netlify first
+	.pop();
+
 const [article, pages] = await Promise.all([
 	getArticle(slug),
 	getPages(),

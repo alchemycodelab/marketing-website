@@ -6,9 +6,8 @@ import '../styles/globals.css';
 import '../styles/typography.css';
 import '../styles/color.css';
 
-const { page, pages } = Astro.props;
-const { title, description, imageUrl, canonicalLink } = page.data;
-
+const { page = {}, pages } = Astro.props;
+const { title, description, imageUrl, canonicalLink } = (page || {}).data || {};
 ---
 
 <html lang="en">

@@ -15,7 +15,13 @@ builder.init(KEY);
 const getPages = builderPages(builder);
 
 const url = new URL(Astro.request.url);
-const slug = url.pathname.split('/').pop();
+const slug = url
+	.pathname
+	.replace(/\/$/, '')
+	.split('/')
+	// .at(-1) // check node version for netlify first
+	.pop();
+	
 const [article, pages] = await Promise.all([
 	getArticle(slug),
 	getPages(),
