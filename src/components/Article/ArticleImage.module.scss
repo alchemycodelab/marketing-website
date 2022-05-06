@@ -11,6 +11,9 @@
   .caption {
     margin-top: var(--vertical-margin-base);
     margin-bottom: calc(12px + var(--vertical-margin-base));
+    @media (min-width: 700px) {
+      width: var(--golden-split-big);
+    }
   }
   
   .Image {
