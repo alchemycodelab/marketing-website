@@ -37,6 +37,8 @@
 
       img {
         height: 100%;
+        /* fixes ipad safari bug */
+        min-height: 100%;  
         width: 100%;
         object-fit: contain;
       }
