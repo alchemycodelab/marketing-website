@@ -28,8 +28,8 @@
     @media (min-width: 700px) {
         grid-template-columns: var(--first-column-width) var(--second-column-width);
 
-        --first-column-width: 50vw;
-        --second-column-width: 50vw;
+        --first-column-width: calc(var(--section-width) * .5);
+        --second-column-width: calc(var(--section-width) * .5);
 
         &.onlyGoldenSplit {
             --first-column-width: calc(var(--section-width) * var(--golden-split-small-calc));
