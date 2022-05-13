@@ -1,15 +1,11 @@
 .Schedules {
-  --min-height: 500px;
-  --ideal-height: calc(100vh - var(--header-height));
-  --max-height: 1258px;
-  --height: clamp(var(--min-height), var(--ideal-height), var(--max-height));
-
+  
   --narrow-image-height: 60vw;
 
-  grid-template-rows: var(--narrow-image-height) calc(var(--height) * 0.9);
+  grid-template-rows: var(--narrow-image-height) auto;
 
   @media (min-width: 700px) {
-    grid-template-rows: var(--height);
+    grid-template-rows: auto;
   }
 
   .leftContainer {
@@ -48,14 +44,12 @@
 
     --gap: 28px;
 
-
-
     .ScheduleContainer {
       grid-area: schedule;
       visibility: hidden;
       overflow: auto;
 
-      padding-top: var(--gap);
+      // padding-top: var(--gap);
       padding-bottom: calc(var(--primary-margin) * 0.75);
 
       @media (min-width: 700px) {
@@ -68,30 +62,7 @@
       }
     }
 
-    .fadeoutCurtain {
-      grid-column: 1;
-      position: absolute;
-      left: 0;
-      right: 0;
-      pointer-events: none;
 
-      @media (min-width: 700px) {
-        left: var(--primary-margin);
-        right: var(--primary-margin);
-      }
-
-      &.top {
-        top: 0;
-        height: calc(var(--gap) * 1.6);
-        background: linear-gradient(white 25%, transparent 100%);
-      }
-
-      &.bottom {
-        bottom: 0;
-        height: calc(var(--primary-margin) * 1.3);
-        background: linear-gradient(transparent 0%, white 65%);
-      }
-    }
   }
 }
 
@@ -110,14 +81,14 @@
     }
   }
 
-  img {
-    height: var(--narrow-image-height);
-  }
+  // img {
+  //   height: var(--narrow-image-height);
+  // }
 
   @media (min-width: 700px) {
     padding: var(--primary-margin) 0;
-    img {
-      height: calc(var(--height) - (var(--primary-margin) * 2));
-    }
+    // img {
+    //   height: calc(var(--height) - (var(--primary-margin) * 2));
+    // }
   }
 }

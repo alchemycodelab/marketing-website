@@ -29,7 +29,7 @@ export default function Schedules({
       theme={theme}
       {...rest}
       className={className}
-      split="half"
+      split="golden-reverse"
       leftChildren={
         <Left
           content={content}
@@ -94,19 +94,6 @@ function Left({ content, schedules, theme, accentTheme }) {
 
         })}
 
-        <div
-          className={classNames(styles.fadeoutCurtain, styles.top)}
-          style={{
-            background: `linear-gradient(var(--${theme}) 25%, transparent 100%)`
-          }}
-        />
-
-        <div
-          className={classNames(styles.fadeoutCurtain, styles.bottom)}
-          style={{
-            background: `linear-gradient(transparent 0%, var(--${theme}) 65%)`
-          }}
-        />
       </div>
 
 
