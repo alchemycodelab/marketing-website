@@ -1,11 +1,26 @@
+/* Nesting these classes messes up astro css bundling */
+
+.Tag {
+    position: relative;
+}
+
+.Id {
+    position: absolute;
+    top: calc(var(--header-height) * -1); 
+    visibility: hidden;  
+}
+
 .Section { 
     max-width: var(--max-section-width);
     margin-left: auto;
     margin-right: auto;
     height: fit-content;
-    // overflow-x: clip;
 
+    /* I think the reason for this is to "cascade"
+    the theme border-color. Maybe would be better to 
+    create a theme sub-class like we do for text-accent,
+    like a border-accent class. */
     &, * {
         border-color: inherit;
     }
-}
+} 
