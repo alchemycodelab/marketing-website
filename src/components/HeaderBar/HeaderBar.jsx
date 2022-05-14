@@ -30,7 +30,8 @@ export default function HeaderBar({ pages, page }) {
       <a href="#apply" className={classNames(styles.apply, 'cta', 'gold')}>
         <span>Apply</span>!
       </a>
-
+      
+      {/* Not sure why "menu-button" id here */}
       <button id="menu-button" className={classNames(styles.menu, 'black', 'trigger-script')}>
         <span></span>
         <SlideOut pages={pages} currentPage={page} />

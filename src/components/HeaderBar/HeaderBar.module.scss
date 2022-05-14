@@ -8,11 +8,6 @@
 
     --duration: 250ms;
 
-    --header-height: 60px;
-    @media (min-width: 1024px) {
-        --header-height: 88px;
-    }
-
     height: var(--header-height);
     padding-left: var(--primary-margin);
 
