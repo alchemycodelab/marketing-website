@@ -13,7 +13,8 @@ import styles from './Content.module.scss';
 export function Content({
   content = {},
   className: customClassName = '',
-  isPrimary = false,
+  size = 'secondary',
+  headlineAs = size === 'primary' ? 'h1' : 'h2',
 }) {
 
   const {
@@ -35,8 +36,8 @@ export function Content({
       />}
 
       {headline && <Headline 
-        as={isPrimary ? 'h1' : 'h2'} 
-        size={isPrimary ? 'primary' : 'secondary'}
+        as={headlineAs} 
+        size={size}
         isSoft={softHeadline} 
         text={headline} 
       />}

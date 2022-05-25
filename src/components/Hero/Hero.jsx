@@ -20,7 +20,7 @@ export default function Hero({
       image={image}
     >
       <div className={styles.contentContainer}>
-        <Content content={content} isPrimary={true}/>
+        <Content content={content} size="primary"/>
       </div>
     </ImageTwoColumn>
   );
