@@ -3,7 +3,6 @@ import Section from '../common/Section';
 import { Content } from '../content/Content';
 import classNames from 'classnames';
 import { themes } from '../../styles/themes.js';
-
 import styles from './BaseAccordion.module.scss';
 
 export default function BaseAccordion({
