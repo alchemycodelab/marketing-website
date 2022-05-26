@@ -12,6 +12,11 @@ html {
   overflow: hidden;
 }
 
+/* Builder IO cruft that creates gap */
+img[builder-id^=builder-pixel] {
+  display: none !important;
+}
+
 
 body {
   min-width: var(--min-section-width);
