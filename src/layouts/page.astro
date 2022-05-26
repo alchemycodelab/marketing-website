@@ -6,21 +6,26 @@ import '../styles/globals.css';
 import '../styles/typography.css';
 import '../styles/color.css';
 
+const isProdBuild = import.meta.env.PROD;
+const defaultCanonicalUrl = Astro.canonicalURL.toString();
 const { page = {}, pages } = Astro.props;
 const { title, description, imageUrl, canonicalLink } = (page || {}).data || {};
 ---
 
 <html lang="en">
 	<head>
+		{isProdBuild && <script is:raw>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f); })(window,document,'script','dataLayer','GTM-M86KFS2');</script>}
 		<meta charset="utf-8"/>
 		<meta name="viewport" content="width=device-width"/>
 		<link rel="icon" type="image/x-icon" href="/images/alchemy-favicon.png"/>
 		<title>{title || 'Alchemy Code Lab'}</title>
 		{description && <meta name="description" content={description} />}
 		{imageUrl && <meta name="og:image" content={imageUrl} />}
-		{canonicalLink && <link rel="canonical" href={canonicalLink} />}
+		<link rel="canonical" href={canonicalLink || defaultCanonicalUrl} />
 	</head>
 	<body>
+		{isProdBuild && <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M86KFS2" height="0" width="0" style="display:none;visibility:hidden"></iframe>}
+		
 		<HeaderBar pages={pages} page={page}/>
 
 		<main>		

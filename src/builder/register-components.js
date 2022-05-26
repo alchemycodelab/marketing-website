@@ -27,12 +27,11 @@ import ArticleQuote from '../components/Article/ArticleQuote';
 import ArticleList from '../components/Article/ArticleList';
 
 export default function registerComponents(Builder) {
-  const isProd = process.env.NODE_ENV === 'production';
 
   function register(Component) {
     const config = {
       ...Component.config,
-      ...(isProd ? { noWrap: true } : {})
+      ...(import.meta.env.PROD ? { noWrap: true } : {})
     };
     Builder.registerComponent(Component, config);
   }
