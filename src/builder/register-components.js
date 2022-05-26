@@ -27,9 +27,14 @@ import ArticleQuote from '../components/Article/ArticleQuote';
 import ArticleList from '../components/Article/ArticleList';
 
 export default function registerComponents(Builder) {
+  const isProd = process.env.NODE_ENV === 'production';
 
   function register(Component) {
-    Builder.registerComponent(Component, Component.config || {});
+    const config = {
+      ...Component.config,
+      ...(isProd ? { noWrap: true } : {})
+    };
+    Builder.registerComponent(Component, config);
   }
 
   register(DeluxeHero);
