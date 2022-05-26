@@ -7,11 +7,12 @@ export const builderPages = builder => async () => {
     limit: 1000,
     options: {
       noTargeting: true,
+      includeUnpublished: import.meta.env.DEV,
     },
   });
 
   return resp.map(item => item.data);
-}
+};
 
 export default async function getStaticPaths() {
   builder.init(KEY);
