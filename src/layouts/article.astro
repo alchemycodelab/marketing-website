@@ -1,0 +1,23 @@
+---
+import Page from './page.astro';
+import CenteredContent from '../components/CenteredContent/CenteredContent.jsx';
+
+const { page = {}, pages } = Astro.props;
+
+---
+<Page pages={pages} page={page}>
+	<slot/>
+	<CenteredContent
+		theme="pink"
+		leftAlign={true}
+		content={{
+			cta: {
+				theme: 'peach',
+				text: '<- Back to News & Events',
+				noArrow: true,
+				type: 'secondary',
+				url: '/news-events',
+			}
+		}}
+	/>
+</Page>

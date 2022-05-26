@@ -36,7 +36,7 @@ export function ArticleList({
               <li key={url}>
                 <a 
                   className={className}
-                  href={`/blog/${url}`}
+                  href={`/news-events/${url}`}
                 >
                   <div className={styles.Content}>
                     <Headline 

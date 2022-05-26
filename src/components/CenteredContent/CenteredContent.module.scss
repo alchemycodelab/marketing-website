@@ -11,11 +11,13 @@
   }
 
   @media (min-width: 700px) {
+    &:not(.LeftAlign) {
     --inset-padding: calc( 130px + ( var(--scale) * 170 ) );
     padding-left: var(--inset-padding);
     padding-right: var(--inset-padding);
 
-    text-align: center;
+      text-align: center;
+    }
   }
 
 
