@@ -8,3 +8,5 @@ Change log
 ## 06/01/2022
 - Created 404 and application submitted pages
 
+## 06/06/2022
+- Trying to get new articles to publish. Not loading in editor.
