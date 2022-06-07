@@ -29,6 +29,8 @@ export default function CohortBox({ cohort }) {
         type="secondary" 
         theme="blue-dark"
         text="Apply Now" 
+        url="https://office.alchemycodelab.com/apply.html"
+        target="_blank"
         className={styles.cta} 
         linkClassName={styles.ctaLink}
       /> 

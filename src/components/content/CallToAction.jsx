@@ -7,6 +7,7 @@ export default function CallToAction({
   url = '', 
   type = 'primary', 
   noArrow = false,
+  openNew = false,
   className: customClassName = '',
   linkClassName: customLinkClassName = '',
 }) {
@@ -30,10 +31,14 @@ export default function CallToAction({
 
   // the builder editor can leave empty objects
   if (!theme && !text && !url) return null;
+  
+  // TODO: this is only used for apply right now. need to add norel, etc. if external
+  // eslint-disable-next-line react/jsx-no-target-blank
+  const target = openNew ? '_blank' : '';
 
   return (
     <p className={className}>
-      <a href={url} className={linkClassName}>
+      <a href={url} className={linkClassName} target={target}>
         <span className={textClassName}>{text}</span>
       </a>
     </p>

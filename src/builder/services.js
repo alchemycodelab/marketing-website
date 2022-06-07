@@ -9,7 +9,7 @@ import {
 export const builderPage = builder => async url => {
   const page = await builder.get(PAGE_MODEL, { url }).promise();
   return page || null;
-}
+};
 
 async function get(url) {
   const response = await fetch(url);

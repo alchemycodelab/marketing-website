@@ -1,5 +1,5 @@
 import Section from '../common/Section';
-import ImageContent from '../ImageContent/ImageContent.jsx';
+import ImageContent from '../Image/ImageContent.jsx';
 import Accordion from '../Accordion/Accordion';
 import styles from './Scholarships.module.scss';
 

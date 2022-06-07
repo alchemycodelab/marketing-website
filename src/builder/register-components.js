@@ -6,7 +6,8 @@ import MediaCarousel from '../components/QuotesCarousel/MediaCarousel.jsx';
 import IllustrativeExplainer from '../components/IllustrativeExplainer/IllustrativeExplainer.jsx';
 import StatsDisplay from '../components/QuadStats/StatsDisplay.jsx';
 import FramedQuotesCarousel from '../components/QuotesCarousel/FramedQuotesCarousel.jsx';
-import ImageContent from '../components/ImageContent/ImageContent.jsx';
+import ImageContent from '../components/Image/ImageContent.jsx';
+import FullImage from '../components/Image/FullImage';
 import Accordion from '../components/Accordion/Accordion.jsx';
 import DeluxeAccordion from '../components/Accordion/DeluxeAccordion.jsx';
 import CenteredContent from '../components/CenteredContent/CenteredContent.jsx';
@@ -44,6 +45,7 @@ export default function registerComponents(Builder) {
   register(StatsDisplay);
   register(FramedQuotesCarousel);
   register(ImageContent);
+  register(FullImage);
   register(Hero);
   register(Accordion);
   register(CenteredContent);
