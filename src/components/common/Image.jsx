@@ -3,7 +3,7 @@ import { sizeImageUrl } from '../format.js';
 import styles from './Image.module.scss';
 
 export default function Image({ 
-  image = {} , 
+  image = {}, 
   maxWidth = 0,
   className = '', 
 }) {

@@ -9,7 +9,7 @@ export default function FullImage({
 }) {
 
   const heightStyle = height ? { height } : null;
-
+  
   return (
     <Section {...rest} className={styles.FullImage}>
       <div className={styles.container} style={heightStyle}>
