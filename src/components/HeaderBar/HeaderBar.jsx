@@ -27,7 +27,10 @@ export default function HeaderBar({ pages, page }) {
         <Navigation pages={pages} currentPage={page} />
       </div>
 
-      <a href="#apply" className={classNames(styles.apply, 'cta', 'gold')}>
+      <a href="office.alchemycodelab.com/apply.html"
+        target="_blank" 
+        className={classNames(styles.apply, 'cta', 'gold')}
+      >
         <span>Apply</span>!
       </a>
       
