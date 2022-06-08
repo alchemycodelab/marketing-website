@@ -13,3 +13,4 @@ Change log
 
 ## 06/08/2022
 - Remove extra space in Outcome page header
+- Fix Program Curriculum Pillar headers
