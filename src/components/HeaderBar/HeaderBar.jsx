@@ -27,7 +27,8 @@ export default function HeaderBar({ pages, page }) {
         <Navigation pages={pages} currentPage={page} />
       </div>
 
-      <a href="office.alchemycodelab.com/apply.html"
+      {/* eslint-disable-next-line react/jsx-no-target-blank */}
+      <a href="https://office.alchemycodelab.com/apply.html"
         target="_blank" 
         className={classNames(styles.apply, 'cta', 'gold')}
       >
