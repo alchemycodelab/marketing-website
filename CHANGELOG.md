@@ -10,3 +10,6 @@ Change log
 
 ## 06/06/2022
 - Trying to get new articles to publish. Not loading in editor.
+
+## 06/08/2022
+- Remove extra space in Outcome page header
