@@ -17,3 +17,6 @@ Change log
 
 ## 06/08/2022
 - Trying to get new "25 Week Program" page to create for Google Ads
+## 06/10/2022
+- Added logos for certifications
+- updated titles for former staff featured
