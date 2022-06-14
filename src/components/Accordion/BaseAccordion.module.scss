@@ -34,8 +34,9 @@
     grid-column: 2;
     place-self: stretch;
 
-    padding-left: calc(var(--primary-margin) + 25.6px);
-    padding-right: calc(var(--primary-margin) + 6.4px);
+
+    padding-right: var(--primary-margin);
+    padding-left: var(--primary-margin);
 
     @media (max-width: 699px) {
       max-height: 0px;
@@ -44,8 +45,6 @@
     }
 
     @media (min-width: 700px) {
-      padding-right: var(--primary-margin);
-      padding-left: var(--primary-margin);
       padding-top: calc(var(--primary-margin) / 2.5);
       padding-bottom: 0;
       visibility: hidden;
@@ -55,7 +54,7 @@
       @media (max-width: 699px) {
         padding-top: var(--primary-margin);
         padding-bottom: var(--primary-margin);
-        max-height: 400px;
+        max-height: 600px;
 
         &:last-of-type {
           padding-bottom: 0;
