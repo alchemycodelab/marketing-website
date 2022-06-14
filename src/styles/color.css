@@ -25,6 +25,10 @@
   --white-transparent-30: #fffcfa4d;
 }
 
+a {
+  color: var(--black-65);
+}
+
 /*** Pink ***/
 
 /* pink */
@@ -279,11 +283,11 @@
 }
 
 .white-text {
-color: var(--white);
+  color: var(--white);
 }
 
 .white-background, .white-active.active {
-background: var(--white);
+  background: var(--white);
 }
 
 
