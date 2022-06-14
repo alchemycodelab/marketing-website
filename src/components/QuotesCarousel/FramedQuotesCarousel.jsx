@@ -9,17 +9,19 @@ export default function FramedQuotesCarousel({
   quotesCarousel, 
   theme,
   overlayTheme = 'peach',
-  ...rest 
+  suppressContent = false, 
 }) {
 
   return (
     <>
       <section className={classNames(styles.FramedQuotesCarousel)}>
+        {!suppressContent &&
         <div className={classNames(styles.contentContainer, theme)}>
           <div className={styles.contentWidth}>
             <Content content={content} />
           </div>
         </div>
+        }
         <div className={styles.carouselContainer}>
           <QuotesCarousel {...quotesCarousel} />
         </div>
@@ -45,6 +47,11 @@ FramedQuotesCarousel.config = {
       type: 'text',
       defaultValue: 'peach',
       enum: themes
+    },
+    {
+      name: 'suppressContent',
+      type: 'boolean',
+      advanced: true,
     },
     ...Content.inputs,
     {
