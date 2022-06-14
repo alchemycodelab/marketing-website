@@ -3,7 +3,10 @@
     grid-template-rows: minmax(auto, 60vh);
 
     @media (min-width: 700px) {
-        grid-template-rows: clamp(312px, 100vw, 80vh);
+        grid-template-rows: auto; 
+    }
+    @media (min-width: 700px) and (min-height: 850px) {
+        grid-template-rows: clamp(312px, 100vw, 65vh);
     }
 
     > .contentContainer {
