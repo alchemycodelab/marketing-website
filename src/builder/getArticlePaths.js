@@ -10,6 +10,7 @@ export default async function getArticlePaths() {
     limit: 1000,
     options: {
       noTargeting: true,
+      includeUnpublished: import.meta.env.DEV,
     },
   });
 
