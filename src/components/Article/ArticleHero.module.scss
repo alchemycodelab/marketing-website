@@ -1,14 +1,15 @@
 .ArticleHero {
   padding: var(--primary-margin);
-  padding-bottom: calc(var(--primary-margin) * .5);
+  padding-bottom: calc(var(--primary-margin) * .75);
 
   .Content {
     .Date:not(:last-child) {
-      margin-bottom: calc(12px + var(--vertical-margin-base));
+      margin-top: calc(.7 * var(--primary-margin));
+      margin-bottom: calc(.45 * var(--primary-margin));
     }
 
     .Wayfinder {
-      margin-bottom: calc(4.5px + var(--vertical-margin-base));
+      margin-bottom: calc(.05 * var(--primary-margin));
     }
 
     @media (min-width: 700px) {

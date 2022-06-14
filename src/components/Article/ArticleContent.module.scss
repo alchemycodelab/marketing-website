@@ -1,6 +1,7 @@
 .ArticleContent {
   padding: 0 var(--primary-margin);
-  padding-top: calc(12px + var(--vertical-margin-base));
+  padding-top: calc(.75 * var(--primary-margin));
+  padding-bottom: calc(.25 * var(--primary-margin));
 
   &.bottomPadding {
     padding-bottom: var(--primary-margin);
@@ -18,8 +19,11 @@
       margin-bottom: calc(12px + var(--vertical-margin-base));
     }
 
+    h2:not(:first-child), h3:not(:first-child), h4:not(:first-child) {
+      margin-top: calc(30px + var(--vertical-margin-base));
+    }
     h2, h3, h4 {
-      margin-bottom: calc(8px + var(--vertical-margin-base));
+      margin-bottom: calc(10px + var(--vertical-margin-base));
     }
   }
 }
