@@ -1,6 +1,6 @@
 .Hero { 
 
-    grid-template-rows: minmax(auto, 60vh);
+    grid-template-rows: 50vh auto;
 
     @media (min-width: 700px) {
         grid-template-rows: auto; 
