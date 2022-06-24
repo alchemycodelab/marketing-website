@@ -45,9 +45,14 @@ export default function Footer({ pages, page: currentPage }) {
       <section className={classNames(styles.copyright)}>
         <p>© Copyright 2022, Alchemy Code Lab</p>
 
-        <a href="#privacypolicy">
-          <span>Privacy Policy</span>
-        </a>
+        <p className={styles.policy}>
+          <a href="/privacy-policy">
+            <span>Privacy Policy</span>
+          </a>
+          <a href="/cookie-policy">
+            <span>Cookie Policy</span>
+          </a>
+        </p>
       </section>
 
     </Section>

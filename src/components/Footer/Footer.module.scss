@@ -45,6 +45,11 @@
     text-decoration: none;
     writing-mode: horizontal-tb;
   }
+
+  .policy {
+    display: flex;
+    gap: 10px;
+  }
   
   .logo {
     grid-area: logo;
@@ -73,6 +78,10 @@
 
   .copyright {
     grid-area: copyright;
+
+    p:not(:last-child) {
+      margin-bottom: calc(var(--intra-text-margin) * .5);
+    } 
   }
 
 }
