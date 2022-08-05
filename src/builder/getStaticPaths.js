@@ -4,7 +4,7 @@ import { KEY, PAGE_MODEL } from './constants.js';
 export const builderPages = (builder) => async () => {
   const resp = await builder.getAll(PAGE_MODEL, {
     fields:
-      'name, data.url,data.navigation,data.title,data.description,data.noIndex,data.canonicalLink',
+      'name,data.url,data.navigation,data.title,data.description,data.noIndex,data.canonicalLink',
     limit: 1000,
     options: {
       noTargeting: true,
