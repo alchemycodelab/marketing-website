@@ -1,31 +1,30 @@
 .AlchemyDifference {
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    margin-top: 100px;
 
-    ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        margin-top: 100px;
-        
-        li {
-            &:not(:last-child) {   
-                margin-bottom: calc(16px + ( var(--scale) * 8));
-            }
+    li {
+      &:not(:last-child) {
+        margin-bottom: calc(16px + (var(--scale) * 8));
+      }
 
-            color: var(--black-65);
-            cursor: pointer;
-            max-height: calc(18.72px + ( var(--scale) * 9.28));
-            overflow: hidden;
-            transition: all 300ms ease-in;
+      color: var(--black-65);
+      cursor: pointer;
+      max-height: calc(18.72px + (var(--scale) * 9.28));
+      overflow: hidden;
+      transition: all 300ms ease-in;
 
-            :global(.HeaderText) {
-                margin-bottom: calc(8px - ( var(--scale) * 8));
-            }
+      :global(.HeaderText) {
+        margin-bottom: calc(8px - (var(--scale) * 8));
+      }
 
-            &:global(.active) {
-                color: var(--black);
-                max-height: 150px;
-                cursor: default;
-            }
-        }
+      &:global(.active) {
+        color: var(--black);
+        max-height: 200px;
+        cursor: default;
+      }
     }
+  }
 }
