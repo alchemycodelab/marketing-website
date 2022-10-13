@@ -22,7 +22,8 @@ const API_URL = 'https://cdn.builder.io/api/v2/content';
 const API_KEY = `?apiKey=${KEY}`;
 const getModelUrl = model => `${API_URL}/${model}${API_KEY}`;
 
-const COHORT_URL = getModelUrl(COHORT_MODEL);
+const COHORT_OPTIONS = '&sort.data.startDate=1';
+const COHORT_URL = `${getModelUrl(COHORT_MODEL)}${COHORT_OPTIONS}`;
 
 export async function getCohorts() {
   const results = await get(COHORT_URL);
