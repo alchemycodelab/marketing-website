@@ -7,7 +7,7 @@ import '../styles/typography.css';
 import '../styles/color.css';
 
 const isProdBuild = import.meta.env.PROD;
-const defaultCanonicalUrl = Astro.canonicalURL.toString();
+const defaultCanonicalUrl = new URL(Astro.url.pathname, Astro.site).toString();
 const { page = {}, pages } = Astro.props;
 const { title, description, imageUrl, noIndex, canonicalLink } = (page || {}).data || {};
 

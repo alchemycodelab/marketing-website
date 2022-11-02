@@ -1,4 +1,3 @@
-import { useState, useEffect } from 'react';
 import { getFAQs } from '../../builder/services';
 import Section from '../common/Section';
 import FAQs from './FAQs';
@@ -12,18 +11,13 @@ export function FAQCatagories({ categories, ...rest }) {
 
   return (
     <Section {...rest} className={className}>
-      
       <div className={styles.TabsContainer}>
-        <HorizontalTabs tabs={tabs}/>
+        <HorizontalTabs tabs={tabs} />
       </div>
 
       <div className={styles.FAQContainer}>
         {categories.map((category, i) => {
-          const className = classNames(
-            styles.FAQArea, 
-            'target-script', 
-            { active: i === 0 },
-          );
+          const className = classNames(styles.FAQArea, 'target-script', { active: i === 0 });
 
           return (
             <div key={category.topic} className={className}>
@@ -39,12 +33,10 @@ export function FAQCatagories({ categories, ...rest }) {
 const categories = await getFAQs();
 
 export default function FAQCatagoriesContainer(props) {
-  return <FAQCatagories categories={categories} {...props}/>;
+  return <FAQCatagories categories={categories} {...props} />;
 }
 
 FAQCatagoriesContainer.config = {
   name: 'FAQ',
-  inputs: [
-    ...Section.inputs,
-  ]
+  inputs: [...Section.inputs],
 };

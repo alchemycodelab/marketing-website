@@ -1,10 +1,8 @@
 ---
 import pkg from '@builder.io/react';
 import registerComponents from '../../builder/register-components.js';
-import CenteredContent from '../../components/CenteredContent/CenteredContent.jsx';
 import Page from '../../layouts/article.astro';
-import { getArticle } from '../../builder/services.js';
-import { builderPages } from '../../builder/getStaticPaths.js';
+import { getArticle, getPages } from '../../builder/services.js';
 import getArticlePaths from '../../builder/getArticlePaths.js';
 import { KEY, ARTICLE_MODEL } from '../../builder/constants.js';
 
@@ -13,22 +11,20 @@ export const getStaticPaths = getArticlePaths;
 const { builder, Builder, BuilderComponent } = pkg;
 builder.init(KEY);
 registerComponents(Builder);
-const getPages = builderPages(builder);
 
 const url = new URL(Astro.request.url);
-const slug = url
-	.pathname
-	.replace(/\/$/, '')
-	.split('/')
-	// .at(-1) // check node version for netlify first
-	.pop();
+const slug = url.pathname
+  .replace(/\/$/, '')
+  .split('/')
+  // .at(-1) // check node version for netlify first
+  .pop();
 
 const [article, pages] = await Promise.all([
-	getArticle(slug),
-	getPages(),
+  getArticle(slug),
+  getPages(),
 ]);
-
 ---
+
 <Page pages={pages} page={article}>
-	<BuilderComponent model={ARTICLE_MODEL} content={article} />
+  <BuilderComponent model={ARTICLE_MODEL} content={article} />
 </Page>

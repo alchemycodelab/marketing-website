@@ -7,10 +7,7 @@ import styles from './ArticleList.module.scss';
 
 const THEMES = ['blue', 'peach', 'gold'];
 
-export function ArticleList({ 
-  articles = [],
-  ...rest }) {
-
+export function ArticleList({ articles = [], ...rest }) {
   return (
     <div className={styles.Articles}>
       <Section theme="white">
@@ -20,61 +17,69 @@ export function ArticleList({
 
         <ul className={styles.ArticleList}>
           {articles.map((article, index) => {
-            const { url, imageUrl, description, title, timestamp } = article;
+            const { url, imageUrl, description, title, timestamp } =
+              article;
             const date = timestampToShortDate(timestamp);
-            const background = imageUrl ?
-              { backgroundImage: `url(${sizeImageUrl(imageUrl, 550)})` }
+            const background = imageUrl
+              ? {
+                  backgroundImage: `url(${sizeImageUrl(
+                    imageUrl,
+                    550
+                  )})`,
+                }
               : null;
-            const theme = !imageUrl ? THEMES[index % THEMES.length] : null;
-            
-            const className = classNames(
-              styles.ArticleItem,
-              { [styles.AltBackground]: index % 2 === 1 }
-            );
+            const theme = !imageUrl
+              ? THEMES[index % THEMES.length]
+              : null;
+
+            const className = classNames(styles.ArticleItem, {
+              [styles.AltBackground]: index % 2 === 1,
+            });
 
             return (
               <li key={url}>
-                <a 
-                  className={className}
-                  href={`/news-events/${url}`}
-                >
+                <a className={className} href={`/news-events/${url}`}>
                   <div className={styles.Content}>
-                    <Headline 
+                    <Headline
                       size="tertiary"
                       style="expressive"
                       text={title}
                       as="h3"
                     />
-                    {date && <SmallText text={date} className="text-accent"/>}
-                    {description && <RichText text={description} className={styles.Description}/>}
+                    {date && (
+                      <SmallText
+                        text={date}
+                        className="text-accent"
+                      />
+                    )}
+                    {description && (
+                      <RichText
+                        text={description}
+                        className={styles.Description}
+                      />
+                    )}
                   </div>
-                  <div 
+                  <div
                     className={classNames(styles.Preview, theme)}
                     style={background}
-                  >
-                  </div>
+                  ></div>
                 </a>
               </li>
             );
           })}
         </ul>
       </Section>
-
     </div>
   );
 }
 
-
-
 const articles = await getArticles();
 
 export default function ArticleListContainer(props) {
-  return <ArticleList articles={articles} {...props}/>;
+  return <ArticleList articles={articles} {...props} />;
 }
 
 ArticleListContainer.config = {
   name: 'ArticleList',
-  inputs: [
-    ...Section.inputs,
-  ]
+  inputs: [...Section.inputs],
 };

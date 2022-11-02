@@ -1,35 +1,23 @@
-import builder from '@builder.io/react';
-import { KEY, ARTICLE_MODEL } from './constants.js';
+// import { builder } from '@builder.io/react';
+// import { KEY, ARTICLE_MODEL } from './constants.js';
+import { getArticles } from './services.js';
 
 export default async function getArticlePaths() {
+  const articles = await getArticles();
 
-  builder.init(KEY);
-
-  const resp = await builder.getAll(ARTICLE_MODEL, {
-    fields: 'data.url,data.title,data.description',
-    limit: 1000,
-    options: {
-      noTargeting: true,
-      includeUnpublished: import.meta.env.DEV,
-    },
+  const paths = articles.map((article) => {
+    return {
+      params: {
+        article: article?.url?.replace('/', '') || undefined,
+      },
+      props: { article, articles },
+    };
   });
-
-  const articles = resp.map(item => item.data);
-
-  const paths = articles
-    .map(article => {
-      return {
-        params: {
-          article: article?.url?.replace('/', '') || undefined,
-        },
-        props: { article, articles }
-      };
-    });
 
   if (process.env.NODE_ENV !== 'production') {
     paths.push({
       params: { article: '_' },
-      props: { articles }
+      props: { articles },
     });
   }
 

@@ -1,8 +1,6 @@
 ---
-import { builder } from '@builder.io/react';
-import { builderPages } from '../../builder/getStaticPaths.js';
 import getArticlePaths from '../../builder/getArticlePaths.js';
-import { getArticle } from '../../builder/services.js';
+import { getArticle, getPages } from '../../builder/services.js';
 import { KEY, ARTICLE_MODEL } from '../../builder/constants.js';
 
 import CMS from '../../builder/CMS.jsx';
@@ -10,25 +8,21 @@ import Page from '../../layouts/article.astro';
 
 export const getStaticPaths = getArticlePaths;
 
-builder.init(KEY);
-const getPages = builderPages(builder);
-
 const url = new URL(Astro.request.url);
-const slug = url
-	.pathname
-	.replace(/\/$/, '')
-	.split('/')
-	// .at(-1) // check node version for netlify first
-	.pop();
-	
+const slug = url.pathname
+  .replace(/\/$/, '')
+  .split('/')
+  // .at(-1) // check node version for netlify first
+  .pop();
+
 const [article, pages] = await Promise.all([
-	getArticle(slug),
-	getPages(),
+  getArticle(slug),
+  getPages(),
 ]);
 
 // TODO: send 404 on no article
-
 ---
+
 <Page pages={pages} page={article}>
-	<CMS page={article} model={ARTICLE_MODEL} client:load/>
+  <CMS page={article} model={ARTICLE_MODEL} client:load />
 </Page>
