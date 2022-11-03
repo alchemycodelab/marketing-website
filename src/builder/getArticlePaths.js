@@ -1,5 +1,3 @@
-// import { builder } from '@builder.io/react';
-// import { KEY, ARTICLE_MODEL } from './constants.js';
 import { getArticles } from './services.js';
 
 export default async function getArticlePaths() {
