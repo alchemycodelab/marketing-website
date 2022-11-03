@@ -1,0 +1,15 @@
+---
+/* This is the build version of builder.astro */
+
+import pkg from '@builder.io/react';
+import registerComponents from './register-components.js';
+import { KEY } from './constants.js';
+
+// @ts-ignore
+const { builder, Builder, BuilderComponent } = pkg;
+
+builder.init(KEY);
+registerComponents(Builder);
+---
+
+<BuilderComponent {...Astro.props} />

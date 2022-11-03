@@ -1,9 +1,9 @@
 ---
 import getArticlePaths from '../../builder/getArticlePaths.js';
 import { getArticle, getPages } from '../../builder/services.js';
-import { KEY, ARTICLE_MODEL } from '../../builder/constants.js';
+import { ARTICLE_MODEL } from '../../builder/constants.js';
 
-import CMS from '../../builder/CMS.jsx';
+import CMS from '../../builder/builder.astro';
 import Page from '../../layouts/article.astro';
 
 export const getStaticPaths = getArticlePaths;
@@ -24,5 +24,5 @@ const [article, pages] = await Promise.all([
 ---
 
 <Page pages={pages} page={article}>
-  <CMS page={article} model={ARTICLE_MODEL} client:load />
+  <CMS model={ARTICLE_MODEL} content={article} />
 </Page>

@@ -7,10 +7,10 @@
     "node": "18.x"
   },
   "scripts": {
-    "prestart": "rm -rf src/pages && cp -R src/pages-dev src/pages",
+    "prestart": "cp -R src/builder/builder.dev.astro src/builder/builder.astro && cp src/design/design.astro src/pages/design.astro",
     "start": "astro dev --host",
     "heroku-postbuild": "echo no build required",
-    "prebuild": "rm -rf src/pages && cp -R src/pages-build src/pages",
+    "prebuild": "cp -R src/builder/builder.build.astro src/builder/builder.astro && rm -f src/pages/design.astro",
     "build": "astro build",
     "preview": "astro preview",
     "lint": "eslint --ignore-path .gitignore .",

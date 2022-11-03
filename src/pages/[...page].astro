@@ -1,9 +1,8 @@
 ---
-import getStaticPaths from '../builder/getStaticPaths.js';
 import { getPage } from '../builder/services.js';
+import getStaticPaths from '../builder/getStaticPaths.js';
 import { PAGE_MODEL } from '../builder/constants.js';
-
-import CMS from '../builder/CMS.jsx';
+import CMS from '../builder/builder.astro';
 import Page from '../layouts/page.astro';
 
 export { getStaticPaths };
@@ -14,5 +13,5 @@ const page = await getPage(url.pathname);
 ---
 
 <Page pages={pages} page={page}>
-  <CMS page={page} model={PAGE_MODEL} client:load />
+  <CMS model={PAGE_MODEL} content={page} />
 </Page>
