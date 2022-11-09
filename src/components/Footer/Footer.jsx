@@ -29,15 +29,15 @@ export default function Footer({ pages, page: currentPage }) {
       </section>
 
       <section className={classNames(styles.social, styles.links)}>
-        <a href="#instagram">
+        <a href="https://www.instagram.com/alchemycodelab/">
           <span>Instagram</span>
         </a>
 
-        <a href="#twitter">
+        <a href="https://twitter.com/AlchemyCodeLab">
           <span>Twitter</span>
         </a>
 
-        <a href="#facebook">
+        <a href="https://www.facebook.com/AlchemyCodeLab">
           <span>Facebook</span>
         </a>
       </section>
