@@ -1,6 +1,7 @@
 # build output
 dist/
 src/builder/builder.astro
+src/pages/design.astro
 
 # dependencies
 node_modules/

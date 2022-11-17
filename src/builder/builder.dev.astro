@@ -1,16 +1,9 @@
 ---
 /* This is the dev version of builder.astro */
-
-import {
-  builder,
-  Builder,
-  BuilderComponent,
-} from '@builder.io/react';
-import registerComponents from './register-components.js';
-import { KEY } from './constants.js';
-
+import CMS from './CMS.jsx';
+import { builder } from '@builder.io/react';
+import { KEY } from '../builder/constants.js';
 builder.init(KEY);
-registerComponents(Builder);
 ---
 
-<BuilderComponent {...Astro.props} client:load />
+<CMS {...Astro.props} client:load />
