@@ -19,9 +19,9 @@
     "check": "astro check"
   },
   "devDependencies": {
-    "@astrojs/react": "^1.2.0",
-    "@astrojs/sitemap": "^1.0.0",
-    "astro": "^1.5.0",
+    "@astrojs/react": "^0.1.2",
+    "@astrojs/sitemap": "^0.1.0",
+    "astro": "^1.0.0-beta.34",
     "eslint-plugin-react": "^7.28.0",
     "node-sass": "^7.0.1",
     "sass": "^1.49.9"
