@@ -1,7 +1,9 @@
 .FramedQuotesCarousel {
-  --extra-side-margin: calc( ( 100vw - var(--section-width) ) / 2);
-  --margin-left: calc( var(--primary-margin) + var(--extra-side-margin) );
-  // border-left: var(--margin-left) solid white; 
+  --extra-side-margin: calc((100vw - var(--section-width)) / 2);
+  --margin-left: calc(
+    var(--primary-margin) + var(--extra-side-margin)
+  );
+  // border-left: var(--margin-left) solid white;
   display: grid;
   grid-template-columns: var(--extra-side-margin) var(--section-width) 1fr;
   grid-template-rows: auto auto;
@@ -11,8 +13,10 @@
     margin-left: var(--primary-margin);
     .contentWidth {
       padding: var(--primary-margin);
-      @media (min-width: 700px) { 
-        max-width: calc( var(--section-width) - (var(--primary-margin) * 5.5) );
+      @media (min-width: 700px) {
+        max-width: calc(
+          var(--section-width) - (var(--primary-margin) * 5.5)
+        );
       }
     }
   }
@@ -20,6 +24,7 @@
   .carouselContainer {
     grid-column: 1 / 4;
     grid-row: 2;
+    overflow: hidden;
     // max-width: var(--section-width);
   }
 
@@ -27,13 +32,12 @@
     grid-column: 2 / 4;
     grid-row: 2;
   }
-  
+
   .overlayTheme {
     grid-column: 1 / 3;
     grid-row: 2;
-    @media (min-width: 700px) { 
+    @media (min-width: 700px) {
       margin-right: var(--primary-margin);
     }
   }
-
 }
