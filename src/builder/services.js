@@ -38,12 +38,20 @@ export async function getPage(url) {
   return page || null;
 }
 
-const COHORT_OPTIONS = '&sort.data.startDate=1';
+const COHORT_OPTIONS =
+  '&query.data.hide=false&sort.data.startDate=-1';
 const COHORT_URL = `${getModelUrl(COHORT_MODEL)}${COHORT_OPTIONS}`;
 
 export async function getCohorts() {
-  const results = await get(COHORT_URL);
-  return results.map(({ name, data }) => ({ ...data, name }));
+  let results = await get(COHORT_URL);
+  return (
+    results
+      .map(({ name, data }) => ({ ...data, name }))
+      // Builder Content API doesn't sort dates correctly:
+      .sort(({ startDate: a }, { startDate: b }) => {
+        return new Date(a) - new Date(b);
+      })
+  );
 }
 
 const FAQ_OPTIONS =
