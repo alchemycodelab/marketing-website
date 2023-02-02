@@ -4,22 +4,17 @@ import styles from './Footer.module.scss';
 import classNames from 'classnames';
 
 export default function Footer({ pages, page: currentPage }) {
-
   return (
-    <Section
-      tag="footer"
-      className={styles.Footer}
-      theme="black"
-    >
+    <Section tag="footer" className={styles.Footer} theme="black">
       <a href="/" className={classNames(styles.logo)}>
         <img
-          src='/images/alchemy-logo-vertical.svg'
+          src="/images/alchemy-logo-vertical.svg"
           alt="Alchemy Footer Logo"
           className={classNames(styles.logo)}
         />
       </a>
 
-      <section className={classNames(styles.info, styles.links)} >
+      {/* <section className={classNames(styles.info, styles.links)} >
         <Pages
           navigation="secondary"
           pages={pages}
@@ -40,7 +35,7 @@ export default function Footer({ pages, page: currentPage }) {
         <a href="#facebook">
           <span>Facebook</span>
         </a>
-      </section>
+      </section> */}
 
       <section className={classNames(styles.copyright)}>
         <p>© Copyright 2022, Alchemy Code Lab</p>
@@ -54,7 +49,6 @@ export default function Footer({ pages, page: currentPage }) {
           </a>
         </p>
       </section>
-
     </Section>
   );
 }
